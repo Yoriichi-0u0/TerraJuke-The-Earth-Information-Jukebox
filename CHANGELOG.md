@@ -12,6 +12,14 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Changed
+- **New visual identity, "Aurora Broadcast"**, replacing the Apple-style look (Jacy: "scrap the Apple-like design").
+  A night-radio jukebox lit by the northern lights: deep indigo night with aurora accents (teal, violet, magenta,
+  amber) and a warm cream "Daylight Radio" light mode; condensed display headlines with aurora-gradient words; a
+  drifting aurora sky and starfield behind every page; chasing marquee lights under the header; the player framed as
+  a jukebox arch whose aurora rim breathes while it plays; glowing gradient transport buttons; sleeves that spin on
+  hover; a live equalizer under the Home hero. All motion stops under reduced motion; text keeps WCAG AA contrast.
+
 ### Added
 - Record 07 **The Warming Map** from NASA SVS 5450 (*Global Temperature Anomalies from 1880 to 2024*, GISTEMP v4),
   replacing *Temperature Through Time*. Every colour is read back to °C on NASA's printed −2 to +2 °C bar. Side A:

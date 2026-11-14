@@ -1,0 +1,180 @@
+/* TerraJuke identity: "Aurora Broadcast". A night-radio jukebox lit by the northern lights.
+ * Loaded after StudioIdentity.css; it re-sets the shared tokens and adds the motifs (aurora sky, marquee lights,
+ * jukebox arch, glowing transport). Every animation stops under reduced motion; text keeps WCAG AA contrast.
+ */
+:root[data-theme] .ss.ss-pages.ss-observatory {
+  --tj-font: 'Avenir Next', 'Segoe UI Variable Text', 'Segoe UI', 'Nunito Sans', Roboto, 'Helvetica Neue', system-ui, sans-serif;
+  --tj-display: 'Bahnschrift', 'DIN Condensed', 'DIN Alternate', 'Avenir Next Condensed', 'Futura', 'Roboto Condensed', 'Arial Narrow', sans-serif;
+  --tj-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
+  --tj-aurora: linear-gradient(100deg, #45f0d0 0%, #7c6cff 38%, #ff5fd1 68%, #ffb547 100%);
+  --tj-aurora-text: linear-gradient(100deg, #45f0d0 0%, #9f93ff 40%, #ff7ad9 70%, #ffc46b 100%);
+  --tj-action-fill: linear-gradient(100deg, #45f0d0 0%, #b9f36a 55%, #ffc857 100%);
+  --ef-bg: #070617;
+  --ef-panel: #110f29;
+  --ef-panel-raised: #1a1740;
+  --ef-text: #f6f3ff;
+  --ef-muted: #bdb6e6;
+  --ef-subtle: #aaa3d8;
+  --ef-border: #2e2a5e;
+  --ef-control-border: #7e76c4;
+  --ef-accent: #45f0d0;
+  --ef-on-accent: #06121a;
+  --ef-selected: #1f2552;
+  --ef-focus: #ffd166;
+  --ef-secondary: #ff8ae0;
+  --ef-chart-grid: #3a3570;
+  --ef-chart-text: #bdb6e6;
+  --ef-shadow: 0 1px 2px #0006, 0 18px 50px #0009;
+  --ef-page-glow: radial-gradient(60% 45% at 12% -5%, #2b7f8a55, transparent 70%), radial-gradient(50% 40% at 92% 4%, #6a3fd155, transparent 70%), radial-gradient(70% 50% at 50% 110%, #a3247c33, transparent 70%);
+  --tj-canvas: #070617;
+  --tj-header: #1a1740;
+  --tj-tray: #110f29;
+  --tj-action: #45f0d0;
+  --tj-on-action: #06121a;
+  --tj-glow: #7c6cff;
+}
+
+:root[data-theme='light'] .ss.ss-pages.ss-observatory {
+  --tj-aurora: linear-gradient(100deg, #12b8a0 0%, #6b55f0 38%, #e0399f 68%, #f29a1f 100%);
+  --tj-aurora-text: linear-gradient(100deg, #0a7d6f 0%, #5236d8 40%, #b4237e 70%, #a85d00 100%);
+  --ef-bg: #fff6ea;
+  --ef-panel: #ffffff;
+  --ef-panel-raised: #fff0dd;
+  --ef-text: #1b1233;
+  --ef-muted: #4f4566;
+  --ef-subtle: #574d6e;
+  --ef-border: #ead8c2;
+  --ef-control-border: #8a7b9e;
+  --ef-accent: #0a6b61;
+  --ef-on-accent: #ffffff;
+  --ef-selected: #e1f4ef;
+  --ef-focus: #b54a00;
+  --ef-secondary: #a8217d;
+  --ef-chart-grid: #e2cfb6;
+  --ef-chart-text: #4f4566;
+  --ef-shadow: 0 1px 2px #3b22100f, 0 16px 40px #3b221014;
+  --ef-page-glow: radial-gradient(60% 45% at 10% -5%, #7ee8d455, transparent 70%), radial-gradient(50% 40% at 95% 0%, #ffc9a855, transparent 70%), radial-gradient(70% 50% at 50% 110%, #d9c8ff44, transparent 70%);
+  --tj-canvas: #fff6ea;
+  --tj-header: #fff0dd;
+  --tj-tray: #ffffff;
+  --tj-action: #2fd9b9;
+  --tj-on-action: #10202a;
+  --tj-glow: #e0399f;
+}
+
+/* ---- Sky: drifting aurora ribbons and (at night) a faint starfield behind every page ---- */
+.ss.ss-pages.ss-observatory { position: relative; isolation: isolate; }
+.ss.ss-pages.ss-observatory::before,
+.ss.ss-pages.ss-observatory::after { content: ''; position: fixed; pointer-events: none; z-index: -1; }
+.ss.ss-pages.ss-observatory::before {
+  inset: -25% -25% auto -25%; height: 70vh;
+  background: conic-gradient(from 200deg at 50% 60%, transparent 0 18%, #45f0d02e 24%, transparent 32% 46%, #7c6cff33 54%, transparent 62% 70%, #ff5fd126 78%, transparent 86%);
+  filter: blur(46px); opacity: .9; transform-origin: 50% 60%;
+}
+:root[data-theme='light'] .ss.ss-pages.ss-observatory::before { opacity: .55; }
+.ss-motion.ss.ss-pages.ss-observatory::before { animation: tj-aurora 28s ease-in-out infinite alternate; }
+.ss.ss-pages.ss-observatory::after {
+  inset: 0;
+  background: radial-gradient(1px 1px at 12% 18%, #fff9 50%, transparent 52%), radial-gradient(1px 1px at 72% 12%, #fff7 50%, transparent 52%), radial-gradient(1.5px 1.5px at 38% 34%, #fffa 50%, transparent 52%), radial-gradient(1px 1px at 88% 44%, #fff6 50%, transparent 52%), radial-gradient(1px 1px at 22% 66%, #fff5 50%, transparent 52%), radial-gradient(1.5px 1.5px at 60% 78%, #fff7 50%, transparent 52%);
+  background-size: 420px 420px; opacity: .55;
+}
+:root[data-theme='light'] .ss.ss-pages.ss-observatory::after { display: none; }
+@keyframes tj-aurora { 0% { transform: translateX(-4%) rotate(-6deg) scaleY(1); } 50% { transform: translateX(3%) rotate(3deg) scaleY(1.12); } 100% { transform: translateX(6%) rotate(8deg) scaleY(.95); } }
+
+/* ---- Type ---- */
+:root .ss.ss-pages.ss-observatory :is(h1, .hi-section-head h2, .ss-story h2, .hi-closing h2, .jb-record-heading h2, .sp-brand > span:last-child) { font-family: var(--tj-display) !important; }
+:root .ss.ss-pages.ss-observatory :is(.jb-readout dd, .jb-progress-row > span, .hi-readout, .air-tempo output, .jb-state) { font-family: var(--tj-mono) !important; }
+.ss.ss-pages.ss-observatory :is(.hi-hero h1, .jb-home .jb-intro h1, .sp-page-heading h1) { font-weight: 700; text-transform: uppercase; letter-spacing: .005em; line-height: .96; }
+.ss.ss-pages.ss-observatory .hi-hero h1 { font-size: clamp(2.7rem, 7.2vw, 5.6rem); }
+.ss.ss-pages.ss-observatory :is(.hi-hero h1 em, .jb-home .jb-intro h1 em) {
+  background: var(--tj-aurora-text); -webkit-background-clip: text; background-clip: text; color: transparent;
+  -webkit-text-fill-color: transparent; background-size: 200% 100%;
+}
+.ss-motion.ss.ss-pages.ss-observatory :is(.hi-hero h1 em, .jb-home .jb-intro h1 em) { animation: tj-shimmer 9s ease-in-out infinite alternate; }
+@keyframes tj-shimmer { to { background-position: 100% 0; } }
+.ss.ss-pages.ss-observatory :is(.hi-section-head h2, .hi-closing h2, .ss-story h2) { text-transform: uppercase; letter-spacing: .01em; line-height: 1.02; }
+.ss.ss-pages.ss-observatory :is(.hi-kicker, .jb-eyebrow, .ss-story header p, .lg-count, .ss-kicker) { color: var(--ef-secondary) !important; font-family: var(--tj-mono) !important; letter-spacing: .14em; }
+
+/* ---- Header: glass bar with chasing marquee lights ---- */
+.ss.ss-pages .sp-header { position: relative; border-bottom: 0 !important; }
+.ss.ss-pages .sp-header::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 6px;
+  background: radial-gradient(circle, #45f0d0 0 1.6px, transparent 2.2px) 0 50% / 18px 6px repeat-x, radial-gradient(circle, #ff5fd1 0 1.6px, transparent 2.2px) 9px 50% / 18px 6px repeat-x;
+  opacity: .85; filter: drop-shadow(0 0 3px #7c6cff);
+}
+:root[data-theme='light'] .ss.ss-pages .sp-header::after { filter: none; opacity: .75; }
+.ss-motion.ss.ss-pages .sp-header::after { animation: tj-marquee 1.8s linear infinite; }
+@keyframes tj-marquee { to { background-position: 18px 50%, 27px 50%; } }
+:root .ss.ss-pages .sp-brand > span:last-child {
+  background: var(--tj-aurora-text); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+  font-size: clamp(1.25rem, 2.6vw, 1.9rem); font-weight: 700; letter-spacing: .02em; text-transform: uppercase;
+}
+:root[data-theme] .ss.ss-pages .sp-nav a { border-radius: 999px; }
+:root[data-theme] .ss.ss-pages .sp-nav a[aria-current='page'] { color: var(--ef-text); background: var(--ef-selected); box-shadow: inset 0 0 0 1px var(--ef-accent), 0 0 18px -4px var(--tj-glow); }
+
+/* ---- Actions: the aurora transport ---- */
+:root[data-theme] .ss.ss-pages :is(.jb-home .jb-play, .jb-home .jb-deck .jb-play, .hi-primary, .lg-actions .lg-next) {
+  background: var(--tj-action-fill) !important; color: #06121a !important; border: 0;
+  box-shadow: 0 6px 22px -8px #45f0d0aa, 0 0 0 1px #ffffff22 inset;
+}
+:root[data-theme] .ss.ss-pages :is(.jb-home .jb-play, .hi-primary, .lg-actions .lg-next):is(:hover, :focus-visible):not(:disabled) { filter: brightness(1.08) saturate(1.1); transform: translateY(-1px); }
+:root[data-theme] .ss.ss-pages .jb-home .jb-play { border-radius: 999px; }
+:is(.ss, html) .ss.ss-pages .jb-show-start { background: var(--tj-aurora); color: #fff; text-shadow: 0 1px 2px #0007; }
+.ss.ss-pages .jb-show-start[aria-pressed='true'] { background: var(--ef-panel-raised); color: var(--ef-text); text-shadow: none; }
+
+/* ---- The player: a jukebox arch with an aurora rim that breathes while it plays ---- */
+:root[data-theme] .ss.ss-pages .jb-home .jb-deck {
+  border: 2px solid transparent;
+  border-radius: 36px 36px 20px 20px;
+  background: linear-gradient(var(--ef-panel), var(--ef-panel)) padding-box, var(--tj-aurora) border-box;
+  box-shadow: var(--ef-shadow), 0 0 50px -24px var(--tj-glow);
+}
+:root[data-theme] .ss.ss-pages .jb-home .jb-deck .jb-deck-header { border-radius: 34px 34px 0 0; }
+.ss-motion.ss.ss-pages .jb-home .jb-deck.is-playing { animation: tj-breathe 1.6s ease-in-out infinite alternate; }
+@keyframes tj-breathe { from { box-shadow: var(--ef-shadow), 0 0 30px -16px var(--tj-glow); } to { box-shadow: var(--ef-shadow), 0 0 70px -8px var(--tj-glow); } }
+:root[data-theme] .ss.ss-pages .jb-home .jb-readout dd.jb-note { color: var(--ef-accent); text-shadow: 0 0 14px color-mix(in srgb, var(--ef-accent) 45%, transparent); }
+
+/* ---- The shelf: glowing sleeves, spinning on hover ---- */
+:root[data-theme] .ss .jb-home .jb-record { border-radius: 18px; transition: transform .18s, box-shadow .18s, border-color .18s; }
+:root[data-theme] .ss .jb-home .jb-record:hover { transform: translateY(-2px); box-shadow: 0 10px 30px -14px var(--tj-glow); }
+:root[data-theme] .ss .jb-home .jb-record.is-selected {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--ef-selected), var(--ef-selected)) padding-box, var(--tj-aurora) border-box;
+  box-shadow: 0 0 26px -10px var(--tj-glow);
+}
+.ss.ss-pages .jb-home .jb-sleeve { box-shadow: 0 0 0 2px var(--record-accent, #45f0d0), 0 0 14px -2px var(--record-accent, #45f0d0); }
+.ss-motion.ss.ss-pages .jb-home .jb-record:hover .jb-sleeve, .ss-motion.ss.ss-pages .jb-home .jb-record.is-selected .jb-sleeve { animation: tj-spin 3.2s linear infinite; }
+@keyframes tj-spin { to { transform: rotate(360deg); } }
+
+/* ---- Home ---- */
+.ss.ss-pages .hi-hero { position: relative; padding-bottom: 78px; }
+.ss.ss-pages .hi-eq { position: absolute; left: 0; right: 0; bottom: 0; height: 56px; display: flex; align-items: flex-end; gap: 4px; opacity: .5; pointer-events: none; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.ss.ss-pages .hi-eq i { flex: 1; border-radius: 3px 3px 0 0; background: linear-gradient(to top, #45f0d0, #7c6cff 55%, #ff5fd1); height: var(--h, 40%); }
+:root[data-theme='light'] .ss.ss-pages .hi-eq i { background: linear-gradient(to top, #12b8a0, #6b55f0 55%, #e0399f); }
+.ss-motion.ss.ss-pages .hi-eq i { animation: tj-eq var(--d, 1.2s) ease-in-out infinite alternate; }
+@keyframes tj-eq { from { transform: scaleY(.25); } to { transform: scaleY(1); } }
+.ss.ss-pages .hi-eq i { transform-origin: bottom; }
+.ss.ss-pages .hi-turntable { border: 2px solid transparent; background: linear-gradient(var(--ef-panel), var(--ef-panel)) padding-box, var(--tj-aurora) border-box; border-radius: 160px 160px 28px 28px; box-shadow: 0 0 60px -20px var(--tj-glow); }
+.ss.ss-pages .hi-turntable::before { content: ''; position: absolute; width: 88%; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(from 0deg, #45f0d055, #7c6cff55, #ff5fd155, #ffb54755, #45f0d055); filter: blur(18px); z-index: 0; }
+.ss-motion.ss.ss-pages .hi-turntable::before { animation: tj-spin 14s linear infinite; }
+.ss.ss-pages .hi-turntable > * { position: relative; z-index: 1; }
+.ss.ss-pages .hi-turntable > .hi-arm { position: absolute; }
+.ss.ss-pages :is(.hi-pillars article, .hi-kinds-grid article, .ss-story, .hi-closing) {
+  border: 1px solid transparent !important;
+  background: linear-gradient(var(--ef-panel), var(--ef-panel)) padding-box, linear-gradient(160deg, color-mix(in srgb, var(--ef-accent) 70%, transparent), var(--ef-border) 35%, var(--ef-border) 70%, color-mix(in srgb, var(--ef-secondary) 70%, transparent)) border-box !important;
+}
+.ss.ss-pages .hi-pillars article { transition: transform .2s, box-shadow .2s; }
+.ss.ss-pages .hi-pillars article:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -20px var(--tj-glow); }
+.ss.ss-pages .hi-pillars svg { color: var(--ef-secondary); filter: drop-shadow(0 0 6px color-mix(in srgb, var(--ef-secondary) 60%, transparent)); }
+.ss.ss-pages .hi-dot { background: var(--tj-aurora) !important; }
+.ss.ss-pages .hi-closing { border-radius: 160px 160px 28px 28px !important; }
+@media (max-width: 860px) { .ss.ss-pages .hi-closing { border-radius: 90px 90px 24px 24px !important; } }
+
+/* ---- Reduced motion: everything stands still ---- */
+.ss-pages:not(.ss-motion)::before, .ss-pages:not(.ss-motion) .sp-header::after, .ss-pages:not(.ss-motion) .hi-turntable::before { animation: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .ss.ss-pages.ss-observatory::before, .ss.ss-pages .sp-header::after, .ss.ss-pages .hi-turntable::before, .ss.ss-pages .hi-eq i { animation: none !important; }
+}
+
+/* Text-style buttons keep no box. */
+:root[data-theme] .ss.ss-pages :is(.jb-guide-start, .jb-guide-start:hover) { background: transparent !important; border: 0 !important; box-shadow: none; color: var(--ef-accent); }

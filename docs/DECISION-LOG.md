@@ -5,6 +5,15 @@ Treat entries as settled: do not re-ask unless new facts contradict them (then a
 Earlier decisions live in dated docs such as [TERRAJUKE-3-DECISIONS.md](TERRAJUKE-3-DECISIONS.md) and
 [TEAM-HANDOFF.md](TEAM-HANDOFF.md).
 
+## 2026-11-15 02:30 · Visual identity "Aurora Broadcast"; build autonomously
+- **Decided by:** Jacy ("scrap the Apple-like design idea… give TerraJuke any eye-tracking visuals as you want";
+  then "continue building at your own, use autonomously"). Order chosen by Jacy: identity first, then new records
+  from the unused challenge Resources (Air Quality 5533, ISS Lightning 5011, GEDI 4950, CO₂ 5196).
+- **What:** `src/components/TerraJukeIdentity.css`, loaded after `StudioIdentity.css`, re-sets the shared tokens and
+  adds the motifs. Fonts stay system fonts (no downloads): a condensed display stack (Bahnschrift, DIN Condensed,
+  Avenir Next Condensed, Futura…) and a monospace stack for readouts.
+- **Autonomy:** Claude merges and deploys each PR after `npm run check` passes and verifies production, per CLAUDE.md,
+  and records every release here and in CHANGELOG.md.
 ## 2026-11-15 02:00 · Record 07 is rebuilt from NASA SVS 5450
 - **Decided by:** Jacy's Claude, after Jacy said "start record 07" (same brief: original NASA source, no remixes).
 - **What:** *Global Temperature Anomalies from 1880 to 2024* (SVS 5450, Mark SubbaRao and Gavin A. Schmidt), the
