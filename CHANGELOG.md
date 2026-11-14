@@ -12,6 +12,19 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Added
+- Record 07 **The Warming Map** from NASA SVS 5450 (*Global Temperature Anomalies from 1880 to 2024*, GISTEMP v4),
+  replacing *Temperature Through Time*. Every colour is read back to °C on NASA's printed −2 to +2 °C bar. Side A:
+  34 bands pole to pole for any decade (the Arctic rings highest). Side B: touch a place to hear its 15 decades,
+  1890 to 2024. Global means read from colour agree with NASA's GISTEMP within 0.06 °C on average.
+  [docs/WARMING-MAP.md](docs/WARMING-MAP.md).
+
+### Removed
+- *Temperature Through Time* from the shelf, the jukebox data deck, and Mystery Record's measurement round (Mystery
+  now draws from Climate Spiral and Moving Earth). The GISTEMP numbers stay as Climate Spiral's Side B.
+- With this, every record on the shelf is built from an original NASA visualization (Moving Earth via an attributed
+  mirror of an EIC animation).
+
 ## [8.0.0] - 2026-11-15 00:46 · PRs #29, #30 · live
 
 The Ice Year, About this sound, and the Sound setting. Production: https://terrajuke.vercel.app, merge `208d678`,

@@ -5,6 +5,15 @@ Treat entries as settled: do not re-ask unless new facts contradict them (then a
 Earlier decisions live in dated docs such as [TERRAJUKE-3-DECISIONS.md](TERRAJUKE-3-DECISIONS.md) and
 [TEAM-HANDOFF.md](TEAM-HANDOFF.md).
 
+## 2026-11-15 02:00 · Record 07 is rebuilt from NASA SVS 5450
+- **Decided by:** Jacy's Claude, after Jacy said "start record 07" (same brief: original NASA source, no remixes).
+- **What:** *Global Temperature Anomalies from 1880 to 2024* (SVS 5450, Mark SubbaRao and Gavin A. Schmidt), the
+  Science On a Sphere frames (plate carrée) plus NASA's `time.txt`; one map per decade 1890–2020 and the 2024 map.
+  It tells a different story from record 01 (where warming happened, not the global average) and has a printed
+  −2 to +2 °C colour bar.
+- **Also decided:** Mystery Record loses its measurement round, because no measurement-only record remains on the
+  shelf; it draws from Climate Spiral and Moving Earth until another picture record can be made concealable.
+
 ## 2026-11-15 00:46 · Merge and deploy 8.0.0 without waiting for Chia's review
 - **Decided by:** Jacy ("Merge both and deploy").
 - **What:** PRs #29 (The Ice Year) and #30 (Sound setting) merged and deployed. TEAM-HANDOFF asked record rebuilds to

@@ -47,6 +47,12 @@ export const JOURNEYS:Record<JukeboxRecordId,readonly JourneyLink[]>={
     {icon:'studio',title:SVS,detail:'SVS 5046, Daily Arctic Sea Ice, visualized by Trent L. Schindler over Blue Marble Next Generation land'},
     EIC,TERRAJUKE,
   ],
+  warming:[
+    {icon:'thermometer',title:'Thermometers on land and at sea',detail:'Weather stations (NOAA GHCN) and ship and buoy sea-surface readings (NOAA ERSST), since 1880'},
+    {icon:'model',title:'NASA GISS, New York',detail:'GISTEMP v4: how far each place is from its 1951–1980 normal'},
+    {icon:'studio',title:SVS,detail:'SVS 5450, a map per month from 1880 to 2024, by Mark SubbaRao with Gavin A. Schmidt'},
+    EIC,TERRAJUKE,
+  ],
   temperature:[
     {icon:'thermometer',title:'Thermometers on land and at sea',detail:'Weather stations (NOAA GHCN) and ship and buoy sea-surface readings (NOAA ERSST)'},
     {icon:'model',title:'NASA GISS, New York',detail:'GISTEMP v4: monthly global temperature anomalies since 1880'},
