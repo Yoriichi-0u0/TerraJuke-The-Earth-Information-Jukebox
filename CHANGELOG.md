@@ -12,6 +12,14 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Changed
+- **New visual identity, "Aurora Broadcast"**, replacing the Apple-style look (Jacy: "scrap the Apple-like design").
+  A night-radio jukebox lit by the northern lights: deep indigo night with aurora accents (teal, violet, magenta,
+  amber) and a warm cream "Daylight Radio" light mode; condensed display headlines with aurora-gradient words; a
+  drifting aurora sky and starfield behind every page; chasing marquee lights under the header; the player framed as
+  a jukebox arch whose aurora rim breathes while it plays; glowing gradient transport buttons; sleeves that spin on
+  hover; a live equalizer under the Home hero. All motion stops under reduced motion; text keeps WCAG AA contrast.
+
 ## [8.0.0] - 2026-11-15 00:46 · PRs #29, #30 · live
 
 The Ice Year, About this sound, and the Sound setting. Production: https://terrajuke.vercel.app, merge `208d678`,

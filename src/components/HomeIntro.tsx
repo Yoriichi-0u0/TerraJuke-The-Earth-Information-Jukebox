@@ -15,6 +15,8 @@ const tour=[
   {id:'touch',icon:Hand,title:'Explore by hand',body:'Flip to Side B, or choose a strip or a place yourself, by touch, mouse or arrow keys, and hear it on its own.',dot:[81,86]},
 ] as const;
 const STEP_MS=4200;
+/** Decorative equalizer behind the hero: fixed heights and speeds, so it looks the same on every visit. */
+const EQ=Array.from({length:32},(_,i)=>({h:30+((i*37)%63),d:0.7+((i*13)%9)/10}));
 
 function useListenLink(){
   return (event:MouseEvent<HTMLAnchorElement>,record?:string)=>{
@@ -66,6 +68,7 @@ export default function HomeIntro({motion}:{motion:boolean}){
         <div className="hi-actions"><a className="hi-primary" href="/listen" onClick={e=>listen(e)}><AudioLines size={17} aria-hidden="true"/>{t('Open the jukebox')}<ArrowRight size={16} aria-hidden="true"/></a><a className="hi-secondary" href="#how-it-works">{t('How it works')}<ArrowDown size={15} aria-hidden="true"/></a></div>
         <p className="hi-fine">{t('Headphones help. Sound starts only when you press Play.')}</p>
       </div>
+      <div className="hi-eq" aria-hidden="true">{EQ.map((b,i)=><i key={i} style={{'--h':`${b.h}%`,'--d':`${b.d}s`} as CSSProperties}/>)}</div>
       <div className="hi-turntable" aria-hidden="true"><div className={`hi-vinyl${motion?' is-spinning':''}`}><img src={storyFrame.imageUrl} alt=""/><i/></div><span className="hi-arm"/><small>{t('Record 01 · Climate Spiral · NASA SVS 5190')}</small></div>
     </header>
 

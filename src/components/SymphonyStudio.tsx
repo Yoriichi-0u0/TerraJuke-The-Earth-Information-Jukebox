@@ -19,6 +19,7 @@ import './StudioPages.css';
 import './Observatory.css';
 import './EarthStations.css';
 import './StudioIdentity.css';
+import './TerraJukeIdentity.css';
 const pageNames:Record<StudioPage,string>={home:'Home',listen:'Listen',create:'Create',data:'Explore Data',about:'About'};
 const ignorePlayback=(_value:boolean)=>{};
 function StudioContent(){

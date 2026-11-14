@@ -5,6 +5,16 @@ Treat entries as settled: do not re-ask unless new facts contradict them (then a
 Earlier decisions live in dated docs such as [TERRAJUKE-3-DECISIONS.md](TERRAJUKE-3-DECISIONS.md) and
 [TEAM-HANDOFF.md](TEAM-HANDOFF.md).
 
+## 2026-11-15 02:30 · Visual identity "Aurora Broadcast"; build autonomously
+- **Decided by:** Jacy ("scrap the Apple-like design idea… give TerraJuke any eye-tracking visuals as you want";
+  then "continue building at your own, use autonomously"). Order chosen by Jacy: identity first, then new records
+  from the unused challenge Resources (Air Quality 5533, ISS Lightning 5011, GEDI 4950, CO₂ 5196).
+- **What:** `src/components/TerraJukeIdentity.css`, loaded after `StudioIdentity.css`, re-sets the shared tokens and
+  adds the motifs. Fonts stay system fonts (no downloads): a condensed display stack (Bahnschrift, DIN Condensed,
+  Avenir Next Condensed, Futura…) and a monospace stack for readouts.
+- **Autonomy:** Claude merges and deploys each PR after `npm run check` passes and verifies production, per CLAUDE.md,
+  and records every release here and in CHANGELOG.md.
+
 ## 2026-11-15 00:46 · Merge and deploy 8.0.0 without waiting for Chia's review
 - **Decided by:** Jacy ("Merge both and deploy").
 - **What:** PRs #29 (The Ice Year) and #30 (Sound setting) merged and deployed. TEAM-HANDOFF asked record rebuilds to
