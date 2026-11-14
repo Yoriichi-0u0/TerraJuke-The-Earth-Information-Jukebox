@@ -54,6 +54,14 @@ export const SOUND_STORIES:Record<JukeboxRecordId,SoundStory>={
     why:'To hear the Arctic breathe: ice grows to a March peak and shrinks to a September low, and some seas never freeze at all.',
     how:'NASA draws ice wherever at least 15% of the sea is frozen. TerraJuke traces every pixel through NASA’s own camera to measure that ice in km²: less ice plays a lower bell, and open water adds an ocean wash. On Side B, each month with ice rings a bell, and farther north rings higher.',
   },
+  warming:{
+    what:'Where on Earth it got warmer, decade by decade: NASA’s temperature-change map from 1890 to 2024.',
+    who:'NASA’s Goddard Institute for Space Studies built the record (GISTEMP v4) from weather stations, ships and buoys; Mark SubbaRao visualized it at NASA’s Scientific Visualization Studio, with Gavin A. Schmidt.',
+    when:'One map per decade, 1890 to 2024; each map averages the 24 months up to that year.',
+    where:'The whole world, from 85°S to 85°N. Image: NASA SVS 5450, Global Temperature Anomalies from 1880 to 2024.',
+    why:'To hear that warming is not even: the Arctic and the continents warm fastest, and any place you touch tells its own story.',
+    how:'Each colour is read back to a temperature anomaly on NASA’s printed −2 to +2 °C colour bar. Side A plays 34 bands of latitude, pole to pole; Side B plays a place’s 15 decades. Warmer than the 1951–1980 normal plays higher.',
+  },
   temperature:{
     what:'Twelve January global temperature anomalies, the same numbers as the Climate Spiral’s Side B, on their own.',
     who:'NASA GISS (GISTEMP v4).',

@@ -51,7 +51,7 @@ test('blocked storage falls back to Note by note and still switches for the visi
 
 const records=[
   {title:'Climate Spiral',ms:3000},{title:'Night Lights',ms:5000},{title:'The Air We Share',ms:2500},
-  {title:'Currents of Heat',ms:2500},{title:'Moving Earth',ms:3000},{title:'The Ice Year',ms:3500},{title:'Temperature Through Time',ms:4500},
+  {title:'Currents of Heat',ms:2500},{title:'Moving Earth',ms:3000},{title:'The Ice Year',ms:3500},{title:'The Warming Map',ms:3000},
 ];
 for(const r of records)test(`${r.title}: Continuous glides one voice; Note by note strikes new notes`,{tag:'@timing'},async({page})=>{
   test.setTimeout(45_000);await audit(page);await page.goto('/listen');

@@ -1,0 +1,21 @@
+/* The Warming Map: NASA's decade maps stacked for cross-fades, a decade strip that doubles as a bar chart. */
+.jb-media.warming-media{height:auto;display:flex;flex-direction:column;background:#03060a}
+.jb-media.warming-media .jb-art-label{position:static;padding:8px 16px 6px;background:none}
+.jb-media.warming-media .jb-art-footer{position:static;padding:4px 16px 10px;background:none}
+.warming-map{position:relative;aspect-ratio:2/1;margin:0 14px;border-radius:6px;overflow:hidden;cursor:crosshair;touch-action:manipulation;outline:none;background:#c8c8c8}
+.warming-map:focus-visible{box-shadow:0 0 0 2px var(--record-accent,#ff6b4a)}
+.warming-map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease;user-select:none;-webkit-user-drag:none}
+.warming-map img.is-shown{opacity:1}
+.ss-pages:not(.ss-motion) .warming-map img{transition:none}
+.warming-decades{list-style:none;display:grid;grid-template-columns:repeat(15,minmax(0,1fr));gap:3px;margin:0;padding:10px 14px 4px}
+.warming-decades button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;width:100%;height:64px;padding:0 0 4px;border:1px solid #ffffff1c;border-radius:6px;background:#0b1520;color:#c9d6de;font:inherit;font-size:10px;cursor:pointer;overflow:hidden}
+.warming-decades button i{position:absolute;left:25%;right:25%;bottom:calc(50% + 4px);height:calc(min(1, max(-1, var(--v) / 2)) * 22px);min-height:1px;border-radius:2px;background:#ff6b4a;transform-origin:bottom}
+.warming-decades button[data-sign=cool] i{bottom:calc(50% + 4px + min(1, max(-1, var(--v) / 2)) * 22px);height:calc(min(1, max(-1, var(--v) / -2)) * 22px);background:#5b8fd8}
+.warming-decades button[data-sign=none] i{display:none}
+.warming-decades button::before{content:'';position:absolute;left:4px;right:4px;bottom:calc(50% + 4px);height:1px;background:#ffffff33}
+.warming-decades button span{position:relative}
+.warming-decades button[aria-pressed=true]{border-color:#ff9c7a;background:#2a1712;color:#fff}
+.warming-decades button:focus-visible{outline:2px solid var(--ef-focus,#64d2ff);outline-offset:2px}
+.warming-cbar{display:block;width:min(260px,62%);height:auto;margin:8px auto 0}
+.warming-media .air-caption{margin:0;padding:8px 16px 4px;min-height:3.4em}
+@media(max-width:520px){.warming-decades{grid-template-columns:repeat(8,minmax(0,1fr));gap:3px}.warming-decades button{height:52px}}

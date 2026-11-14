@@ -116,7 +116,7 @@ test('Scratch and Looper move the same sector; switching sources removes the old
   await page.getByRole('button',{name:'Open Mystery Record',exact:true}).click();await expect(print(page)).toHaveCount(0);
   await page.getByRole('button',{name:'Select record: Climate Spiral',exact:true}).click();
   await expect(print(page)).toHaveAttribute('data-groove-index','0');expect(await print(page).locator('.gg-mark').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('d')))).toEqual(initial);
-  await page.getByRole('button',{name:'Select record: Temperature Through Time',exact:true}).click();await expect(print(page)).toHaveCount(0);
+  await page.getByRole('button',{name:'Select record: The Warming Map',exact:true}).click();await expect(print(page)).toHaveCount(0);
 });
 
 test('late audio startup, hidden tabs and navigation cannot drive a stale engraving',async({page})=>{

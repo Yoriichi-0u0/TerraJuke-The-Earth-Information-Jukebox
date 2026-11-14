@@ -2,7 +2,7 @@ import {frames} from './frames';
 import {storyFrame} from './guidedStory';
 import type {EarthFrame} from './frames';
 
-export type JukeboxRecordId='spiral'|'nightlights'|'air'|'ocean'|'motion'|'ice'|'temperature';
+export type JukeboxRecordId='spiral'|'nightlights'|'air'|'ocean'|'motion'|'ice'|'warming'|'temperature';
 export type JukeboxRecord={/** false: not drawn by Mystery Record (it needs one picture or one measurement series). */mystery?:boolean;id:JukeboxRecordId;number:string;title:string;kind:'visual'|'data';subtitle:string;source:string;sourceUrl:string;meaning:string;frame?:EarthFrame;posterUrl?:string;accent:string};
 export const jukeboxRecords:readonly JukeboxRecord[]=[
   {id:'spiral',number:'01',title:'Climate Spiral',kind:'visual',subtitle:'One story. Two sides. Picture and measurements.',source:'NASA SVS 5190',sourceUrl:storyFrame.sourceUrl,meaning:'Image brightness makes pitch. These are pixels, not temperature measurements.',frame:storyFrame,accent:'#64d2ff'},
@@ -11,7 +11,9 @@ export const jukeboxRecords:readonly JukeboxRecord[]=[
     {mystery:false,id:'ocean',number:'04',title:'Currents of Heat',kind:'visual',subtitle:'Pole to pole: hear the ocean warm, then cool.',source:'NASA SVS 3912 · ECCO2',sourceUrl:'https://svs.gsfc.nasa.gov/3912/',meaning:'Each current trace’s colour is read back to a temperature on NASA’s own 0–32 °C scale; warm water plays high, cold water low. Model temperatures, read from colour.',posterUrl:'/nasa/svs3912/svs3912_poster_720x360.jpg',accent:'#ff8a3d'},
   {id:'motion',number:'05',title:'Moving Earth',kind:'visual',subtitle:'An Earth in motion. An evolving sound.',source:'NASA EIC · attributed mirror',sourceUrl:frames[2].mirrorUrl,meaning:'Changing video pixels shape the sound. This is an archived visual, not a live measurement feed.',frame:frames[2],posterUrl:'/frames/untethered-record-poster.jpg',accent:'#9acfcf'},
   {mystery:false,id:'ice',number:'06',title:'The Ice Year',kind:'visual',subtitle:'Arctic sea ice through 2024: hear it shrink and return.',source:'NASA SVS 5046 · JAXA AMSR2',sourceUrl:'https://svs.gsfc.nasa.gov/5046/',meaning:'Each month, the sea ice NASA drew north of 50°N is measured on NASA’s own globe; less ice plays a lower note. Side B plays any place’s ice season. Ice as rendered by NASA, not a data product.',posterUrl:'/nasa/svs5046/2024-03-15.webp',accent:'#9cc8ef'},
-  {id:'temperature',number:'07',title:'Temperature Through Time',kind:'data',subtitle:'The Side B measurements, on their own.',source:'NASA GISS · GISTEMP v4',sourceUrl:'https://data.giss.nasa.gov/gistemp/',meaning:'Global monthly anomalies set pitch, relative to the 1951–1980 January average. Selected years, not a continuous record.',accent:'#f0b08b'},
+  {mystery:false,id:'warming',number:'07',title:'The Warming Map',kind:'visual',subtitle:'1890 to 2024: hear where the heat arrived.',source:'NASA SVS 5450 · GISTEMP v4',sourceUrl:'https://svs.gsfc.nasa.gov/5450/',meaning:'Each place’s colour on NASA’s map is read back to a temperature anomaly on NASA’s −2 to +2 °C colour bar; warmer than the 1951–1980 normal plays higher. Read from rendered colour, not station data.',posterUrl:'/nasa/svs5450/2024.webp',accent:'#ff6b4a'},
 ];
+/** Climate Spiral's Side B: the GISTEMP January measurements (no longer a shelf record of its own since 9.0.0). */
+export const measurementRecord:JukeboxRecord={id:'temperature',number:'07',title:'Temperature Through Time',kind:'data',subtitle:'The Side B measurements, on their own.',source:'NASA GISS · GISTEMP v4',sourceUrl:'https://data.giss.nasa.gov/gistemp/',meaning:'Global monthly anomalies set pitch, relative to the 1951–1980 January average. Selected years, not a continuous record.',accent:'#f0b08b'};
 /** Records Mystery Record can play concealed. */
 export const mysteryRecords:readonly JukeboxRecord[]=jukeboxRecords.filter(record=>record.mystery!==false);
