@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';
 import {appearanceButton,appearanceGroup,chooseAppearance} from './appearanceControl';
 import type {Page} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-const recordTitles=['Climate Spiral','Moving Earth','Temperature Through Time'];
+const recordTitles=['Climate Spiral','Moving Earth'];
 
 type Audit={contexts:AudioContext[];notes:number[];hold:boolean;fail:boolean;resumes:(()=>void)[]};
 declare global{interface Window{mysteryAudit:Audit}}
@@ -14,7 +14,7 @@ async function setup(page:Page,draw=0){
     const audit:Audit={contexts:[],notes:[],hold:false,fail:false,resumes:[]};window.mysteryAudit=audit;
     const Context=AudioContext;window.AudioContext=class extends Context{
       constructor(){super();audit.contexts.push(this);}
-      get state():AudioContextState{return audit.hold&&super.state!=='closed'?'suspended':super.state;}
+      get state():AudioContextState{return (audit.hold||audit.fail)&&super.state!=='closed'?'suspended':super.state;}
       async resume(){if(audit.fail){audit.fail=false;throw new Error('Test: initialization denied');}await super.resume();if(audit.hold)await new Promise<void>(resolve=>audit.resumes.push(resolve));}
       createOscillator(){const osc=super.createOscillator(),start=osc.start.bind(osc),set=osc.frequency.setValueAtTime.bind(osc.frequency);let mapped:number|undefined;
         osc.frequency.setValueAtTime=(hz,at)=>{mapped=hz;return set(hz,at);};osc.start=(when)=>{audit.notes.push(mapped??osc.frequency.value);start(when);};return osc;}
@@ -57,7 +57,7 @@ test('reveal can skip listening/guessing; another mystery resets the round and a
   await setup(page);await open(page);expect(await page.evaluate(()=>window.mysteryAudit.contexts.length)).toBe(0);
   await mystery(page).getByRole('button',{name:'Reveal source',exact:true}).click();await expect(mystery(page)).toContainText("Here's the source. Curiosity is the point.");expect(await page.evaluate(()=>window.mysteryAudit.contexts.length)).toBe(0);
   await mystery(page).getByRole('button',{name:'Try another mystery',exact:true}).click();await expect(mystery(page).getByRole('heading',{name:'Mystery Record',exact:true})).toBeFocused();await noPrematureIdentity(page);
-  await mystery(page).getByRole('radio',{name:'Temperature Through Time',exact:true}).check();await mystery(page).getByRole('button',{name:'Reveal source',exact:true}).click();await expect(mystery(page).getByRole('heading',{name:'Moving Earth',exact:true})).toBeVisible();await expect(mystery(page)).toContainText('Another record was in the grooves. Meet its source.');await expect(mystery(page)).not.toContainText('incorrect');
+  await mystery(page).getByRole('radio',{name:'Climate Spiral',exact:true}).check();await mystery(page).getByRole('button',{name:'Reveal source',exact:true}).click();await expect(mystery(page).getByRole('heading',{name:'Moving Earth',exact:true})).toBeVisible();await expect(mystery(page)).toContainText('Another record was in the grooves. Meet its source.');await expect(mystery(page)).not.toContainText('incorrect');
 });
 
 test('Stop and Replay stay in the same round; another mystery, record switch and navigation close the old owner',async({page})=>{
@@ -83,11 +83,11 @@ test('a hidden tab stops sound without resuming; appearance changes preserve the
   await chooseAppearance(page,'light');await chooseAppearance(page,'dark');await expect(mystery(page).getByRole('button',{name:'Stop mystery',exact:true})).toBeVisible();expect(await page.evaluate(()=>window.mysteryAudit.contexts.length)).toBe(contexts);
   const zh=page.getByRole('region',{name:'Mystery Record',exact:true});await expect(zh.getByRole('button',{name:'Stop mystery',exact:true})).toBeVisible();await expect(zh.getByRole('radio',{name:'Climate Spiral',exact:true})).toBeChecked();
   await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'));});await expect(zh.getByRole('button',{name:'Replay',exact:true})).toBeVisible();const count=await page.evaluate(()=>window.mysteryAudit.notes.length);
-  await page.evaluate(()=>{delete (document as unknown as {hidden?:boolean}).hidden;document.dispatchEvent(new Event('visibilitychange'));});await page.waitForTimeout(600);expect(await page.evaluate(()=>window.mysteryAudit.notes.length)).toBe(count);await zh.getByRole('button',{name:'Reveal source',exact:true}).click();await expect(zh).toContainText('GISTEMP');
+  await page.evaluate(()=>{delete (document as unknown as {hidden?:boolean}).hidden;document.dispatchEvent(new Event('visibilitychange'));});await page.waitForTimeout(600);expect(await page.evaluate(()=>window.mysteryAudit.notes.length)).toBe(count);await zh.getByRole('button',{name:'Reveal source',exact:true}).click();await expect(zh).toContainText('NASA EIC');
 });
 
 test('audio initialization and missing imagery fail neutrally and keep Reveal available',async({page})=>{
-  await setup(page,.9);await open(page);await page.evaluate(()=>{window.mysteryAudit.fail=true;});await play(page).click();await expect(mystery(page).getByRole('alert')).toContainText('could not play');expect(await mystery(page).getByRole('alert').innerText()).not.toMatch(/GISTEMP|GISS|January|°C/);await play(page).click();await expect(mystery(page).getByRole('button',{name:'Stop mystery',exact:true})).toBeVisible();
+  await setup(page,.9);await open(page);await page.evaluate(()=>{window.mysteryAudit.fail=true;});await play(page).click();await expect(mystery(page).getByRole('alert')).toContainText('could not play');expect(await mystery(page).getByRole('alert').innerText()).not.toMatch(/Moving Earth|NASA|EIC|mirror/);await play(page).click();await expect(mystery(page).getByRole('button',{name:'Stop mystery',exact:true})).toBeVisible();
   await page.route('**/frames/climate-spiral-svs5190-2026-10-18.jpg',route=>route.abort());await page.evaluate(()=>{Math.random=()=>0;});await mystery(page).getByRole('button',{name:'Try another mystery',exact:true}).click();await expect(mystery(page).getByRole('alert')).toBeVisible();await expect(play(page)).toBeDisabled();await mystery(page).getByRole('button',{name:'Reveal source',exact:true}).click();await expect(mystery(page).getByRole('link',{name:'NASA SVS 5190',exact:false})).toBeVisible();
 });
 
@@ -95,10 +95,6 @@ test('a stalled initialization is bounded by the 30-second guard and late resolu
   await setup(page);await open(page);await page.clock.install();await page.evaluate(()=>{window.mysteryAudit.hold=true;});await play(page).click();await expect.poll(()=>page.evaluate(()=>window.mysteryAudit.resumes.length)).toBe(1);await page.clock.runFor(30_050);await expect(mystery(page).getByRole('status')).toContainText('Excerpt stopped');await page.evaluate(()=>{window.mysteryAudit.hold=false;window.mysteryAudit.resumes.splice(0).forEach(resolve=>resolve());});expect(await page.evaluate(()=>window.mysteryAudit.notes)).toEqual([]);
 });
 
-test('the generated measurement performance ends naturally and can be replayed',{tag:'@full'},async({page})=>{
-  test.setTimeout(35_000);await setup(page,.9);await open(page);await play(page).click();await expect(mystery(page).getByRole('status')).toContainText('Ready to replay',{timeout:27_000});await expect(mystery(page).getByRole('button',{name:'Replay',exact:true})).toBeEnabled();
-  await mystery(page).getByRole('button',{name:'Reveal source',exact:true}).click();await expect(mystery(page).locator('.mr-observation-label')).toHaveText('Last heard observation');await expect(mystery(page).locator('.jb-data-value>span')).toHaveText('January 2025');
-});
 
 test('guesses, rerolls and reveals stay in session memory without score or network writes',async({page})=>{
   const posts:string[]=[];page.on('request',r=>{if(!['GET','HEAD'].includes(r.method()))posts.push(r.url());});await setup(page);await open(page);

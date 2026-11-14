@@ -1,7 +1,7 @@
 import {lazy,Suspense,useEffect,useId,useMemo,useRef,useState} from 'react';
 import type {CSSProperties,ReactNode} from 'react';
 import {ArrowDown,ArrowUpRight,AudioLines,ChevronLeft,ChevronRight,Disc3,Eye,ImagePlus,Play,ShieldCheck,Square,Volume2} from 'lucide-react';
-import {jukeboxRecords} from '../data/jukeboxRecords';
+import {jukeboxRecords,measurementRecord} from '../data/jukeboxRecords';
 import type {JukeboxRecord,JukeboxRecordId} from '../data/jukeboxRecords';
 import {defaults} from '../lib/symphony';
 import {measurementSequence,mapRecordPoint} from '../lib/jukeboxData';
@@ -38,6 +38,7 @@ const NightLightsDeck=lazy(()=>import('./NightLightsDeck'));
 const AirDeck=lazy(()=>import('./AirDeck'));
 const OceanDeck=lazy(()=>import('./OceanDeck'));
 const IceDeck=lazy(()=>import('./IceDeck'));
+const WarmingDeck=lazy(()=>import('./WarmingDeck'));
 const RecordJourney=lazy(()=>import('./RecordJourney'));
 const ShowCard=lazy(()=>import('./ShowCard'));
 type Show={index:number;phase:'intro'|'playing';cue:number|null};
@@ -86,10 +87,6 @@ function useDataRecord(record:JukeboxRecord,volume:number){
   }
   return {audio,point,state,extra,points,index,audition};
 }
-function DataDeck({record,motion,volume,onVolume}:{record:JukeboxRecord;motion:boolean;volume:number;onVolume:(value:number)=>void}){
-  const data=useDataRecord(record,volume);
-  return <DeckConsole record={record} {...data.state} artwork={<DataArtwork record={record} current={data.point} pulse={data.audio.noteEvent?.serial??0} motion={motion}/>} volume={volume} onVolume={onVolume} extra={data.extra}/>;
-}
 
 /** Shared Scratch/Looper path; scientific adapters and renderers stay independent. */
 function useImagePerformance(visual:ReturnType<typeof useVisualRecord>,volume:number,sourceIdentity:string,enabled=true,canAudition=false){
@@ -107,7 +104,6 @@ function useImagePerformance(visual:ReturnType<typeof useVisualRecord>,volume:nu
 function ClimateDeck({record,motion,volume,onVolume}:{record:JukeboxRecord;motion:boolean;volume:number;onVolume:(value:number)=>void}){
   const {t}=useStudioLanguage();const [side,setSide]=useState<RecordSide>('a');
   const [inspectedObservation,setInspectedObservation]=useState<number|null>(null);
-  const measurementRecord=jukeboxRecords.find(item=>item.id==='temperature')!;
   // Both adapters persist through a flip; only an explicit Play action starts an engine.
   const visual=useVisualRecord(record,motion,volume),data=useDataRecord(measurementRecord,volume);
   const visualGrooves=useMemo(()=>imageGrooveprint(visual.visual.steps),[visual.visual.steps]);
@@ -225,7 +221,7 @@ export default function JukeboxHome({motion}:{motion:boolean}){
         <ShowContext.Provider value={{cue:show?.phase==='playing'?show.cue:null,onEnded,onStopped}}>
         {show?.phase==='intro'&&<Suspense fallback={null}><ShowCard key={show.index} record={jukeboxRecords[show.index]} index={show.index} total={jukeboxRecords.length} motion={motion} onDone={introDone}/></Suspense>}
         {selected==='personal'&&personal.error&&<p className="jb-personal-error" role="alert">{t(personal.error)}{personal.image&&<> {t('Your previous image is still available. Its take has been cleared.')}</>}</p>}
-        {selected==='mystery'?<Suspense fallback={<p role="status">{t('Loading Mystery Record…')}</p>}><MysteryRecord motion={motion} volume={volume} onVolume={setVolume} onOpen={selectRecord}/></Suspense>:selected==='personal'?personal.loading||!personal.image?<section className="jb-personal-loading" aria-labelledby="jb-personal-loading-title"><ImagePlus size={32}/><h2 id="jb-personal-loading-title">{t('Your Record')}</h2><p role="status">{t(personal.loading?'Opening your image…':'Choose an image to make your record.')}</p><p>{t('The previous performance has been cleared.')}</p>{!personal.loading&&<button type="button" onClick={()=>fileInput.current?.click()}>{t('Choose another image')}</button>}</section>:<PersonalDeck key={personal.image.id} image={personal.image} motion={motion} volume={volume} onVolume={setVolume}/>:record.id==='spiral'?<ClimateDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/>:record.id==='nightlights'?<Suspense fallback={<p role="status">{t('Loading Night Lights…')}</p>}><NightLightsDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/></Suspense>:record.id==='ocean'?<Suspense fallback={<p role="status">{t('Loading Currents of Heat…')}</p>}><OceanDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/></Suspense>:record.id==='ice'?<Suspense fallback={<p role="status">{t('Loading The Ice Year…')}</p>}><IceDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/></Suspense>:record.id==='air'?<Suspense fallback={<p role="status">{t('Loading The Air We Share…')}</p>}><AirDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/></Suspense>:record.kind==='visual'?<VisualDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/>:<DataDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/>}
+        {selected==='mystery'?<Suspense fallback={<p role="status">{t('Loading Mystery Record…')}</p>}><MysteryRecord motion={motion} volume={volume} onVolume={setVolume} onOpen={selectRecord}/></Suspense>:selected==='personal'?personal.loading||!personal.image?<section className="jb-personal-loading" aria-labelledby="jb-personal-loading-title"><ImagePlus size={32}/><h2 id="jb-personal-loading-title">{t('Your Record')}</h2><p role="status">{t(personal.loading?'Opening your image…':'Choose an image to make your record.')}</p><p>{t('The previous performance has been cleared.')}</p>{!personal.loading&&<button type="button" onClick={()=>fileInput.current?.click()}>{t('Choose another image')}</button>}</section>:<PersonalDeck key={personal.image.id} image={personal.image} motion={motion} volume={volume} onVolume={setVolume}/>:record.id==='spiral'?<ClimateDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/>:record.id==='nightlights'?<Suspense fallback={<p role="status">{t('Loading Night Lights…')}</p>}><NightLightsDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/></Suspense>:record.id==='ocean'?<Suspense fallback={<p role="status">{t('Loading Currents of Heat…')}</p>}><OceanDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/></Suspense>:record.id==='warming'?<Suspense fallback={<p role="status">{t('Loading The Warming Map…')}</p>}><WarmingDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/></Suspense>:record.id==='ice'?<Suspense fallback={<p role="status">{t('Loading The Ice Year…')}</p>}><IceDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/></Suspense>:record.id==='air'?<Suspense fallback={<p role="status">{t('Loading The Air We Share…')}</p>}><AirDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/></Suspense>:<VisualDeck key={`${record.id}:${deckEpoch}`} record={record} motion={motion} volume={volume} onVolume={setVolume}/>}
         {!optional&&<SoundStory key={`story:${record.id}`} record={record}/>}
         {!optional&&<Suspense fallback={null}><RecordJourney key={record.id} recordId={record.id} motion={motion}/></Suspense>}
         </ShowContext.Provider>
@@ -236,7 +232,7 @@ export default function JukeboxHome({motion}:{motion:boolean}){
           <div className={`jb-shelf-wrap${edges.left?' has-previous':''}${edges.right?' has-next':''}`}>
             <div className="jb-records" ref={shelf}>{jukeboxRecords.map((item,index)=><button key={item.id} className={`jb-record ${selected===item.id?'is-selected':''}`} aria-pressed={selected===item.id} aria-label={`${t('Select record')}: ${t(item.title)}`} onClick={()=>selectRecord(item.id)} onKeyDown={e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const buttons=shelf.current?.querySelectorAll<HTMLButtonElement>('.jb-record');const next=e.key==='Home'?0:e.key==='End'?jukeboxRecords.length-1:(index+(e.key==='ArrowRight'?1:-1)+jukeboxRecords.length)%jukeboxRecords.length;buttons?.[next]?.focus();}}>
               <span className={`jb-sleeve jb-sleeve-${item.id}`} aria-hidden="true">{item.id==='spiral'?<img src={item.frame!.imageUrl} alt=""/>:item.posterUrl?<img src={item.posterUrl} alt=""/>:<span>↗</span>}<i/></span>
-              <span className="jb-record-copy"><small>{t(item.id==='spiral'||item.id==='nightlights'||item.id==='air'||item.id==='ocean'||item.id==='ice'?'SIDES A + B':item.kind==='visual'?'Visual':'Measurements')}</small><strong>{t(item.title)}</strong><span>{t(item.id==='motion'?'Still from the archived animation':item.subtitle)}</span></span><span className="jb-record-indicator" aria-hidden="true">{selected===item.id?<AudioLines size={17}/>:<ArrowUpRight size={17}/>}</span>
+              <span className="jb-record-copy"><small>{t(item.id==='spiral'||item.id==='nightlights'||item.id==='air'||item.id==='ocean'||item.id==='ice'||item.id==='warming'?'SIDES A + B':item.kind==='visual'?'Visual':'Measurements')}</small><strong>{t(item.title)}</strong><span>{t(item.id==='motion'?'Still from the archived animation':item.subtitle)}</span></span><span className="jb-record-indicator" aria-hidden="true">{selected===item.id?<AudioLines size={17}/>:<ArrowUpRight size={17}/>}</span>
             </button>)}</div>
             {edges.left&&<button className="jb-shelf-arrow jb-shelf-previous" type="button" aria-label={t('Previous records')} onClick={()=>moveShelf(-1)}><ChevronLeft size={17}/></button>}
             {edges.right&&<button className="jb-shelf-arrow jb-shelf-next" type="button" aria-label={t('More records')} onClick={()=>moveShelf(1)}><ChevronRight size={17}/></button>}

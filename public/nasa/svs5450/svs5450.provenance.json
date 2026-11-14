@@ -1,0 +1,513 @@
+{
+ "title": "Global Temperature Anomalies from 1880 to 2024",
+ "svsId": 5450,
+ "page": "https://svs.gsfc.nasa.gov/5450/",
+ "released": "2025-01-10",
+ "credits": {
+  "producer": "NASA's Scientific Visualization Studio",
+  "visualizer": "Mark SubbaRao",
+  "scientificConsulting": "Gavin A. Schmidt",
+  "data": "NASA GISS Surface Temperature Analysis (GISTEMP v4); anomalies against 1951-1980; maps averaged over a running 24-month window"
+ },
+ "retrievedAt": "2026-11-15T01:30:00+08:00",
+ "retrievalNote": "svs.gsfc.nasa.gov refused connections from this network; every file came from the Internet Archive raw (id_) capture of NASA's own URL, listed per file.",
+ "frameSet": {
+  "name": "4096x2048_2x1_30p (Science On a Sphere, plate carree)",
+  "frames": 900,
+  "selection": "the last frame labelled with each year in time.txt (one per decade 1890-2020, plus the final 2024 map)"
+ },
+ "colorbar": {
+  "file": "svs5450_cbar.png",
+  "originalFilename": "SOS_GlobalTemperatures_cbar_1000px.png",
+  "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/SOS_GlobalTemperatures_cbar_1000px.png",
+  "archiveCaptureId": "20260624023500",
+  "width": 1000,
+  "height": 346,
+  "bytes": 64283,
+  "sha256": "33b539b3775545a84f094e7db763574885a654c31455fddc0058cce201b40155",
+  "scale": "Temperature Change, linear, -2 C at x=130 to +2 C at x=872 (also -3 to +3 F)",
+  "note": "The SVS page lists this file as 43.1 KB; the archived copy is 64,283 bytes. Its printed scale is the one the page describes."
+ },
+ "timeList": {
+  "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/time.txt",
+  "archiveCaptureId": "20261031130809",
+  "bytes": 4500,
+  "sha256": "31f3df98860520cda7f5373c6d6f0296a58d37e5cba56945058f6c1084d67687",
+  "lines": 900,
+  "first": 1881,
+  "last": 2024
+ },
+ "processing": "scripts/svs5450-prepare.sh: sips resize to 720x360 for analysis (colour chunks stripped) and cwebp q80 at 2048x1024 for display. No generated imagery.",
+ "derived": {
+  "file": "src/data/warming5450.json",
+  "by": "scripts/svs5450-analyse.ts",
+  "sha256": "6f58218ac65d5feb063260fcc7f0a2f04a2d877dda60d466d20a4b0f75b7aff0"
+ },
+ "frames": [
+  {
+   "year": 1890,
+   "frameIndex": 59,
+   "timeTxtLabel": 1890,
+   "originalFilename": "2024GISTEMP_SOS059.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS059.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250220223358id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS059.png",
+   "archiveCaptureId": "20250220223358",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6519963,
+    "sha256": "fa5f2bbdecf2139701ca8a9ba9440d5625d4d719e4357d0a5d65321e80753441"
+   },
+   "display": {
+    "file": "1890.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 115044,
+    "sha256": "a1496654d6a27ae6dd0e2e13b02a491585aab15f1f79d952e70aefa73243386c"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/1890.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 370842,
+    "sha256": "7f04376a3b7ade636cdcdc9eeae240f08e5ded1bc4ceba3b4be56c467c20d46a"
+   }
+  },
+  {
+   "year": 1900,
+   "frameIndex": 119,
+   "timeTxtLabel": 1900,
+   "originalFilename": "2024GISTEMP_SOS119.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS119.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250220214251id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS119.png",
+   "archiveCaptureId": "20250220214251",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6682880,
+    "sha256": "2a660ae39d9b6c5fbf55637e68d8db5a8a5cc67bd0c787e929f97f12c031ef49"
+   },
+   "display": {
+    "file": "1900.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 131838,
+    "sha256": "e89839d1dd03540f5a27105d63e136f62eb2daea18d3ac6b94a291f7a7252fbf"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/1900.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 376740,
+    "sha256": "f90f622154fb5b98a0204912e484ed058a4010d959cf7c66fc1cf498b5633ea5"
+   }
+  },
+  {
+   "year": 1910,
+   "frameIndex": 179,
+   "timeTxtLabel": 1910,
+   "originalFilename": "2024GISTEMP_SOS179.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS179.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250219212646id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS179.png",
+   "archiveCaptureId": "20250219212646",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6374460,
+    "sha256": "448cd4b54d92c0b2a8306200b52ffa87ceba4f944c9225583913375d490a11d8"
+   },
+   "display": {
+    "file": "1910.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 112714,
+    "sha256": "dc84c89b413096e5514ac775659f9fc1e19702c1ed8ec9ff7ac52b0fd983e50e"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/1910.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 359580,
+    "sha256": "5991fd38f593f913eae0db10264a7efa689f97dfff9555f20c9a61ddf5cf43ee"
+   }
+  },
+  {
+   "year": 1920,
+   "frameIndex": 239,
+   "timeTxtLabel": 1920,
+   "originalFilename": "2024GISTEMP_SOS239.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS239.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250220184812id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS239.png",
+   "archiveCaptureId": "20250220184812",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6472967,
+    "sha256": "bc602846b5ab556b7ca740f0b5a6a65bd343e59823380da5f479df5d79c801bb"
+   },
+   "display": {
+    "file": "1920.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 121580,
+    "sha256": "05b21bbeec1c00450af20895f6ecd08c6064dd5b63e07acac47225f6cc949164"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/1920.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 370603,
+    "sha256": "7998b3c85e2b0adecda67f8125365ab7a2447bf7430eac23c6ea96fb028a8bd0"
+   }
+  },
+  {
+   "year": 1930,
+   "frameIndex": 299,
+   "timeTxtLabel": 1930,
+   "originalFilename": "2024GISTEMP_SOS299.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS299.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250220014607id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS299.png",
+   "archiveCaptureId": "20250220014607",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6481551,
+    "sha256": "56e1f469f1189667f19281ec92202892568af2128db0f6d603e96ba202257c71"
+   },
+   "display": {
+    "file": "1930.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 126698,
+    "sha256": "0c59018d933dc05208ea1ea75ebce81ce339ae0270dc437629c9076cde6cda33"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/1930.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 368421,
+    "sha256": "44b5ec7f049faf7fc1167c4626a5e98cfcd63c4f1989f888cf17cadbd78b9e03"
+   }
+  },
+  {
+   "year": 1940,
+   "frameIndex": 359,
+   "timeTxtLabel": 1940,
+   "originalFilename": "2024GISTEMP_SOS359.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS359.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250221060951id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS359.png",
+   "archiveCaptureId": "20250221060951",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6678402,
+    "sha256": "afec2d797907d660728d15efa04478f30b055dba78e82ee3f2b1155155a3ca20"
+   },
+   "display": {
+    "file": "1940.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 128188,
+    "sha256": "8fe673854b0209cef8e46c326d427c24cf33a48e68ea06f5a960831d1d26ff05"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/1940.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 376627,
+    "sha256": "e0736e2c129a09a3e4952ebe06d0005eae81e13606202c6af4e50f9dcefd45ee"
+   }
+  },
+  {
+   "year": 1950,
+   "frameIndex": 419,
+   "timeTxtLabel": 1950,
+   "originalFilename": "2024GISTEMP_SOS419.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS419.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250221053429id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS419.png",
+   "archiveCaptureId": "20250221053429",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6345543,
+    "sha256": "56b8c3137b52b0214b87d2334a26248834e02d713227845ba43103d0fc7c7061"
+   },
+   "display": {
+    "file": "1950.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 125076,
+    "sha256": "0253b1b1fc3c4263b20148cb236f1c3b98d6cad8e7bfe70e86d59749b499aa36"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/1950.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 369587,
+    "sha256": "d2b84391691461efb27751d92a94424e2be6a9b75aad0a27acf29698d98d7494"
+   }
+  },
+  {
+   "year": 1960,
+   "frameIndex": 479,
+   "timeTxtLabel": 1960,
+   "originalFilename": "2024GISTEMP_SOS479.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS479.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250221020731id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS479.png",
+   "archiveCaptureId": "20250221020731",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6173774,
+    "sha256": "0524b9dffecc70550dd8a3b1b4d372f31b4196be084b1a4a6748472ea8f07158"
+   },
+   "display": {
+    "file": "1960.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 129746,
+    "sha256": "712163047cb0f98b03d5fe6875e20d75fcd4bf6762f565c5cd35904130ab260f"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/1960.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 359417,
+    "sha256": "1a60d259b8bd0b0cdbf51e36c0bd9c73431208e128b0c0cc6b16bc553a1c8dee"
+   }
+  },
+  {
+   "year": 1970,
+   "frameIndex": 539,
+   "timeTxtLabel": 1970,
+   "originalFilename": "2024GISTEMP_SOS539.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS539.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250220212250id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS539.png",
+   "archiveCaptureId": "20250220212250",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6263855,
+    "sha256": "f6f9de2762f02c36ad55a35d6a1931b307f6cf5df754a3502c3ab9dbe7831d78"
+   },
+   "display": {
+    "file": "1970.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 129514,
+    "sha256": "ae28a2dd22299135e7c66127175c2f69674e76461e498a7a433d84804915252e"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/1970.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 368896,
+    "sha256": "41ff923714511df37eaf0508371c8888e63adcacdb362b6b0fc3bc0d9e5c5fc6"
+   }
+  },
+  {
+   "year": 1980,
+   "frameIndex": 599,
+   "timeTxtLabel": 1980,
+   "originalFilename": "2024GISTEMP_SOS599.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS599.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250220215459id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS599.png",
+   "archiveCaptureId": "20250220215459",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6357377,
+    "sha256": "d53b0c2abcdd2fa50619bf1f224e86a52dfbad11b345c3bdd621afe358aca7a0"
+   },
+   "display": {
+    "file": "1980.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 130676,
+    "sha256": "95e63533f9418f832e2e62ed97c66a6684c4176b57eb0a399cb8273bbeb73327"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/1980.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 365239,
+    "sha256": "a4180e5bd55df879630382db76636a7681ca2a6554888b293f25535b361af617"
+   }
+  },
+  {
+   "year": 1990,
+   "frameIndex": 659,
+   "timeTxtLabel": 1990,
+   "originalFilename": "2024GISTEMP_SOS659.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS659.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250208032937id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS659.png",
+   "archiveCaptureId": "20250208032937",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6300687,
+    "sha256": "abde46b1dd2b601bf84d978dc6c3762371df360ab3691ca48ab3f1c799f3a049"
+   },
+   "display": {
+    "file": "1990.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 130346,
+    "sha256": "fecc34385428222bf20f110ba55bdf0dca8b11a0c2a57e1ee4e490ab797af96c"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/1990.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 362559,
+    "sha256": "c838cde73559edd35c786f3689854e3489b40a94f1dabecc3e8dfa29ded1a485"
+   }
+  },
+  {
+   "year": 2000,
+   "frameIndex": 719,
+   "timeTxtLabel": 2000,
+   "originalFilename": "2024GISTEMP_SOS719.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS719.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250219232934id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS719.png",
+   "archiveCaptureId": "20250219232934",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6376871,
+    "sha256": "10d535cc8bb76f3c4adf55dae3d671f5ec682a955413c5bdbc1fe03eed27aa27"
+   },
+   "display": {
+    "file": "2000.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 128772,
+    "sha256": "6b3b47ddcd2f4cab7fef3ce594e9c056a39e9b714c153e39ee1b366be55583ee"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/2000.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 363830,
+    "sha256": "30893d02e4d02e028dbb7383fc701b13ca82d7b6508d7330181a17d8dcc39d91"
+   }
+  },
+  {
+   "year": 2010,
+   "frameIndex": 779,
+   "timeTxtLabel": 2010,
+   "originalFilename": "2024GISTEMP_SOS779.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS779.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250220211158id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS779.png",
+   "archiveCaptureId": "20250220211158",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 6224313,
+    "sha256": "858087b9d025da572bfeabbeca166924e3b5d4e6b8e0f0eb0ccc517c1a98a70d"
+   },
+   "display": {
+    "file": "2010.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 115764,
+    "sha256": "ee119912edb054e6701d8ad3fc78f0fa3a5a1016efe0672af1feea19417b392f"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/2010.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 346050,
+    "sha256": "44b6cbf4e76b21d34cef4e739723c42637e65c4d27547f8fbffb6bc0ef2be588"
+   }
+  },
+  {
+   "year": 2020,
+   "frameIndex": 839,
+   "timeTxtLabel": 2020,
+   "originalFilename": "2024GISTEMP_SOS839.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS839.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250220212630id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS839.png",
+   "archiveCaptureId": "20250220212630",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 5906076,
+    "sha256": "d60f8e9f07b3f44c198911918afabafd221991120dd16060587027077a7cf3a0"
+   },
+   "display": {
+    "file": "2020.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 99962,
+    "sha256": "bcb56e4fd0210ee96a1091bcb133791f5fdc2ffb786ad6ce99fb9a077c67a0f5"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/2020.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 328880,
+    "sha256": "9b303410ef35785bc9c985e2650df08b04841c2a951c426b10098e3e920a3641"
+   }
+  },
+  {
+   "year": 2024,
+   "frameIndex": 899,
+   "timeTxtLabel": 2024,
+   "originalFilename": "2024GISTEMP_SOS899.png",
+   "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS899.png",
+   "routeUsed": "internet-archive",
+   "archiveUrl": "https://web.archive.org/web/20250208113808id_/https://svs.gsfc.nasa.gov/vis/a000000/a005400/a005450/frames/4096x2048_2x1_30p/2024GISTEMP_SOS899.png",
+   "archiveCaptureId": "20250208113808",
+   "original": {
+    "width": 4096,
+    "height": 2048,
+    "format": "PNG RGBA 8-bit, no colour profile",
+    "bytes": 5568168,
+    "sha256": "9f5398a0c029f6727539dfb22e075da2deb469eb0103036f5a3d8629b7a04457"
+   },
+   "display": {
+    "file": "2024.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 86306,
+    "sha256": "78e3a44a0f0792edd7f5a3746557144fd16cff5bea3de2ee6c3742746e9b718b"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5450/2024.png",
+    "width": 720,
+    "height": 360,
+    "bytes": 316100,
+    "sha256": "e3dede54d4a05cd4314fc06d986857631e26e8e0fed4f7d6a49111dfd5fd29a9"
+   }
+  }
+ ]
+}

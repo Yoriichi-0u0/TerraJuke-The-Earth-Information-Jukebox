@@ -4,13 +4,9 @@ import {ArrowUpRight,Disc3,Play,RotateCcw,Square,Volume2} from 'lucide-react';
 import {mysteryRecords} from '../data/jukeboxRecords';
 import type {JukeboxRecord,JukeboxRecordId} from '../data/jukeboxRecords';
 import {chooseMysteryRecord} from '../lib/mysteryRecord';
-import {measurementSequence} from '../lib/jukeboxData';
 import {useVisualTransport} from '../lib/useVisualTransport';
-import {useSequenceTransport} from '../lib/useSequenceTransport';
 import {useStudioLanguage} from '../lib/studioLanguage';
-import {defaults} from '../lib/symphony';
 import type {NoteEvent} from '../lib/recordSignal';
-import DataArtwork from './JukeboxDataArtwork';
 import './MysteryRecord.css';
 
 type Props={motion:boolean;volume:number;onVolume:(value:number)=>void;onOpen:(id:JukeboxRecordId)=>void};
@@ -22,7 +18,8 @@ const noop=()=>{};
 export default function MysteryRecord(props:Props){
   const [record,setRecord]=useState(()=>chooseMysteryRecord());
   const onNext=()=>setRecord(previous=>chooseMysteryRecord(previous.id));
-  return record.kind==='visual'?<VisualRound key={record.id} {...props} record={record} onNext={onNext}/>:<MeasurementRound key={record.id} {...props} record={record} onNext={onNext}/>;
+  // Every Mystery record is a picture (since 9.0.0 the shelf has no measurement-only record).
+  return <VisualRound key={record.id} {...props} record={record} onNext={onNext}/>;
 }
 
 function VisualRound(props:RoundProps){
@@ -34,19 +31,6 @@ function VisualRound(props:RoundProps){
     {/* Decode locally for the existing sampler; no identity-bearing accessible name before reveal. */}
     {frame.videoUrl?<video ref={visual.videoRef} src={frame.videoUrl} poster={record.posterUrl} muted playsInline preload="auto" loop aria-label={revealed?t(frame.description):undefined} onError={fail}/>:<img ref={visual.imageRef} src={frame.imageUrl} alt={revealed?t(frame.description):''} onLoad={visual.prepare} onError={fail}/>}
   </div>}/>;
-}
-
-function MeasurementRound(props:RoundProps){
-  const {record,volume}=props;
-  const sequence=useMemo(()=>measurementSequence('temperature'),[]);
-  const audio=useSequenceTransport<(typeof sequence.points)[number]>();
-  // Stop clears the transport readout. Keep only committed observations for reveal.
-  const [lastHeard,setLastHeard]=useState<(typeof sequence.points)[number]|null>(null);
-  useEffect(()=>{if(audio.audible)setLastHeard(audio.audible);},[audio.audible]);
-  const {t}=useStudioLanguage();
-  useEffect(()=>{audio.setVolume(volume);},[volume]);
-  const playback:Playback={ready:true,active:audio.playing,starting:audio.status==='Starting audio…',error:audio.status.startsWith('Audio could not'),event:audio.noteEvent,start:()=>{setLastHeard(null);void audio.play(sequence.points,sequence.pitches,{...defaults,tempo:60,volume});},stop:audio.stop};
-  return <MysteryRound {...props} playback={playback} source={revealed=>revealed?<><p className="mr-observation-label">{t(audio.audible?'Current observation':lastHeard?'Last heard observation':'Starting observation · no note heard yet')}</p><DataArtwork record={record} current={audio.audible??lastHeard??sequence.points[0]}/></>:null}/>;
 }
 
 function MysteryRound({record,motion,volume,onVolume,onOpen,onNext,playback,source}:RoundProps&{playback:Playback;source:(revealed:boolean)=>ReactNode}){

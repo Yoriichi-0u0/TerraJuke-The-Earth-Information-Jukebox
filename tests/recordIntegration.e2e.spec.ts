@@ -62,11 +62,11 @@ test('normal → mystery → personal → mystery → original keeps exactly one
   await expect(page.locator('.jb-personal-heading img')).toHaveAttribute('src',url!);
   await mystery(page).getByRole('button',{name:'Play mystery',exact:true}).click();
   await mystery(page).getByRole('button',{name:'Reveal source',exact:true}).click();
-  await expect(mystery(page)).toContainText('Measurement sound');
-  await expect(mystery(page).getByRole('link',{name:/GISTEMP/})).toHaveAttribute('href','https://data.giss.nasa.gov/gistemp/');
+  await expect(mystery(page)).toContainText('Visual sound');
+  await expect(mystery(page).getByRole('link',{name:/NASA EIC/})).toBeVisible();
   await mystery(page).getByRole('button',{name:'Open full record',exact:true}).click();
   await closed(page);await noLateNotes(page);
-  await expect(page.getByRole('heading',{name:'Temperature Through Time',exact:true})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Moving Earth',exact:true})).toBeVisible();
   await expect(page.locator('.jb-deck')).not.toHaveClass(/is-playing/);
   await expect(page.locator('.jb-record')).toHaveCount(7);
   await page.getByRole('button',{name:'Your Record',exact:true}).click();
@@ -156,22 +156,6 @@ for(const owner of ['personal','mystery'])test(`leaving Home during ${owner} pla
   await expect(page.locator('.jb-deck')).not.toHaveClass(/is-playing/);
 });
 
-for(const [draw,second] of [[.7,'January 1900'],[.9,'January 1900']] as const)test(`measurement reveal retains ${second} on ${draw===.9?'Stop':'reveal'}; a silent reveal labels the starting point`,async({page})=>{
-  await setup(page,draw);await openMystery(page);
-  await mystery(page).getByRole('button',{name:'Reveal source',exact:true}).click();
-  await expect(mystery(page).locator('.mr-observation-label')).toHaveText('Starting observation · no note heard yet');
-  expect(await page.evaluate(()=>window.integrationAudit.notes)).toBe(0);
-  await page.reload();await openMystery(page);await mystery(page).getByRole('button',{name:'Play mystery',exact:true}).click();
-  await expect(mystery(page).getByRole('status')).toContainText('Listening');
-  // At 60 BPM the unchanged engine advances observations every two seconds.
-  await page.waitForTimeout(2500);
-  if(draw===.9)await mystery(page).getByRole('button',{name:'Stop mystery',exact:true}).click();
-  await mystery(page).getByRole('button',{name:'Reveal source',exact:true}).click();
-  await expect(mystery(page).locator('.mr-observation-label')).toHaveText('Last heard observation');
-  await expect(mystery(page).locator('.jb-data-value>span')).toHaveText(second);
-  
-  await expect(page.locator('.mr-observation-label')).toHaveText('Last heard observation');
-});
 
 for(const theme of ['light','dark'] as const)test(`${theme} integrated Home keeps both optional entries usable at six viewports`,{tag:'@full'},async({page})=>{
   test.setTimeout(60_000);await setup(page);
