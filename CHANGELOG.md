@@ -12,6 +12,11 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [9.0.0] - 2026-11-15 02:15 · PRs #32, #33 · live
+
+The Warming Map and the Aurora Broadcast identity. Production: https://terrajuke.vercel.app, merge `4b9d8a2`,
+bundle `index-DuYvgp-e.js`. Notes: [docs/releases/v9.0.0.md](docs/releases/v9.0.0.md).
+
 ### Changed
 - **New visual identity, "Aurora Broadcast"**, replacing the Apple-style look (Jacy: "scrap the Apple-like design").
   A night-radio jukebox lit by the northern lights: deep indigo night with aurora accents (teal, violet, magenta,
@@ -33,7 +38,7 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 - With this, every record on the shelf is built from an original NASA visualization (Moving Earth via an attributed
   mirror of an EIC animation).
 
-## [8.0.0] - 2026-11-15 00:46 · PRs #29, #30 · live
+## [8.0.0] - 2026-11-15 00:46 · PRs #29, #30
 
 The Ice Year, About this sound, and the Sound setting. Production: https://terrajuke.vercel.app, merge `208d678`,
 bundle `index-CFCACNwB.js`. Notes: [docs/releases/v8.0.0.md](docs/releases/v8.0.0.md).
@@ -152,6 +157,7 @@ Notes: [docs/releases/v7.0.0.md](docs/releases/v7.0.0.md).
 ## [1.0.0] - 2026-10-14 · Earth FM
 - First visual and climate sonification, connected to GitHub and Vercel; `main` is the single production branch.
 
-[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v8.0.0...main
+[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v9.0.0...main
+[9.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v9.0.0
 [8.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v8.0.0
 [7.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v7.0.0
