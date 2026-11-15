@@ -12,6 +12,11 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Changed
+- The Create, Explore Data, About, Learn and Listen-weight tests now also run on the emulated iPhone, iPad, Safari
+  and Android devices (`PLAYWRIGHT_DEVICES=1`); one test no longer relies on Tab reaching buttons, which Safari
+  skips by default.
+
 ## [11.1.0] - 2026-11-15 21:11 · PRs #69, #70, #71 · live
 
 Learn joins the rest of the site. Production: merge `a60d4b9`, bundle `index-DSn4F_f4.js`.
