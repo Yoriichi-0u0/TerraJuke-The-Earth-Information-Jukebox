@@ -49,8 +49,8 @@ Paste from [`docs/PORTAL-DRAFT.md`](PORTAL-DRAFT.md), field by field:
 - [ ] Space Agency Partner Data and Other References (JAXA AMSR2 via SVS 5046; NSIDC; Natural Earth; libraries)
 - [ ] Everything in English
 - [ ] Team roster correct (Chia Yuen Kai, Jacy Chiong Yet Suu), Local Event Bintulu, challenge *The Earth Information Jukebox*
-- [ ] Press **Submit for Judging** and **wait for the success message**. Take a screenshot of it.
-- [ ] Note the time and the live version (TerraJuke 10.1.0 or later) in `project-library/challenge-plan/TerraJuke-Submission-Tracker-2026.md`.
+- [x] Press **Submit for Judging** and **wait for the success message**. Take a screenshot of it. Done: "Project Submitted for Judging", last submitted **15 November 2026, 16:56** (screenshot kept by Chia, not in the repo).
+- [x] Submitted 15 Nov 2026 16:56 MYT with https://terrajuke.vercel.app and https://youtu.be/bZC6O_t4LHc. Note the time and the live version (TerraJuke 10.1.0 or later) in `project-library/challenge-plan/TerraJuke-Submission-Tracker-2026.md`.
 
 ## 4. After submitting
 
