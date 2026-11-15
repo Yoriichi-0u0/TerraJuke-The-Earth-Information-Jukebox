@@ -13,6 +13,8 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 ## [Unreleased]
 
 ### Changed
+- Space Apps project page resubmitted at 19:13 with ten typos fixed in its NASA Data and references lists and the
+  broken Blue Marble link corrected; nothing else on the page changed.
 - The submitted Space Apps project page was checked (19:20, read-only): it shows TerraJuke with the right demo,
   project and code links, roster and challenge, and is public signed out; ten small typos in its data lists are
   listed in the submission checklist.

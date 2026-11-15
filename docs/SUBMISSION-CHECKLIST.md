@@ -3,7 +3,7 @@
 ## Final verification (15 Nov 2026, 19:05 MYT)
 
 The project **was submitted for judging at 16:56** ("Project Submitted for Judging" banner; screenshot kept by
-Chia). Edits and resubmission stay open until **23:59**; only the last submission is judged. Claude checked
+Chia) and **resubmitted at 19:13** with typo and link fixes only (see below). The 19:13 submission is the one judged. Edits and resubmission stay open until **23:59**; only the last submission is judged. Claude checked
 everything that can be checked without signing in to the portal:
 
 | # | Check | Result | Evidence |
@@ -27,8 +27,13 @@ everything that can be checked without signing in to the portal:
   wrong): NASA Data: "Visulizations" → Visualizations, "Temprature" → Temperature, "from the IS 2017-2023" → ISS,
   "from 180 to 2024" → 1880, "exhibitanimation" → exhibit animation, "Next Generation globe view)" → "(globe view)";
   references: "as visualied" → visualized, "Eplore Data" → Explore Data, "deo video" → demo video,
-  "watermarkedartwork" → watermarked artwork. Fixing them means editing the page and pressing Submit for Judging
-  again before 23:59; optional.
+  "watermarkedartwork" → watermarked artwork. **Fixed and resubmitted at 19:13** by Claude at Jacy's request ("Yes,
+  fix and resubmit"), together with an eleventh fix: the Blue Marble link pointed to `.../ble-marble-...` (404) and
+  now points to `.../blue-marble-next-generation/base-topography/` (200). Only those 11 entries were changed; the
+  summary, details, demo and project links and the declarations were left as submitted. The panel shows "Last
+  Submitted: 15 November 2026 19:13" and the banner "Project Submitted for Judging!"; the public page (signed out)
+  shows every correction and none of the old typos. Every other link on the page returns 200 (the Internet Archive
+  and Natural Earth only refuse automated checks).
 - [ ] ~~(old item kept for the record)~~ **Open the submitted project page signed in and read every field.** On 14 Nov a *different* draft was saved
   there (name "TerraJuke: One Earth. Every Sense. Everyone.", link terrajuke-2026.vercel.app, NASA data only
   SVS 5313). Make sure the submitted page shows **this** project: name "TerraJuke: The Earth Information Jukebox",
