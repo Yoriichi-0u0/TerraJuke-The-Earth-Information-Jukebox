@@ -33,6 +33,9 @@ test('all eight records say what kind of number they play, with charts, takeaway
   await expect(cards.filter({hasText:'Storm Drums'})).toContainText('Busiest month: Aug.');
   await expect(cards.filter({hasText:'Storm Drums'}).getByRole('link',{name:/Hear it/})).toHaveAttribute('href','/listen?record=storm');
   await expect(cards.filter({hasText:'Storm Drums'}).getByRole('link',{name:/NASA source/})).toHaveAttribute('href','https://svs.gsfc.nasa.gov/5011/');
+  const spiral=cards.filter({hasText:'Climate Spiral'});
+  await expect(spiral.getByRole('link',{name:/NASA data \(GISTEMP\)/})).toHaveAttribute('href','https://data.giss.nasa.gov/gistemp/');
+  await expect(spiral.getByRole('link',{name:/NASA picture \(SVS 5190\)/})).toHaveAttribute('href',/svs\.gsfc\.nasa\.gov\/5190/);
   const pending=page.waitForEvent('download');await cards.filter({hasText:'The Warming Map'}).getByRole('button',{name:'Download the numbers (CSV)'}).click();
   const file=await pending;expect(file.suggestedFilename()).toBe('TerraJuke-Warming-Map-global-average.csv');
   const csv=(await readFile((await file.path())!,'utf8')).trim().split('\n');
