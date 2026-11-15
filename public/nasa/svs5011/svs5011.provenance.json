@@ -1,0 +1,266 @@
+{
+ "title": "Lightning Events Detected from the International Space Station (ISS) 2017-2023",
+ "svsId": 5011,
+ "page": "https://svs.gsfc.nasa.gov/5011/",
+ "released": "2023-10-19",
+ "credits": {
+  "producer": "NASA's Scientific Visualization Studio",
+  "visualizer": "Michala Garrison",
+  "data": "ISS Lightning Imaging Sensor (LIS) quality-controlled science dataset; 10-day roving window"
+ },
+ "retrievedAt": "2026-11-15T14:17:00+08:00",
+ "retrievalNote": "svs.gsfc.nasa.gov refused connections from this network; files came from the Internet Archive raw (id_) capture of NASA's own URL.",
+ "movie": {
+  "originalFilename": "iss_lightning_sos_yearly_07312023_2048p60.mp4",
+  "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005011/iss_lightning_sos_yearly_07312023_2048p60.mp4",
+  "archiveCaptureId": "20260320203119",
+  "bytes": 350207237,
+  "sha256": "c5cd7993dc683f45344abdcd2c5021e7d8d3bef8734a7c4f178acf2af493bc67",
+  "video": "H.264, 4096x2048, 60 fps, 6002 frames (Science On a Sphere, plate carree)",
+  "bundled": false
+ },
+ "labels": {
+  "originalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005011/labels.txt",
+  "archiveCaptureId": "20260317123508",
+  "bytes": 108017,
+  "sha256": "5e18147340e54be6f54d587d4b02b874940b98d6115b46b64c1ef1ef67c707d8",
+  "lines": 6001,
+  "note": "Frame n carries line n (0-based); the 2023 frames are labelled 2003, an evident typo."
+ },
+ "processing": "scripts/svs5011-prepare.sh: ffmpeg frame selection, sips resize to 1440x720 for analysis (colour chunks stripped), cwebp q82 at 2048x1024 for display. No generated imagery.",
+ "derived": {
+  "file": "src/data/lightning5011.json",
+  "by": "scripts/svs5011-analyse.ts",
+  "sha256": "f9bbf5d062ed200faa819d04ab9dd93e283b68b84da6ef23f0a10b46d917054e"
+ },
+ "frames": [
+  {
+   "id": "2022-01",
+   "frameNumber": 4132,
+   "label": "15 Jan 2022 13:11",
+   "display": {
+    "file": "2022-01.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 99424,
+    "sha256": "c8ae245ed0a6633631e31fba89570393149c7c514a5fed1e7940d8e2891a22b5"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5011/2022-01.png",
+    "width": 1440,
+    "height": 720,
+    "bytes": 729372,
+    "sha256": "7a3fb049273c0cf148f892811f5e07fc79f11f9f7e89ff7463e2d5fd9a882cc2"
+   }
+  },
+  {
+   "id": "2022-02",
+   "frameNumber": 4194,
+   "label": "15 Feb 2022 09:15",
+   "display": {
+    "file": "2022-02.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 90138,
+    "sha256": "25131811f1a6d47f1dfdc88dd8253203378ea459f9d641e870dba6960db00ace"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5011/2022-02.png",
+    "width": 1440,
+    "height": 720,
+    "bytes": 712331,
+    "sha256": "88f2ce4212ac5bfb6da032f066903d78abd4b8ac261b1aea8ef945693fa74fac"
+   }
+  },
+  {
+   "id": "2022-03",
+   "frameNumber": 4251,
+   "label": "15 Mar 2022 07:34",
+   "display": {
+    "file": "2022-03.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 96708,
+    "sha256": "65ffdbfadcbbec2837817a2329071f9d58a53becbd4065372547ac2fe0d0cea5"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5011/2022-03.png",
+    "width": 1440,
+    "height": 720,
+    "bytes": 723202,
+    "sha256": "94feed8b3b7581f31e4a1f67acfdf0b51f1d3ad32d90b3392074a04faec42eaf"
+   }
+  },
+  {
+   "id": "2022-04",
+   "frameNumber": 4316,
+   "label": "15 Apr 2022 15:25",
+   "display": {
+    "file": "2022-04.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 100822,
+    "sha256": "c2d4f093a58b0de05cfe003a5c6f8ad5031c05db320ef16b3f04b0a72de29bfb"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5011/2022-04.png",
+    "width": 1440,
+    "height": 720,
+    "bytes": 734854,
+    "sha256": "ff2aee40b7f1c9144e8859fd7993dbc27dc9eaa6b7503173194c911635304d6a"
+   }
+  },
+  {
+   "id": "2022-05",
+   "frameNumber": 4379,
+   "label": "15 May 2022 10:34",
+   "display": {
+    "file": "2022-05.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 106238,
+    "sha256": "740297a9b292600bbc9ac737b240ec364b31d8cfc1fbf45b82e545bf55a84bb1"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5011/2022-05.png",
+    "width": 1440,
+    "height": 720,
+    "bytes": 751086,
+    "sha256": "3f23293d09179fe5ddd23c713ddd012530a81d9417d3025bbc2fba5ab5f00203"
+   }
+  },
+  {
+   "id": "2022-06",
+   "frameNumber": 4446,
+   "label": "15 Jun 2022 11:35",
+   "display": {
+    "file": "2022-06.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 123082,
+    "sha256": "4b92434d06ba942d5f30967f156018a7bb3720a459db85119214505df0139ef4"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5011/2022-06.png",
+    "width": 1440,
+    "height": 720,
+    "bytes": 759592,
+    "sha256": "dd6be8301f1cd77acd71539bd6ee849c5b59821c5150b7c07bd15a6ac28a33d8"
+   }
+  },
+  {
+   "id": "2022-07",
+   "frameNumber": 4512,
+   "label": "15 Jul 2022 08:54",
+   "display": {
+    "file": "2022-07.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 114840,
+    "sha256": "dbe11a8a67519726318417d42f5d0df9d89543de55e96a04bcecf1b707e088ec"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5011/2022-07.png",
+    "width": 1440,
+    "height": 720,
+    "bytes": 747694,
+    "sha256": "86d809c04d5a0ae14892f89d42792f9587577723a6ee14211b80c97da24832d7"
+   }
+  },
+  {
+   "id": "2022-08",
+   "frameNumber": 4583,
+   "label": "15 Aug 2022 17:08",
+   "display": {
+    "file": "2022-08.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 137602,
+    "sha256": "62fffa6561fbe438d9bda7121f32c1a3c1e76a716b7cf17b7ce2ea5547670ff5"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5011/2022-08.png",
+    "width": 1440,
+    "height": 720,
+    "bytes": 781176,
+    "sha256": "daba2e4fc89f4026630e31e77d4968f429ea6c06c302d1af14dacad9684c3bb7"
+   }
+  },
+  {
+   "id": "2022-09",
+   "frameNumber": 4655,
+   "label": "15 Sep 2022 14:16",
+   "display": {
+    "file": "2022-09.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 111068,
+    "sha256": "7d6273c43a461c84ce3096f2057550b79673f731c0d536ebc76ded3c972e8c88"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5011/2022-09.png",
+    "width": 1440,
+    "height": 720,
+    "bytes": 755055,
+    "sha256": "9bb62be79514247f02537359e82d29494cd2907e028c74f1c7c0695ead79f9aa"
+   }
+  },
+  {
+   "id": "2022-10",
+   "frameNumber": 4727,
+   "label": "15 Oct 2022 12:21",
+   "display": {
+    "file": "2022-10.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 86640,
+    "sha256": "0dbde53696deabcda83ba29bfdb2bc32621b95cd6c54373350c5475b8f1fc130"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5011/2022-10.png",
+    "width": 1440,
+    "height": 720,
+    "bytes": 697649,
+    "sha256": "96a2db7f8ad7c1818406bb453e1dd9fc7e9c4dab1c3394a295138c9952654335"
+   }
+  },
+  {
+   "id": "2022-11",
+   "frameNumber": 4804,
+   "label": "15 Nov 2022 09:27",
+   "display": {
+    "file": "2022-11.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 100920,
+    "sha256": "7444294daa3c802c09be35bc6246c7fbbfc6dff62561210a98740f0d346266e5"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5011/2022-11.png",
+    "width": 1440,
+    "height": 720,
+    "bytes": 706526,
+    "sha256": "da1e09c7106f9346af7bd5d51a4d8d72acedca6a77d5006fb440117e140ae722"
+   }
+  },
+  {
+   "id": "2022-12",
+   "frameNumber": 4882,
+   "label": "15 Dec 2022 10:25",
+   "display": {
+    "file": "2022-12.webp",
+    "width": 2048,
+    "height": 1024,
+    "bytes": 99702,
+    "sha256": "d82d853b837005093cd14e0fabedfe582678a2108196be02f09fd5a4ef711206"
+   },
+   "analysis": {
+    "file": "../../../validation/svs5011/2022-12.png",
+    "width": 1440,
+    "height": 720,
+    "bytes": 726819,
+    "sha256": "0c2d1745db73f00dac313c0d84fafa4fed1546a0bfbe0b574d9f07080c61ecf0"
+   }
+  }
+ ]
+}

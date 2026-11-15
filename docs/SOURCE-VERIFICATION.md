@@ -25,6 +25,12 @@ made from an original NASA source, are the bundled files the bytes NASA publishe
 | 06 | Arctic September | NSIDC daily extent CSV (NSIDC-0051/0081) via a third-party GitHub notebook repo (`s4f-dortmund/open_data_notebooks`), averaged into Septembers by this project | Matches its pin; no NASA visual exists for it | NASA-funded NSIDC data, **project-derived, not a NASA visual** | **Replaced on 15 Nov 2026** by record 06 *The Ice Year* (NASA SVS 5046; 12 EXR frames pinned with SHA-256, see [ARCTIC-ICE.md](ARCTIC-ICE.md)). The NSIDC series remains only in the Arctic guided story under Explore Data and Create |
 | 07 | Temperature Through Time | GISTEMP v4 (same file as Record 01 Side B) | Matches its pin | NASA data, but a **remix of Record 01 Side B** | **Replaced on 15 Nov 2026** by record 07 *The Warming Map* (NASA SVS 5450; 15 decade frames, colour bar and `time.txt` pinned with SHA-256, see [WARMING-MAP.md](WARMING-MAP.md)). The GISTEMP numbers remain only as Climate Spiral's Side B |
 
+## Added after this check
+
+| # | Record | Source | Verdict |
+|---|---|---|---|
+| 08 | Storm Drums (15 Nov) | NASA SVS 5011 Science On a Sphere movie + `labels.txt` (challenge Resource), pinned by SHA-256 | NASA original |
+
 ## Also noted
 
 - The vinyl artwork (`public/art/terrajuke-vinyl-surface.jpg`) and the icon are AI-generated (credited in their

@@ -92,7 +92,7 @@ export default function HomeIntro({motion}:{motion:boolean}){
     </section>
 
     <section className="hi-shelf" aria-labelledby="hi-shelf-title">
-      <div className="hi-section-head"><p className="hi-kicker">{t('ON THE SHELF')}</p><h2 id="hi-shelf-title">{t('Seven records. Pick one to start.')}</h2></div>
+      <div className="hi-section-head"><p className="hi-kicker">{t('ON THE SHELF')}</p><h2 id="hi-shelf-title">{t('Eight records. Pick one to start.')}</h2></div>
       <ul>{jukeboxRecords.map(record=>{const image=record.id==='spiral'?record.frame?.imageUrl:record.posterUrl;return <li key={record.id} style={{'--accent':record.accent} as CSSProperties}><a href={`/listen?record=${record.id}`} onClick={e=>listen(e,record.id)}>
         <span className="hi-sleeve" aria-hidden="true">{image?<img src={image} alt=""/>:<AudioLines size={20}/>}</span>
         <span className="hi-record-copy"><small>{record.number} · {t(record.kind==='visual'?'Visual':'Measurements')}</small><strong>{t(record.title)}</strong><span>{t(record.source)}</span></span><ArrowRight size={16} aria-hidden="true"/></a></li>;})}</ul>

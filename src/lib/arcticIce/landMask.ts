@@ -1,14 +1,14 @@
 /**
  * Natural Earth 1:110m land (public domain, already bundled in src/data/world.json) rasterised onto a
- * 0.25° latitude/longitude grid north of 20°N by scanline filling, even–odd rule.
+ * 0.25° latitude/longitude grid north of `south` (default 20°N, the Arctic record) by scanline filling, even–odd rule.
  */
 export const GRID = {step: 0.25, south: 20} as const;
-export type LandGrid = {cols: number; rows: number; land: Uint8Array};
+export type LandGrid = {cols: number; rows: number; land: Uint8Array; south: number};
 type Ring = readonly (readonly [number, number])[] | readonly (readonly number[])[];
 
-export function rasterLand(rings: readonly Ring[]): LandGrid {
-  const cols = Math.round(360 / GRID.step), rows = Math.round((90 - GRID.south) / GRID.step), land = new Uint8Array(cols * rows);
-  const north = rings.filter(r => r.some(p => p[1] > GRID.south));
+export function rasterLand(rings: readonly Ring[], south: number = GRID.south): LandGrid {
+  const cols = Math.round(360 / GRID.step), rows = Math.round((90 - south) / GRID.step), land = new Uint8Array(cols * rows);
+  const north = rings.filter(r => r.some(p => p[1] > south));
   for (let row = 0; row < rows; row++) {
     const lat = 90 - (row + 0.5) * GRID.step, crossings: number[] = [];
     for (const ring of north) for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
@@ -21,10 +21,10 @@ export function rasterLand(rings: readonly Ring[]): LandGrid {
       for (let col = from; col <= to; col++) land[row * cols + col] = 1;
     }
   }
-  return {cols, rows, land};
+  return {cols, rows, land, south};
 }
 export function isLand(grid: LandGrid, lat: number, lon: number): boolean {
-  if (lat < GRID.south) return false;
+  if (lat < grid.south) return false;
   const row = Math.min(grid.rows - 1, Math.floor((90 - lat) / GRID.step)), col = Math.min(grid.cols - 1, Math.max(0, Math.floor((lon + 180) / GRID.step)));
   return grid.land[row * grid.cols + col] === 1;
 }

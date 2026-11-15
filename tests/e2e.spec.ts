@@ -418,7 +418,7 @@ test('five real pages keep the homepage simple, support history and direct reloa
   await expect(page).toHaveURL(/\/listen$/);
   await expect(page.getByRole('heading',{level:1})).toHaveAccessibleName('Your planet. On the record.');
   await expect(page.getByRole('button',{name:'Play record',exact:true})).toBeEnabled();
-  await expect(page.getByRole('button',{name:/Select record:/})).toHaveCount(7);
+  await expect(page.getByRole('button',{name:/Select record:/})).toHaveCount(8);
   await page.getByRole('button',{name:'Side B: hear the measurements',exact:true}).click();
   await expect(page.locator('.jb-deck')).toHaveAttribute('data-record-kind','data');
   await expect(page.locator('.jb-deck')).toHaveAttribute('data-record-side','b');
@@ -740,7 +740,7 @@ for(const failure of ['graphics unavailable','image unavailable']){
 
 test('Listen opens the jukebox and each station story keeps the five-page layout and source-aware links',async({page})=>{
  await page.goto('/');await page.getByRole('navigation').getByRole('link',{name:'Listen',exact:true}).click();await expect(page).toHaveURL(/\/listen$/);
- await expect(page.getByRole('heading',{level:1})).toHaveAccessibleName('Your planet. On the record.');await expect(page.getByRole('button',{name:/Select record:/})).toHaveCount(7);
+ await expect(page.getByRole('heading',{level:1})).toHaveAccessibleName('Your planet. On the record.');await expect(page.getByRole('button',{name:/Select record:/})).toHaveCount(8);
  await page.goto('/listen?station=arctic');await expect(page).toHaveURL(/station=arctic/);
  await page.reload();await expect(page.getByRole('heading',{name:'Listen to the ice record.'})).toBeVisible();
  await page.getByRole('navigation').getByRole('link',{name:'Explore Data',exact:true}).click();await expect(page).toHaveURL(/\/data\?station=arctic$/);

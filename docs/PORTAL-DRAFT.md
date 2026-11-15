@@ -16,7 +16,7 @@ TerraJuke: The Earth Information Jukebox
 
 TerraJuke is a web jukebox that turns NASA's Earth Information Center visualizations into music you can play, touch
 and understand. Each "record" is a NASA Scientific Visualization Studio picture: climate warming, night lights, the
-air we share, ocean heat, Arctic sea ice and a century of temperature change. Press Play and the browser reads the
+air we share, ocean heat, Arctic sea ice, a century of temperature change and lightning seen from the Space Station. Press Play and the browser reads the
 picture's own colours, often back to real values on NASA's printed colour bars, and turns them into sound live, on
 fixed scales: warmer water plays higher, less sea ice plays lower. Side B of each record lets you touch a place to hear
 its story. Every note is also written as text, controls work with a keyboard and screen reader, and a 5W1H card says
@@ -34,7 +34,7 @@ https://terrajuke.vercel.app (source: https://github.com/Yoriichi-0u0/TerraJuke-
 ## Detailed Project Description
 
 **What it does.** Two pages. Home introduces the project and guides the eye with a moving light across a drawn player.
-Listen is the jukebox: seven records on a 3D shelf, a player, Play the whole jukebox (every record in turn), Mystery
+Listen is the jukebox: eight records on a 3D shelf, a player, Play the whole jukebox (every record in turn), Mystery
 Record (guess a record by ear), and Your Record (turn a personal image into sound; it never leaves the device).
 
 **How it works.** Everything runs in the browser with the Web Audio API; there are no recordings.
@@ -49,6 +49,9 @@ Record (guess a record by ear), and Your Record (turn a personal image into soun
   each month of 2024 in km²; Side B plays any Arctic place's ice season.
 - *The Warming Map* (SVS 5450): every map colour read back to a temperature anomaly on NASA's −2 to +2 °C bar;
   the global means read from colour match NASA's GISTEMP within 0.06 °C on average.
+- *Storm Drums* (SVS 5011): lightning detected by the ISS Lightning Imaging Sensor, counted from NASA's dots in every
+  place; each month opens with a note for the world's lightning, then drums sweep west to east. Tests confirm about
+  three quarters of it falls over land and that the storm belt follows the sun north and back.
 
 **Balancing data and music.** Pitches come only from the data, on fixed pentatonic scales so layers stay musical.
 Tempo, timbre and the Sound setting (note by note, or one continuous gliding line) are labelled musical choices that
@@ -85,7 +88,8 @@ Playwright and axe-core for testing, Vercel for hosting, macOS sips, cwebp and f
   - SVS 5313 Change in Night Lights 2012–2023, EIC Version: https://svs.gsfc.nasa.gov/5313/ (cross-check SVS 5276)
   - SVS 5046 Daily Arctic Sea Ice (EIC Daily Visualizations): https://svs.gsfc.nasa.gov/5046/
   - SVS 3912 Global Sea Surface Currents and Temperature: https://svs.gsfc.nasa.gov/3912/
-- Other challenge resources: SVS 5669 GEOS Aerosols: https://svs.gsfc.nasa.gov/5669/
+- Other challenge resources: SVS 5669 GEOS Aerosols: https://svs.gsfc.nasa.gov/5669/; SVS 5011 Lightning Events
+  Detected from the ISS 2017–2023 (made also for the EIC display): https://svs.gsfc.nasa.gov/5011/
 - SVS 5450 Global Temperature Anomalies from 1880 to 2024 (GISTEMP): https://svs.gsfc.nasa.gov/5450/
 - NASA GISS Surface Temperature Analysis (GISTEMP v4): https://data.giss.nasa.gov/gistemp/
 - NASA Earth Observatory Blue Marble (optional globe view)

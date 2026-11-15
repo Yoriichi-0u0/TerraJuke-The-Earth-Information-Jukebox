@@ -53,6 +53,12 @@ export const JOURNEYS:Record<JukeboxRecordId,readonly JourneyLink[]>={
     {icon:'studio',title:SVS,detail:'SVS 5450, a map per month from 1880 to 2024, by Mark SubbaRao with Gavin A. Schmidt'},
     EIC,TERRAJUKE,
   ],
+  storm:[
+    {icon:'satellite',title:'International Space Station, Lightning Imaging Sensor',detail:'A camera that sees each flash, day and night, between about 55°N and 55°S'},
+    {icon:'model',title:'NASA Marshall Space Flight Center',detail:'The quality-controlled LIS science dataset, 2017 to 2023'},
+    {icon:'studio',title:SVS,detail:'SVS 5011, a 10-day roving window of lightning, visualized by Michala Garrison, with a version made for the EIC display'},
+    EIC,TERRAJUKE,
+  ],
   temperature:[
     {icon:'thermometer',title:'Thermometers on land and at sea',detail:'Weather stations (NOAA GHCN) and ship and buoy sea-surface readings (NOAA ERSST)'},
     {icon:'model',title:'NASA GISS, New York',detail:'GISTEMP v4: monthly global temperature anomalies since 1880'},
