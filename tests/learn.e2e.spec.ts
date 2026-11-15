@@ -45,3 +45,12 @@ test('Home leads to Learn from its "Explore together" card',async({page})=>{
   await expect(link).toHaveAttribute('href','/learn');
   await link.click();await expect(page).toHaveURL(/\/learn$/);await expect(page.getByRole('heading',{level:1})).toHaveText('What did you hear?');
 });
+
+test('answering all eight shows what the records share',async({page})=>{
+  await page.goto('/learn');
+  await expect(page.getByRole('region',{name:'What all eight records share'})).toHaveCount(0);
+  const groups=page.locator('.ln-card fieldset');await expect(groups).toHaveCount(8);
+  for(let i=0;i<8;i++)await groups.nth(i).getByRole('radio').first().check();
+  const summary=page.getByRole('region',{name:'What all eight records share'});
+  await expect(summary).toContainText('more of something plays higher or louder');await expect(summary).toContainText('a brighter picture is not a measurement');
+});

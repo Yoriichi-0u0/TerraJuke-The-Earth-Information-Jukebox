@@ -21,5 +21,6 @@ export default function LearnPage(){
       <fieldset><legend>{t(q.ask)}</legend>{q.options.map((option,i)=><label key={option} data-answer={done&&i===q.answer?'yes':undefined}><input type="radio" name={`learn-${record.id}`} checked={choice===i} onChange={()=>setPicked(p=>({...p,[record.id]:i}))}/><span>{t(option)}</span></label>)}</fieldset>
       <p className="ln-why" aria-live="polite">{done&&<><b>{t(ok?'Yes!':'Not quite.')}</b> {t(q.why)}</>}</p>
     </li>;})}</ol>
+    {answered===asked.length&&<section className="ln-summary" aria-labelledby="ln-summary-title"><h2 id="ln-summary-title">{t('What all eight records share')}</h2><p>{t('In TerraJuke, more of something plays higher or louder: more warmth, more city light, more sea ice, more aerosol, more lightning. Less plays lower or quieter, and nothing drawn stays silent.')}</p><p>{t('One exception to remember: a brighter picture is not a measurement. Side A of Climate Spiral and Moving Earth play the picture’s pixels, so check the numbers on Side B or Explore Data.')}</p><a href="/listen">{t('Back to the jukebox')} →</a></section>}
     <p className="sp-bottom-note">{t('These questions are for practice and fun. TerraJuke has not run a study of what people learn from them.')}</p></>;
 }
