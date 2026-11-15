@@ -12,6 +12,18 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Added
+- **Explore Data: "All eight records, and what their numbers are."** Each record says which kind of number it plays
+  (NASA measurements, read from NASA's colour scale, counted from NASA's map, or picture brightness only). The four
+  records with a pinned series (Climate Spiral, The Ice Year, The Warming Map, Storm Drums) show a small chart, a
+  one-line takeaway computed from the same data, and a CSV download; every card links to hear the record and to
+  its NASA source.
+
+### Changed
+- Explore Data uses the same two big data buttons as Create instead of the "Earth Station" menu, starts with three
+  steps (pick a month, read the number, hear its note), and says the number in a sentence, for example "January
+  2025 was 1.37 °C warmer than an average January in 1951–1980."
+
 ## [10.2.0] - 2026-11-15 17:40 · PRs #45, #46 · live
 
 Create for all ages. Production: merge `766dafd`, bundle `index-CkT6gDW-.js`.
