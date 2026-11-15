@@ -214,6 +214,8 @@ export default function JukeboxHome({motion}:{motion:boolean}){
       player.current.scrollIntoView({block:'start',behavior:'instant'});
     }
   }
+  // Create links here (/listen#your-record): bring the photo panel into view and put focus on its button.
+  useEffect(()=>{if(location.hash!=='#your-record')return;const go=()=>{const panel=document.getElementById('your-record');panel?.querySelector<HTMLButtonElement>('.jb-personal-actions button:last-child')?.focus({preventScroll:true});panel?.scrollIntoView({block:'center'});};const timer=setTimeout(go,300);return()=>clearTimeout(timer);},[]); // after the page's own heading focus
   function selectPersonal(){stopShow(false);setSelected('personal');player.current?.scrollIntoView({block:'start',behavior:motion?'smooth':'instant'});}
   function chooseImage(file:File){selectPersonal();void personal.choose(file);}
   function moveShelf(direction:number){const element=shelf.current;if(element)element.scrollBy({left:direction*element.clientWidth*.8,behavior:motion?'smooth':'instant'});}
@@ -249,7 +251,7 @@ export default function JukeboxHome({motion}:{motion:boolean}){
             {edges.right&&<button className="jb-shelf-arrow jb-shelf-next" type="button" aria-label={t('More records')} onClick={()=>moveShelf(1)}><ChevronRight size={17}/></button>}
           </div>
         </section>
-        <section className="jb-personal-panel" aria-labelledby="jb-personal-title" aria-busy={personal.loading}>
+        <section id="your-record" className="jb-personal-panel" aria-labelledby="jb-personal-title" aria-busy={personal.loading}>
           <div className="jb-personal-heading"><span aria-hidden="true">{personal.image?<img src={personal.image.url} alt=""/>:<ImagePlus size={24}/>}</span><div><p>{t('PRESS YOUR OWN RECORD')}</p><h2 id="jb-personal-title">{t('Your image. Your sound.')}</h2></div></div>
           <p>{t('Turn a picture into a playable record. Keep it here, just for you.')}</p>
           <input ref={fileInput} type="file" accept="image/png,image/jpeg,image/webp" aria-label={t('Choose a personal image')} hidden onChange={e=>{const file=e.currentTarget.files?.[0];e.currentTarget.value='';if(file)chooseImage(file);}}/>

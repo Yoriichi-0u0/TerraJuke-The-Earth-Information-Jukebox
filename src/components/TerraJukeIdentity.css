@@ -211,3 +211,28 @@
   .ss.ss-pages .jb-howto li svg{display:none}
   .ss.ss-pages .jb-howto b{font-size:.76rem;line-height:1.2}
 }
+
+/* Create: pick the data, what you change vs what the data decides, and the photo record. */
+.ss.ss-pages .cr-datasets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 16px}
+.ss.ss-pages .cr-datasets button{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;padding:16px 18px;border-radius:16px;border:1px solid var(--ef-border);background:var(--ef-panel);color:var(--ef-text);min-height:48px;cursor:pointer}
+.ss.ss-pages .cr-datasets button b{font-size:1.05rem}
+.ss.ss-pages .cr-datasets button span{font-size:.92rem;color:var(--ef-muted)}
+.ss.ss-pages .cr-datasets button small{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ef-accent)}
+.ss.ss-pages .cr-datasets button[aria-pressed=true]{border-color:var(--ef-accent);background:var(--ef-selected,var(--ef-panel-raised));box-shadow:0 0 0 1px var(--ef-accent) inset}
+.ss.ss-pages .cr-fair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 22px;margin:0 0 22px;padding:16px 20px;border-radius:16px;border:1px solid var(--ef-border);background:var(--ef-panel)}
+.ss.ss-pages .cr-fair h2{margin:0 0 4px;font-size:1rem;color:var(--ef-text)}
+.ss.ss-pages .cr-fair div+div h2{color:var(--ef-accent)}
+.ss.ss-pages .cr-fair p{margin:0;font-size:.92rem;line-height:1.5;color:var(--ef-muted)}
+.ss.ss-pages .cr-fair .cr-fair-note{grid-column:1/-1;margin-top:10px;padding-top:10px;border-top:1px solid var(--ef-border);font-size:.86rem}
+.ss.ss-pages .cr-photo{display:flex;align-items:center;gap:16px;margin:26px 0 0;padding:18px 20px;border-radius:16px;border:1px dashed var(--ef-control-border,var(--ef-border));background:var(--ef-panel);color:var(--ef-text)}
+.ss.ss-pages .cr-photo>svg{flex:none;color:var(--ef-accent)}
+.ss.ss-pages .cr-photo h2{margin:0 0 4px;font-size:1.05rem}
+.ss.ss-pages .cr-photo p{margin:0;font-size:.92rem;line-height:1.5;color:var(--ef-muted)}
+.ss.ss-pages .cr-photo-link{flex:none;margin-left:auto;padding:12px 18px;border-radius:999px;background:var(--ef-accent);color:var(--ef-on-accent,#081018);font-weight:600;text-decoration:none;white-space:nowrap}
+.ss.ss-pages .cr-photo-link:hover{filter:brightness(1.08)}
+@media (max-width:650px){
+  .ss.ss-pages .cr-datasets button{padding:12px 14px}
+  .ss.ss-pages .cr-fair{grid-template-columns:1fr;gap:10px;padding:14px 16px}
+  .ss.ss-pages .cr-photo{flex-wrap:wrap;padding:16px}
+  .ss.ss-pages .cr-photo-link{margin-left:0;width:100%;text-align:center}
+}

@@ -12,6 +12,13 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Changed
+- **Create is easier for all ages.** It opens with three steps (pick the data, pick a sound, play and save), two
+  big choices for the data (Earth's temperature from NASA GISTEMP, or Arctic sea ice from the NSIDC Sea Ice Index)
+  instead of the "Earth Station" menu, and a plain box saying what you change (instrument, style, speed, echo) and
+  what the data decides (which note plays). A new card leads to Your Record on Listen, which now scrolls into view
+  with its button ready.
+
 ## [10.1.1] - 2026-11-15 16:55 · PRs #43, #44 · live
 
 Globe fix and narrated demo. Production: merge `0285579`, bundle `index-BsR9y5Yq.js`.
