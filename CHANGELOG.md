@@ -12,6 +12,11 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Added
+- Evening QA re-check logged in `docs/evidence/qa-2026-11-15.md`: no console errors on any page or record link,
+  Listen 3.0 MB on a phone, and the new page tests 76/76 on Chromium and ten emulated iPhone, iPad and Android
+  devices against production.
+
 ## [10.4.2] - 2026-11-15 19:36 · PRs #59, #60 · live
 
 Temperature chart colours. Production: merge `c5f36f9`, bundle `index-Bnqvn4R6.js`.
