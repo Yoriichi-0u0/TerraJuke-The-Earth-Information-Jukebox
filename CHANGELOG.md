@@ -12,6 +12,11 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [10.2.0] - 2026-11-15 17:40 · PRs #45, #46 · live
+
+Create for all ages. Production: merge `766dafd`, bundle `index-CkT6gDW-.js`.
+Notes: [docs/releases/v10.2.0.md](docs/releases/v10.2.0.md).
+
 ### Changed
 - **Create is easier for all ages.** It opens with three steps (pick the data, pick a sound, play and save), two
   big choices for the data (Earth's temperature from NASA GISTEMP, or Arctic sea ice from the NSIDC Sea Ice Index)
