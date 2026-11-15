@@ -12,6 +12,13 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Changed
+- **About is rewritten for all ages.** It answers "why a jukebox?" in three cards (pick a record, hear it, check it),
+  lists the eight records with their sources and links to hear each one, explains the two ways to listen (the
+  picture, the numbers), says how TerraJuke is made for everyone and how AI was used (code, watermarked artwork,
+  the demo's narration voice; no data or in-app sound), and introduces Team BoboMimi with links to the demo video and
+  the source code. The old "Earth Stations" section is folded into Science and sources.
+
 ## [10.3.0] - 2026-11-15 18:20 · PRs #47, #48, #49 · live
 
 Explore Data for all ages; the demo video is public. Production: merge `0a01aa0`, bundle `index-RfDQ54Yk.js`.

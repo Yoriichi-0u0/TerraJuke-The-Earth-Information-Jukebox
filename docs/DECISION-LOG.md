@@ -5,6 +5,12 @@ Treat entries as settled: do not re-ask unless new facts contradict them (then a
 Earlier decisions live in dated docs such as [TERRAJUKE-3-DECISIONS.md](TERRAJUKE-3-DECISIONS.md) and
 [TEAM-HANDOFF.md](TEAM-HANDOFF.md).
 
+## 2026-11-15 18:45 · About explains the idea, the team and AI use in plain words
+- **Decided by:** Jacy ("Yes, About"); the content is Claude's, from facts already in the portal draft.
+- **What:** About becomes the place for "why a jukebox?", the eight records, accessibility (with its limits), how AI
+  was used (matching the portal's SI section) and the team with the demo and code links. The detailed science and
+  source notes stay, under Science and sources (`#sources`, which other pages link to).
+
 ## 2026-11-15 18:00 · Explore Data shows every record's kind of number
 - **Decided by:** Jacy ("Yes, Explore Data"); the design is Claude's.
 - **What:** Explore Data labels each of the eight records honestly as NASA measurements, read from NASA's colour
