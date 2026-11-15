@@ -5,6 +5,17 @@ Treat entries as settled: do not re-ask unless new facts contradict them (then a
 Earlier decisions live in dated docs such as [TERRAJUKE-3-DECISIONS.md](TERRAJUKE-3-DECISIONS.md) and
 [TEAM-HANDOFF.md](TEAM-HANDOFF.md).
 
+## 2026-11-15 16:30 · Demo narration: AI voice speaking as the team, no on-screen label
+- **Decided by:** Jacy ("add narration sound to the video"; chose the Kokoro AI voice and "As Team BoboMimi Chia and
+  Jacy but without AI label").
+- **What:** a local Kokoro text-to-speech voice reads the team's script, including "Hi! We're Chia and Jacy". There is
+  no on-screen AI label for the voice. The official guide asks for SI audio to be acknowledged in text and metadata
+  (the visible watermark rule is for SI images and videos), so the portal's SI section and the MP4 metadata say the
+  narration is AI. This supersedes the "no AI voice" line of the 15:50 entry.
+- **Also:** the footage is re-recorded after a warm-up pass so every NASA frame, font and the 3D shelf have loaded
+  before each scene; recording also exposed a real bug (the 3D globe blanked whenever its map changed), fixed in the
+  same release.
+
 ## 2026-11-15 15:50 · Demo video: real footage, real sound, captions, no AI voice
 - **Decided by:** Jacy's Claude, after Jacy said to "kick start the video production".
 - **What:** the first cut (30.0 s, 1920×1080) is recorded from the live site by Playwright, with the soundtrack tapped

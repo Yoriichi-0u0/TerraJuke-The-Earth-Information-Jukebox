@@ -8,10 +8,13 @@ Cards: [`CARDS.md`](CARDS.md).
 ## The produced cut (15 November 2026)
 
 A first cut already exists: exactly 30.0 s, 1920 × 1080, recorded from the live site by Playwright with the app's
-own Web Audio output as the soundtrack, cards and captions burned in, no voice. It follows the shots below except
+own Web Audio output as the soundtrack, cards and captions burned in. A narrated version adds an AI text-to-speech
+voice (Kokoro, run locally) reading the voice lines below; the app sound ducks under it. Jacy chose the voice and asked
+for no on-screen AI label; the SI section of the portal and the video metadata acknowledge it. It follows the shots below except
 0:20–0:25, which shows **Storm Drums** (Play the storm year) instead of The Ice Year. It is rebuilt with the scripts in
 the separate `TerraJuke-video-studio` repository, folder `terrajuke-30s/` (see its README). To add your own voices,
-record to the caption timings and mix them over that soundtrack; keep the export at 30 s or less.
+record to the caption timings and mix them over that soundtrack; keep the export at 30 s or less. The narrated cut's
+timings are in `docs/video/terrajuke-demo.srt`.
 
 ## Before recording (a person must do this; test browsers are silent)
 
@@ -30,11 +33,11 @@ record to the caption timings and mix them over that soundtrack; keep the export
 |---|---|---|
 | 0:00–0:02 | Title card (CARDS.md, card 1) | "Hi! We're Chia and Jacy, team BoboMimi." |
 | 0:02–0:05 | https://terrajuke.vercel.app Home; the glowing guide dot moves across the drawn player | "Our challenge: the Earth Information Jukebox." |
-| 0:05–0:10 | Hold on the hero headline, then click **Open the jukebox** | "This is TerraJuke: hear NASA's view of our planet." |
-| 0:10–0:15 | On Listen, click the shelf record **The Warming Map**, then **Play pole to pole**; let 4–5 bands sound, the globe turning | "Pick a NASA visualization and press Play. Its colours are read on NASA’s own scale: warmer plays higher." |
+| 0:05–0:10 | Hold on the hero headline, then click **Open the jukebox** | "This is TerraJuke. Hear NASA's view of our planet." |
+| 0:10–0:15 | On Listen, click the shelf record **The Warming Map**, then **Play pole to pole**; let 4–5 bands sound, the globe turning | "Pick a NASA picture and press Play. Warmer places play higher notes." |
 | 0:15–0:20 | Click **Side B: touch a place**, then tap central Europe on the map: the decades rise | "Touch any place to hear its story, from 1890 to today." |
 | 0:20–0:25 | Click the shelf record **The Ice Year**, press **Play the ice year** for 3 beats; the month bars shrink to September | "Eight NASA records, with captions and keyboard control." |
-| 0:25–0:30 | End card (CARDS.md, card 2) over the last notes | "Imagine every Earth Information Center screen you can also hear. TerraJuke." |
+| 0:25–0:30 | End card (CARDS.md, card 2) over the last notes | "Imagine every Earth Information Center screen, one you could also hear. TerraJuke!" |
 
 Total spoken: about 60 words. If a take runs long, cut the 0:20–0:25 shot first.
 
