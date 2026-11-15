@@ -11,3 +11,5 @@
 .ss.ss-pages .ss-story-source a{color:var(--ef-accent,#2997ff);text-underline-offset:3px}
 @media(max-width:980px){.ss.ss-pages .ss-story dl{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.ss.ss-pages .ss-story{padding:16px}.ss.ss-pages .ss-story dl{grid-template-columns:1fr}}
+.ss.ss-pages .ss-story-learn{margin:10px 0 0;font-size:.92rem}
+.ss.ss-pages .ss-story-learn a{color:var(--ef-accent,#2997ff);font-weight:600;text-decoration:underline;text-underline-offset:3px}

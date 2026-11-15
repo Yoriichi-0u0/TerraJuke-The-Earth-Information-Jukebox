@@ -313,3 +313,6 @@
 .ss.ss-pages .ln-card input[type=radio]{width:18px;height:18px;accent-color:var(--ef-accent);flex:none}
 .ss.ss-pages .ln-why{margin:0;min-height:1.2em;font-size:.92rem;line-height:1.5;color:var(--ef-muted)}
 .ss.ss-pages .ln-why b{color:var(--ef-text)}
+.ss.ss-pages .ln-card{scroll-margin-top:16px}
+.ss.ss-pages .ln-card.is-arrived{border-color:var(--ef-accent);box-shadow:0 0 0 2px var(--ef-accent)}
+.ss.ss-pages .hi-learn{color:var(--ef-accent);font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
