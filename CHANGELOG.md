@@ -13,6 +13,9 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 ## [Unreleased]
 
 ### Changed
+- The submitted Space Apps project page was checked (19:20, read-only): it shows TerraJuke with the right demo,
+  project and code links, roster and challenge, and is public signed out; ten small typos in its data lists are
+  listed in the submission checklist.
 - Final submission check (19:05): everything public was verified signed out (site, code, video 29 s, NASA sources,
   hashes, AI disclosure) and recorded at the top of the submission checklist, with the steps only a signed-in person
   can do; the portal draft gains an optional refreshed description.
