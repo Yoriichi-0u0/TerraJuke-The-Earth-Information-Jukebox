@@ -17,16 +17,25 @@ everything that can be checked without signing in to the portal:
 | 7 | AI use disclosed; AI images watermarked; no NASA logos | ✅ | SI section of the portal draft (code, watermarked icon and vinyl art, AI narration voice); watermarks since 10.0.0 |
 | 8 | Everything in English | ✅ | App is English only; video has English captions |
 | 9 | Eligibility | ✅ | This repository is the submission (DECISION-LOG, 14 Nov 21:10; Jacy) |
+| 10 | Submitted project page shows **this** project (checked 19:20 in the signed-in browser pane, read-only, at Jacy's request) | ✅ | Team page `spaceappschallenge.org/2026/find-a-team/bobomimi/?tab=project`: title "TerraJuke: The Earth Information Jukebox"; summary, Project Demonstration https://youtu.be/bZC6O_t4LHc, Project https://terrajuke.vercel.app, details with the code link, SI text, NASA data and references all match [PORTAL-DRAFT.md](PORTAL-DRAFT.md). The 14 Nov draft text is gone. The page is also public signed out (title and both links served) |
+| 11 | Team, event, challenge | ✅ | Members: Chia Yuen Kai (owner) and Jacy Chiong; Local Event Bintulu, Malaysia; challenge The Earth Information Jukebox; profile shows "Projects Submitted: 1" |
 
 **Still for a person (Claude cannot see the signed-in portal):**
 
-- [ ] **Open the submitted project page signed in and read every field.** On 14 Nov a *different* draft was saved
+- [x] ~~Open the submitted project page signed in and read every field.~~ Done by Claude at 19:20 (rows 10–11).
+  **Typos found on the live project page** (letters lost when pasting; the meaning is clear, and nothing else is
+  wrong): NASA Data: "Visulizations" → Visualizations, "Temprature" → Temperature, "from the IS 2017-2023" → ISS,
+  "from 180 to 2024" → 1880, "exhibitanimation" → exhibit animation, "Next Generation globe view)" → "(globe view)";
+  references: "as visualied" → visualized, "Eplore Data" → Explore Data, "deo video" → demo video,
+  "watermarkedartwork" → watermarked artwork. Fixing them means editing the page and pressing Submit for Judging
+  again before 23:59; optional.
+- [ ] ~~(old item kept for the record)~~ **Open the submitted project page signed in and read every field.** On 14 Nov a *different* draft was saved
   there (name "TerraJuke: One Earth. Every Sense. Everyone.", link terrajuke-2026.vercel.app, NASA data only
   SVS 5313). Make sure the submitted page shows **this** project: name "TerraJuke: The Earth Information Jukebox",
   Final Project https://terrajuke.vercel.app, Demo https://youtu.be/bZC6O_t4LHc, and the summary, description,
   SI, NASA data and references from [PORTAL-DRAFT.md](PORTAL-DRAFT.md).
-- [ ] Team roster (Chia Yuen Kai, Jacy Chiong Yet Suu), Local Event Bintulu, challenge *The Earth Information
-  Jukebox*.
+- [x] Team roster (Chia Yuen Kai, Jacy Chiong Yet Suu), Local Event Bintulu, challenge *The Earth Information
+  Jukebox* (row 11).
 - [ ] **SSC, before 21:00:** team photo posted in Discord `#team-photo`.
 - [ ] Open the video in a private window and turn on subtitles: English subtitles appear.
 - [ ] Optional, before 23:59: paste the refreshed "What it does" and "Validity" text from
