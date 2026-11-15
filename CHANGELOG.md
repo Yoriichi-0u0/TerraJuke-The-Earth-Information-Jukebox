@@ -12,6 +12,11 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [10.0.0] - 2026-11-15 14:36 · PRs #35, #36, #37 · live
+
+Storm Drums, AI watermarks and the submission kit. Production: https://terrajuke.vercel.app, merge `3389950`,
+bundle `index-YNGiaFMz.js`. Notes: [docs/releases/v10.0.0.md](docs/releases/v10.0.0.md).
+
 ### Added
 - Record 08 **Storm Drums** from NASA SVS 5011 (*Lightning Events Detected from the ISS 2017–2023*, a challenge
   Resource): twelve 2022 frames extracted from NASA's Science On a Sphere movie with its `labels.txt`. Side A: each
@@ -26,7 +31,7 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 - AI-generated images (vinyl record art, TerraJuke icon and artwork) now carry a visible "AI-GENERATED" watermark or
   "AI" badge, as the Space Apps rules require (`scripts/watermark-si.mjs`).
 
-## [9.0.0] - 2026-11-15 02:15 · PRs #32, #33 · live
+## [9.0.0] - 2026-11-15 02:15 · PRs #32, #33
 
 The Warming Map and the Aurora Broadcast identity. Production: https://terrajuke.vercel.app, merge `4b9d8a2`,
 bundle `index-DuYvgp-e.js`. Notes: [docs/releases/v9.0.0.md](docs/releases/v9.0.0.md).
@@ -171,7 +176,8 @@ Notes: [docs/releases/v7.0.0.md](docs/releases/v7.0.0.md).
 ## [1.0.0] - 2026-10-14 · Earth FM
 - First visual and climate sonification, connected to GitHub and Vercel; `main` is the single production branch.
 
-[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v9.0.0...main
+[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v10.0.0...main
+[10.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.0.0
 [9.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v9.0.0
 [8.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v8.0.0
 [7.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v7.0.0
