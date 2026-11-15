@@ -90,8 +90,8 @@ export default function IceDeck({record,motion,volume,onVolume}:{record:JukeboxR
 
   const sideControls=<>
     <div className="jb-side-selector" role="group" aria-label={t('Choose a side of The Ice Year')}>
-      <button type="button" aria-label={t('Side A: the year of ice')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('The year of ice')}<small>{t('12 months · area sets pitch')}</small></span></button>
-      <button type="button" aria-label={t('Side B: touch the ice')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('Touch the ice')}<small>{t('Any place · its ice season')}</small></span></button>
+      <button type="button" aria-label={t('Side A: the year of ice')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('The year of ice')}<small>{t('Watch it melt and freeze')}</small></span></button>
+      <button type="button" aria-label={t('Side B: touch the ice')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('Touch the ice')}<small>{t('Tap the Arctic')}</small></span></button>
     </div>
     <div className="air-tempo"><label htmlFor="ice-bpm">{t('Tempo')}</label><input id="ice-bpm" type="range" min={48} max={120} step={4} value={bpm} aria-valuetext={`${bpm} ${t('beats per minute')}`} onChange={e=>{bpmRef.current=Number(e.target.value);setBpm(Number(e.target.value));}}/><output htmlFor="ice-bpm">{bpm} BPM</output></div>
   </>;

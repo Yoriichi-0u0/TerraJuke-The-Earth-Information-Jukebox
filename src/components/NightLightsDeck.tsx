@@ -244,8 +244,8 @@ export default function NightLightsDeck({record,motion,volume,onVolume}:{record:
 
   const sideControls=<>
     <div className="jb-side-selector" role="group" aria-label={t('Choose a side of Night Lights')}>
-      <button type="button" aria-label={t('Side A: the change map')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('The change map')}<small>{t('2012 → 2023 · purple more, orange less')}</small></span></button>
-      <button type="button" aria-label={t('Side B: hear the decade')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('Hear the decade')}<small>{t('NASA’s 12 yearly frames')}</small></span></button>
+      <button type="button" aria-label={t('Side A: the change map')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('The change map')}<small>{t('Where lights grew or faded')}</small></span></button>
+      <button type="button" aria-label={t('Side B: hear the decade')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('Hear the decade')}<small>{t('One year at a time')}</small></span></button>
     </div>
     <div className="nl-places" role="group" aria-label={t('Choose a place')}>
       {[world,...regions].filter((p):p is Place=>Boolean(p)).map(p=><button key={p.id} type="button" aria-pressed={!concealed&&current?.id===p.id} disabled={!ready||concealed} onClick={()=>choose(p)}>{t(p.id==='world'?'Whole map':p.label.replace(' map region',''))}</button>)}

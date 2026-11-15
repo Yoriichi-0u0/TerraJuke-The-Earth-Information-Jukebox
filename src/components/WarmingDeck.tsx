@@ -97,8 +97,8 @@ export default function WarmingDeck({record,motion,volume,onVolume}:{record:Juke
 
   const sideControls=<>
     <div className="jb-side-selector" role="group" aria-label={t('Choose a side of The Warming Map')}>
-      <button type="button" aria-label={t('Side A: pole to pole')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('Pole to pole')}<small>{t('34 bands · any decade')}</small></span></button>
-      <button type="button" aria-label={t('Side B: touch a place')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('Touch a place')}<small>{t('Its warming, 1890 to 2024')}</small></span></button>
+      <button type="button" aria-label={t('Side A: pole to pole')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('Pole to pole')}<small>{t('South Pole to North Pole')}</small></span></button>
+      <button type="button" aria-label={t('Side B: touch a place')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('Touch a place')}<small>{t('Tap a place to hear it warm')}</small></span></button>
     </div>
     <div className="air-tempo"><label htmlFor="warming-bpm">{t('Tempo')}</label><input id="warming-bpm" type="range" min={60} max={160} step={4} value={bpm} aria-valuetext={`${bpm} ${t('beats per minute')}`} onChange={e=>{bpmRef.current=Number(e.target.value);setBpm(Number(e.target.value));}}/><output htmlFor="warming-bpm">{bpm} BPM</output></div>
   </>;

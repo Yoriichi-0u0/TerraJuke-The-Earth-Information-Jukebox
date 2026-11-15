@@ -12,6 +12,13 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Changed
+- **Easier for all ages** (mentor feedback: the public found it hard to understand, and "why a jukebox?"). Listen now
+  starts with three steps (pick a record, press Play, flip to Side B) and one line on why it is a jukebox; the first
+  record says START HERE; shelf subtitles, side names and captions use plain words; the Sound setting moved under
+  "More sound options"; small labels are at least 11–12 px; Home explains the idea in everyday language.
+- Low-memory phones (2 GB or less) skip the decorative 3D shelf; the record list does the same job.
+
 ## [10.0.1] - 2026-11-15 15:15 · PR #39 · live
 
 Phone map fix. Production: merge `4138edc`, bundle `index-fEe7sCWD.js`. Notes: [docs/releases/v10.0.1.md](docs/releases/v10.0.1.md).

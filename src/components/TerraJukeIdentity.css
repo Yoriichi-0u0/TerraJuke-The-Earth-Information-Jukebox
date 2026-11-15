@@ -178,3 +178,36 @@
 
 /* Text-style buttons keep no box. */
 :root[data-theme] .ss.ss-pages :is(.jb-guide-start, .jb-guide-start:hover) { background: transparent !important; border: 0 !important; box-shadow: none; color: var(--ef-accent); }
+
+/* ---- All ages: how to play, why a jukebox, start here, readable sizes ---- */
+.ss.ss-pages .jb-howto-wrap{margin:0 0 clamp(14px,2vw,22px)}
+.ss.ss-pages .jb-howto{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0;padding:0}
+.ss.ss-pages .jb-howto li{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:16px;background:var(--ef-panel);border:1px solid var(--ef-border)}
+.ss.ss-pages .jb-howto li svg{flex:none;margin-top:2px;color:var(--ef-accent)}
+.ss.ss-pages .jb-howto b{display:block;font-size:1rem;color:var(--ef-text)}
+.ss.ss-pages .jb-howto small{display:block;margin-top:2px;font-size:.88rem;line-height:1.4;color:var(--ef-muted)}
+.ss.ss-pages .jb-why{margin:10px 2px 0;font-size:.92rem;line-height:1.5;color:var(--ef-muted)}
+.ss.ss-pages .jb-why b{color:var(--ef-text)}
+.ss.ss-pages .jb-start-here{display:inline-block;margin-right:6px;padding:1px 7px;border-radius:999px;background:var(--tj-action-fill);color:#06121a;font-size:.7rem;letter-spacing:.06em}
+.ss.ss-pages .jb-more{padding:8px var(--tj-deck-pad,23px) 0}
+.ss.ss-pages .jb-more summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;font-size:.88rem;color:var(--ef-accent)}
+.ss.ss-pages .jb-more .jb-shape{padding:0 0 4px}
+/* Readable minimums for small labels on every screen */
+.ss.ss-pages .jb-home :is(.jb-readout dt, .jb-record-copy small, .jb-progress-row > span) { font-size: max(.78rem, 12px) !important; }
+.ss.ss-pages .jb-home :is(.jb-art-label, .jb-art-footer) { font-size: max(.72rem, 11px) !important; }
+.ss.ss-pages .jb-home .jb-side-selector small { font-size: max(.78rem, 12px); }
+@media (max-width: 760px) {
+  .ss.ss-pages .jb-howto{gap:6px}
+  .ss.ss-pages .jb-howto li{flex-direction:column;align-items:center;text-align:center;gap:4px;padding:8px 6px}
+  .ss.ss-pages .jb-howto b{font-size:.84rem}
+  .ss.ss-pages .jb-howto small{display:none}
+  .ss.ss-pages .jb-why{font-size:.84rem}
+}
+/* Small phones: Play must stay on the first screen. Keep the three steps as one compact row; Home explains "why". */
+@media (max-width: 480px) {
+  .ss.ss-pages .jb-why{display:none}
+  .ss.ss-pages .jb-howto-wrap{margin-bottom:5px}
+  .ss.ss-pages .jb-howto li{padding:5px 4px;border-radius:12px}
+  .ss.ss-pages .jb-howto li svg{display:none}
+  .ss.ss-pages .jb-howto b{font-size:.76rem;line-height:1.2}
+}

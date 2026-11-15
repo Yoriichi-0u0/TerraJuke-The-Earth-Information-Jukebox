@@ -92,8 +92,8 @@ export default function StormDeck({record,motion,volume,onVolume}:{record:Jukebo
 
   const sideControls=<>
     <div className="jb-side-selector" role="group" aria-label={t('Choose a side of Storm Drums')}>
-      <button type="button" aria-label={t('Side A: the storm year')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('The storm year')}<small>{t('12 months · 18 drums each')}</small></span></button>
-      <button type="button" aria-label={t('Side B: touch a place')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('Touch a place')}<small>{t('Its lightning, month by month')}</small></span></button>
+      <button type="button" aria-label={t('Side A: the storm year')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('The storm year')}<small>{t('A whole year of storms')}</small></span></button>
+      <button type="button" aria-label={t('Side B: touch a place')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('Touch a place')}<small>{t('Tap a place to hear its storms')}</small></span></button>
     </div>
     <div className="air-tempo"><label htmlFor="storm-bpm">{t('Tempo')}</label><input id="storm-bpm" type="range" min={80} max={180} step={4} value={bpm} aria-valuetext={`${bpm} ${t('beats per minute')}`} onChange={e=>{bpmRef.current=Number(e.target.value);setBpm(Number(e.target.value));}}/><output htmlFor="storm-bpm">{bpm} BPM</output></div>
   </>;
