@@ -5,6 +5,12 @@ Treat entries as settled: do not re-ask unless new facts contradict them (then a
 Earlier decisions live in dated docs such as [TERRAJUKE-3-DECISIONS.md](TERRAJUKE-3-DECISIONS.md) and
 [TEAM-HANDOFF.md](TEAM-HANDOFF.md).
 
+## 2026-11-15 19:13 · Portal typos fixed and resubmitted
+- **Decided by:** Jacy ("Yes, fix and resubmit").
+- **What:** Claude edited only the 11 faulty entries on the Space Apps project page (ten typos, one broken Blue
+  Marble link) in the signed-in browser pane and pressed Submit for Judging; the success banner appeared. The
+  summary, details, links and declarations are unchanged from the 16:56 submission.
+
 ## 2026-11-15 18:45 · About explains the idea, the team and AI use in plain words
 - **Decided by:** Jacy ("Yes, About"); the content is Claude's, from facts already in the portal draft.
 - **What:** About becomes the place for "why a jukebox?", the eight records, accessibility (with its limits), how AI
