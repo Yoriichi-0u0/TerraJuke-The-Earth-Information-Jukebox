@@ -4,14 +4,14 @@
 
 - **Who holds the repository:** still Jacy and her Claude Code. Chia's session has not resumed; it must `git pull`
   and read this section, [CHANGELOG.md](../CHANGELOG.md) and [DECISION-LOG.md](DECISION-LOG.md) before pushing.
-- **Live:** TerraJuke **10.4.0**, merge `c7310dc`, bundle `index-CataseTm.js` (https://terrajuke.vercel.app).
+- **Live:** TerraJuke **10.4.2**, merge `c5f36f9`, bundle `index-Bnqvn4R6.js` (https://terrajuke.vercel.app).
   `main` and production match. Release notes: [docs/releases/](releases/README.md).
-- **Submitted** on the NASA Space Apps portal at **16:56 MYT** (10.1.1 was live then). Edits are possible until
+- **Submitted** on the NASA Space Apps portal at **16:56 MYT** (10.1.1 was live then) and **resubmitted at 19:13** with typo and link fixes only. Edits are possible until
   23:59. Demo video: https://youtu.be/bZC6O_t4LHc. Portal text: [PORTAL-DRAFT.md](PORTAL-DRAFT.md).
 - **Shelf (frozen at eight):** 01 Climate Spiral, 02 Night Lights, 03 The Air We Share, 04 Currents of Heat,
   05 Moving Earth, 06 The Ice Year (SVS 5046), 07 The Warming Map (SVS 5450), 08 Storm Drums (SVS 5011).
 - **All five pages** (Home, Listen, Create, Explore Data, About) have had the all-ages pass (10.1.0–10.4.0).
-- **Tests:** `npm run check` green with 155 unit and 193 browser tests; the quick suite passes against production.
+- **Tests:** `npm run check` green with 155 unit and 195 browser tests; the quick suite passes against production.
 - **Tasks below:** 1 done (06 and 07 rebuilt, plus 08), 2 done (video produced and uploaded), 3 done (portal text,
   submitted), 4 done (automated and emulated QA, [evidence/qa-2026-11-15.md](evidence/qa-2026-11-15.md)).
   **Still open, needs people:** 5 (VoiceOver/NVDA check) and a real-phone check. Nothing else is in flight; no open

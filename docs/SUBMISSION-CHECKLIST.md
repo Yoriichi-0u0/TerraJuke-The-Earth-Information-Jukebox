@@ -9,7 +9,7 @@ everything that can be checked without signing in to the portal:
 | # | Check | Result | Evidence |
 |---|---|---|---|
 | 1 | Final project link opens signed out | ✅ | https://terrajuke.vercel.app returns 200; all five pages load |
-| 2 | Live site is the latest `main` | ✅ | TerraJuke 10.4.0; live bundle `index-CataseTm.js` equals a fresh build of `main` (`beb0561`) |
+| 2 | Live site is the latest `main` | ✅ | TerraJuke 10.4.0 at 19:05 (bundle `index-CataseTm.js`); since then 10.4.1 and 10.4.2, each verified live after deploy |
 | 3 | Source code is public | ✅ | GitHub repo `PUBLIC`, opens signed out |
 | 4 | Demo video is public, plays signed out, 30 s or less | ✅ | https://youtu.be/bZC6O_t4LHc: Public, not private or unlisted, playability OK, 29 s; title "TerraJuke: The Earth Information Jukebox (NASA Space Apps 2026, Team BoboMimi)" |
 | 5 | At least one NASA data source | ✅ | Seven SVS visualizations (5190, 5313, 5046, 3912, 5669, 5450, 5011) and GISTEMP v4, listed in [PORTAL-DRAFT.md](PORTAL-DRAFT.md) |
