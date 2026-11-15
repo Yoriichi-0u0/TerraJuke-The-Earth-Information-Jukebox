@@ -12,6 +12,10 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Changed
+- Explore Data's Climate Spiral card links both its sources: the NASA picture (SVS 5190) and the NASA data its
+  numbers come from (GISTEMP).
+
 ## [10.4.3] - 2026-11-15 19:53 · PRs #61, #62, #63 · live
 
 Keep your place when switching data; evening QA. Production: merge `b5f03ab`, bundle `index-DrX5zh5r.js`.

@@ -2,7 +2,7 @@
 // a small chart, a plain takeaway and a CSV of the same numbers. Nothing here is computed differently from the decks:
 // the series are the committed data files the records themselves play.
 import {useEffect,useState} from 'react';
-import {jukeboxRecords} from '../../data/jukeboxRecords';
+import {jukeboxRecords,measurementRecord} from '../../data/jukeboxRecords';
 import type {JukeboxRecordId} from '../../data/jukeboxRecords';
 import {saveStationFile} from '../../data/earthStations';
 import {MONTHS} from '../../lib/climateMapping';
@@ -67,7 +67,7 @@ export default function RecordNumbers(){
       <p className="rn-what">{t(about.what)}</p>
       {s&&<figure><figcaption>{t(s.label)} ({t(s.unit)})</figcaption><Bars series={s}/><p className="rn-take">{s.takeaway}</p></figure>}
       {!s&&series===null&&['spiral','warming','ice','storm'].includes(record.id)&&<p className="rn-wait" role="status">{t('Loading the numbers…')}</p>}
-      <div className="rn-links"><a href={`/listen?record=${record.id}`}>{t('Hear it')} →</a><a href={record.sourceUrl} target="_blank" rel="noreferrer">{t(record.id==='motion'?'Source (archived copy)':'NASA source')} ↗</a>{s&&<button type="button" onClick={()=>saveStationFile(new Blob([s.csv+'\n'],{type:'text/csv'}),s.file)}>{t('Download the numbers (CSV)')}</button>}</div>
+      <div className="rn-links"><a href={`/listen?record=${record.id}`}>{t('Hear it')} →</a><a href={record.sourceUrl} target="_blank" rel="noreferrer">{t(record.id==='motion'?'Source (archived copy)':record.id==='spiral'?'NASA picture (SVS 5190)':'NASA source')} ↗</a>{record.id==='spiral'&&<a href={measurementRecord.sourceUrl} target="_blank" rel="noreferrer">{t('NASA data (GISTEMP)')} ↗</a>}{s&&<button type="button" onClick={()=>saveStationFile(new Blob([s.csv+'\n'],{type:'text/csv'}),s.file)}>{t('Download the numbers (CSV)')}</button>}</div>
     </li>;})}</ol>
   </section>;
 }
