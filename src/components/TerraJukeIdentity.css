@@ -287,3 +287,9 @@
 .ss.ss-pages .ab-team h2{margin:0 0 6px}
 .ss.ss-pages .ab-team .sp-source-links a{display:inline-flex;align-items:center;gap:6px}
 @media (max-width:650px){.ss.ss-pages .ab-why{grid-template-columns:1fr}.ss.ss-pages .ab-team{flex-direction:column;gap:8px}}
+
+/* Phones held sideways have about 320–360 px of height: on Listen the three steps would push Play below the first
+   screen, so they give way there (Guide me and the record's own labels still explain it). */
+@media (orientation:landscape) and (max-height:500px){
+  .ss.ss-pages .jb-home .jb-howto-wrap{display:none}
+}
