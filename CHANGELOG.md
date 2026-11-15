@@ -12,6 +12,11 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Fixed
+- On phones, The Warming Map's and Storm Drums' NASA map collapsed to zero height, so Side B could not be touched.
+  Found by the live QA sweep ([docs/evidence/qa-2026-11-15.md](docs/evidence/qa-2026-11-15.md)); tests now check
+  every map keeps its 2:1 shape on every screen.
+
 ## [10.0.0] - 2026-11-15 14:36 · PRs #35, #36, #37 · live
 
 Storm Drums, AI watermarks and the submission kit. Production: https://terrajuke.vercel.app, merge `3389950`,

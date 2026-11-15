@@ -15,7 +15,8 @@ test('the shelf opens The Warming Map with NASA’s 2024 map, colour bar, source
   await open(page);
   await expect(page.getByRole('img',{name:/NASA world map of temperature anomalies for the 24 months to 2024/})).toBeVisible();
   const shown=page.locator('.warming-map img.is-shown');await expect(shown).toHaveAttribute('src','/nasa/svs5450/2024.webp');
-  expect(await shown.evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth)).toBe(2048);
+  await expect.poll(()=>shown.evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth),{timeout:15_000}).toBe(2048);
+  const mapBox=(await page.locator('.warming-map').boundingBox())!;expect(mapBox.height/mapBox.width).toBeGreaterThan(0.45);expect(mapBox.height/mapBox.width).toBeLessThan(0.6); // the map keeps its 2:1 shape on every screen
   await expect(page.getByRole('img',{name:/Temperature Change: from −2 °C/})).toBeVisible();
   await expect(page.getByRole('list',{name:'Global average, decade by decade'}).getByRole('button')).toHaveCount(15);
   const story=page.getByRole('region',{name:/The Warming Map: what you are hearing/});

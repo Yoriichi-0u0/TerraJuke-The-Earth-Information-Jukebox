@@ -15,7 +15,8 @@ test('the shelf opens Storm Drums with NASA’s August frame, its source and 5W1
   await open(page);
   await expect(page.getByRole('img',{name:/NASA world map of lightning detected from the International Space Station in the ten days around 15 August 2022/})).toBeVisible();
   const shown=page.locator('.storm-map img.is-shown');await expect(shown).toHaveAttribute('src','/nasa/svs5011/2022-08.webp');
-  expect(await shown.evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth)).toBe(2048);
+  await expect.poll(()=>shown.evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth),{timeout:15_000}).toBe(2048);
+  const mapBox=(await page.locator('.storm-map').boundingBox())!;expect(mapBox.height/mapBox.width).toBeGreaterThan(0.45);expect(mapBox.height/mapBox.width).toBeLessThan(0.6);
   await expect(page.getByRole('list',{name:'Lightning worldwide, month by month'}).getByRole('button')).toHaveCount(12);
   const story=page.getByRole('region',{name:/Storm Drums: what you are hearing/});
   await expect(story).toContainText('Lightning Imaging Sensor');await expect(story.getByRole('link',{name:/NASA SVS 5011/})).toHaveAttribute('href','https://svs.gsfc.nasa.gov/5011/');
@@ -44,7 +45,7 @@ test('Side B: touching the Congo plays twelve months of storms',async({page})=>{
   await open(page);
   await page.getByRole('button',{name:'Side B: touch a place',exact:true}).click();
   const map=page.getByRole('application',{name:/Lightning map\. Arrow keys/}),box=(await map.boundingBox())!;
-  await map.click({position:{x:(22+180)/360*box.width,y:(90+2)/180*box.height}});
+  await map.click({position:{x:(25+180)/360*box.width,y:(90+5)/180*box.height}}); // the centre of the 0–10°S, 20–30°E place
   await expect(page.getByTestId('storm-announcer')).toHaveText(/^Africa, 5°S 25°E: lightning in 12 of 12 months, most in \w+$/);
   await expect.poll(async()=>(await events(page)).length,{timeout:15_000}).toBe(12);
   await map.press('Escape');await expect(page.locator('.jb-deck')).not.toHaveClass(/is-playing/);
