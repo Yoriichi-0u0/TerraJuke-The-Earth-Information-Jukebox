@@ -12,6 +12,11 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [10.1.1] - 2026-11-15 16:55 · PRs #43, #44 · live
+
+Globe fix and narrated demo. Production: merge `0285579`, bundle `index-BsR9y5Yq.js`.
+Notes: [docs/releases/v10.1.1.md](docs/releases/v10.1.1.md).
+
 ### Fixed
 - The 3D globe went blank whenever its NASA map changed: on Side B of The Warming Map (each decade) and while Storm
   Drums moved from month to month. It now keeps showing the previous map until the next one has loaded. A test
