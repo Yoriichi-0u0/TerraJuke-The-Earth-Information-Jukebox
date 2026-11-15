@@ -5,6 +5,23 @@ Treat entries as settled: do not re-ask unless new facts contradict them (then a
 Earlier decisions live in dated docs such as [TERRAJUKE-3-DECISIONS.md](TERRAJUKE-3-DECISIONS.md) and
 [TEAM-HANDOFF.md](TEAM-HANDOFF.md).
 
+## 2026-11-15 15:50 · Demo video: real footage, real sound, captions, no AI voice
+- **Decided by:** Jacy's Claude, after Jacy said to "kick start the video production".
+- **What:** the first cut (30.0 s, 1920×1080) is recorded from the live site by Playwright, with the soundtrack tapped
+  straight from the app's Web Audio output, so every frame and every sound is TerraJuke itself. Shots follow
+  `docs/video/SHOT-LIST.md` except 0:20–0:25 shows Storm Drums instead of The Ice Year (both fit the caption).
+  English captions are burned in; no voice. Build scripts: the separate `TerraJuke-video-studio` repo,
+  `terrajuke-30s/`.
+- **Rules out:** an AI voice speaking as Chia or Jacy. If the team wants narration, they record it themselves to the
+  caption timings. Caption 4 now says the colours are "read on NASA's own scale" rather than "become real values",
+  matching the stated limits of read-from-colour records.
+
+## 2026-11-15 14:50 · Make TerraJuke easier for all ages, not bigger
+- **Decided by:** Jacy, after mentor feedback that the public found it hard to understand and asked "why a jukebox?".
+- **What:** no new features; plainer words, a three-step "how to play", one line on why it is a jukebox, START HERE on
+  the first record, advanced sound options folded away, larger small text, and lighter loading on low-memory phones.
+  Then balance the other pages (About, Explore Data, Create).
+
 ## 2026-11-15 02:30 · Visual identity "Aurora Broadcast"; build autonomously
 - **Decided by:** Jacy ("scrap the Apple-like design idea… give TerraJuke any eye-tracking visuals as you want";
   then "continue building at your own, use autonomously"). Order chosen by Jacy: identity first, then new records

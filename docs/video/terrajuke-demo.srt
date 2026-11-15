@@ -13,7 +13,7 @@ This is TerraJuke: hear NASA's view of our planet.
 4
 00:00:10,000 --> 00:00:15,000
 Pick a NASA visualization and press Play.
-Its colours become real values: warmer plays higher.
+Its colours are read on NASA’s own scale: warmer plays higher.
 
 5
 00:00:15,000 --> 00:00:20,000

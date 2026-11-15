@@ -12,7 +12,19 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [10.1.0] - 2026-11-15 16:00 · PRs #41, #42 · live
+
+Easier for all ages, plus the submission kit. Production: merge `22cf545`, bundle `index-CTxge_2e.js`.
+Notes: [docs/releases/v10.1.0.md](docs/releases/v10.1.0.md).
+
+### Added
+- [docs/SUBMISSION-CHECKLIST.md](docs/SUBMISSION-CHECKLIST.md): what a person must still do before the 21:00 MYT
+  deadline (team photo, video upload, the eight portal fields, Submit for Judging).
+- A first 30-second demo cut, recorded from the live site with its own sound and English captions (made in the
+  separate video studio repository; see the shot list).
+
 ### Changed
+- Demo caption 4 now says the colours are read on NASA's own scale, instead of "become real values".
 - **Easier for all ages** (mentor feedback: the public found it hard to understand, and "why a jukebox?"). Listen now
   starts with three steps (pick a record, press Play, flip to Side B) and one line on why it is a jukebox; the first
   record says START HERE; shelf subtitles, side names and captions use plain words; the Sound setting moved under
