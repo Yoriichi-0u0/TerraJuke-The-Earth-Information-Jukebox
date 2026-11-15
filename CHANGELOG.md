@@ -12,12 +12,16 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [10.0.1] - 2026-11-15 15:15 · PR #39 · live
+
+Phone map fix. Production: merge `4138edc`, bundle `index-fEe7sCWD.js`. Notes: [docs/releases/v10.0.1.md](docs/releases/v10.0.1.md).
+
 ### Fixed
 - On phones, The Warming Map's and Storm Drums' NASA map collapsed to zero height, so Side B could not be touched.
   Found by the live QA sweep ([docs/evidence/qa-2026-11-15.md](docs/evidence/qa-2026-11-15.md)); tests now check
   every map keeps its 2:1 shape on every screen.
 
-## [10.0.0] - 2026-11-15 14:36 · PRs #35, #36, #37 · live
+## [10.0.0] - 2026-11-15 14:36 · PRs #35, #36, #37
 
 Storm Drums, AI watermarks and the submission kit. Production: https://terrajuke.vercel.app, merge `3389950`,
 bundle `index-YNGiaFMz.js`. Notes: [docs/releases/v10.0.0.md](docs/releases/v10.0.0.md).
@@ -181,7 +185,8 @@ Notes: [docs/releases/v7.0.0.md](docs/releases/v7.0.0.md).
 ## [1.0.0] - 2026-10-14 · Earth FM
 - First visual and climate sonification, connected to GitHub and Vercel; `main` is the single production branch.
 
-[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v10.0.0...main
+[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v10.0.1...main
+[10.0.1]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.0.1
 [10.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.0.0
 [9.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v9.0.0
 [8.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v8.0.0
