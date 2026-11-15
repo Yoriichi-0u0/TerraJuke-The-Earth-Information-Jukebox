@@ -1,4 +1,10 @@
-# Source verification: all seven records (14 November 2026)
+# Source verification: the shelf records (checked 14 November 2026, updated 15 November)
+
+**Current shelf (TerraJuke 10.4.0, 15 Nov 2026):** 01 Climate Spiral (SVS 5190 + GISTEMP v4), 02 Night Lights
+(SVS 5313), 03 The Air We Share (SVS 5669), 04 Currents of Heat (SVS 3912), 05 Moving Earth (EIC clip via an
+attributed mirror; bytes not verifiable against NASA), 06 The Ice Year (SVS 5046), 07 The Warming Map (SVS 5450),
+08 Storm Drums (SVS 5011). Records 06 and 07 below are the *old* records that were replaced; their replacements and
+08 are listed under "Added after this check". No NASA file or record data file changed after 10.0.0 (15 Nov 14:36); all 112 hashes in the provenance files re-checked against the bundled files on 15 Nov 19:15 (0 mismatches; 4 recorded originals are not bundled).
 
 Checked by Jacy's Claude at Jacy's request on production 7.0.0 (`8ec8e34`). Question for each record: is the sound
 made from an original NASA source, are the bundled files the bytes NASA published, and is it a remix?
@@ -29,12 +35,14 @@ made from an original NASA source, are the bundled files the bytes NASA publishe
 
 | # | Record | Source | Verdict |
 |---|---|---|---|
+| 06 | The Ice Year (15 Nov) | NASA SVS 5046 EXR frames (JAXA AMSR2), pinned by SHA-256; see [ARCTIC-ICE.md](ARCTIC-ICE.md) | NASA original |
+| 07 | The Warming Map (15 Nov) | NASA SVS 5450 Science On a Sphere frames + `time.txt` + colour bar, pinned by SHA-256; see [WARMING-MAP.md](WARMING-MAP.md) | NASA original |
 | 08 | Storm Drums (15 Nov) | NASA SVS 5011 Science On a Sphere movie + `labels.txt` (challenge Resource), pinned by SHA-256 | NASA original |
 
 ## Also noted
 
 - The vinyl artwork (`public/art/terrajuke-vinyl-surface.jpg`) and the icon are AI-generated (credited in their
-  provenance files). The Space Apps rules require a **visible watermark** on AI-generated images; check before
-  submitting.
+  provenance files). The Space Apps rules require a **visible watermark** on AI-generated images: added in 10.0.0
+  (`scripts/watermark-si.mjs`).
 - To re-run: the scripts used are described above; the hash check is a few lines of Python over the provenance
   files, and the upstream check needs network access to the Internet Archive.

@@ -12,6 +12,12 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Changed
+- Records tidied after 10.4.0: the release index and changelog links now include 10.1.0–10.4.0; SUBMISSION.md
+  says eight records, the five all-ages pages, the public video and current test counts (155 unit, 193 browser);
+  the portal draft notes the 16:56 submission; the handoff has a current status section; source verification lists
+  the current shelf and a fresh hash check (112 files, 0 mismatches).
+
 ## [10.4.0] - 2026-11-15 19:00 · PRs #50, #51, #52 · live
 
 About for all ages; the Space Apps project was submitted at 16:56. Production: merge `c7310dc`, bundle
@@ -264,7 +270,12 @@ Notes: [docs/releases/v7.0.0.md](docs/releases/v7.0.0.md).
 ## [1.0.0] - 2026-10-14 · Earth FM
 - First visual and climate sonification, connected to GitHub and Vercel; `main` is the single production branch.
 
-[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v10.0.1...main
+[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v10.4.0...main
+[10.4.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.0
+[10.3.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.3.0
+[10.2.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.2.0
+[10.1.1]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.1.1
+[10.1.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.1.0
 [10.0.1]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.0.1
 [10.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.0.0
 [9.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v9.0.0

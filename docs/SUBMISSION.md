@@ -4,7 +4,7 @@
 **Team:** BoboMimi. Chia Yuen Kai (leader, `Chia_0u0`) and Jacy Chiong Yet Suu (`jacychiongys`).
 **Live:** https://terrajuke.vercel.app · **Code:** https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox
 
-Status: draft for the team's own submission form, updated 14 November 2026. It describes the app as deployed; it is not evidence of a submission or of any user study.
+Status: updated 15 November 2026, 19:10 MYT, for TerraJuke 10.4.0 (live). The team submitted on the Space Apps portal at 16:56 MYT (see [SUBMISSION-CHECKLIST.md](SUBMISSION-CHECKLIST.md)); this file describes the app as deployed and is not evidence of any user study.
 
 ## One-line pitch
 
@@ -16,7 +16,7 @@ NASA's Earth Information Center shows the planet on giant screens, but a picture
 
 ## What TerraJuke does
 
-Every NASA visualization is a **record**. Side A turns the picture's pixels into sound live in the browser; Side B, where one exists, plays the measurements or the story behind it. Seven records:
+Every NASA visualization is a **record**. Side A turns the picture's pixels into sound live in the browser; Side B, where one exists, plays the measurements or the story behind it. Eight records:
 
 | # | Record | NASA source | What you hear |
 |---|---|---|---|
@@ -33,6 +33,8 @@ Every NASA visualization is a **record**. Side A turns the picture's pixels into
 
 **Play the whole jukebox** turns TerraJuke into a real jukebox: it plays every record in turn, each introduced by an animated title card and a spoken announcement, which suits a big screen in an Earth Information Center or a judging table. The challenge welcomes a curated playlist as a deliverable; this is one that is generated live.
 
+**Five pages for all ages.** After mentor feedback that the public found it hard to follow, every page was made plainer without adding features: Listen opens with three steps (pick a record, press Play, flip to Side B), one line on why it is a jukebox and START HERE on the first record; Create says what you change (instrument, style, speed, echo) and what the data decides (which note plays); Explore Data says each number in a sentence and labels every record as NASA measurements, read from NASA's colour scale, counted from NASA's map, or picture brightness only, with charts and CSVs; About answers "why a jukebox?", lists the eight records, and states how AI was used.
+
 **Two pages, one path.** Home introduces the project and the challenge, explains the two kinds of sound (rendered pixels vs measurements), and runs a "follow the light" guide: a glowing dot moves across a drawn player to show where to look (choose a record, press Play, follow the scan, explore by hand). Listen is the jukebox itself, with every player; **Guide me** rings the real controls one at a time and never plays sound. Both guides step by button or keyboard, announce each step to screen readers, and stop moving under reduced motion.
 
 Around the shelf: the **Record Journey**, an animated "from orbit to your ears" strip naming the satellite or model, the NASA team, the visualizers, the Earth Information Center and finally the listener, in their own time zone (computed in the browser, nothing sent). Also a 3D record rack, a Grooveprint picture of each groove, Scratch and Earth Looper for performing, Your Record for a personal image that never leaves the device, and Mystery Record.
@@ -47,17 +49,17 @@ Around the shelf: the **Record Journey**, an animated "from orbit to your ears" 
 | Balance data with musicality | Fixed scales from the data; shared pentatonic scales so layers harmonise; tempo, tone, mixer and the Sound setting (note by note, or one continuous gliding line) are musical choices that never change a note |
 | Accessibility for blind and low-vision users | Every map is a keyboard instrument with spoken descriptions; captions and screen-reader announcements on every note; Android vibration patterns; reduced motion; 2D fallbacks for all 3D; automated WCAG checks in light and dark |
 | Tell the story | NASA's own stories on Side B, liner notes with the method and limits, and the Record Journey from instrument to listener |
-| Use the Resources | EIC Content Database (SVS 5190, SVS 5313 EIC Version) and the listed GEOS Aerosols (SVS 5669) and Global Sea Surface Currents and Temperature (SVS 3912); the Caldwell 73 sonification informed the scanning design |
+| Use the Resources | EIC Content Database (SVS 5190, SVS 5313 EIC Version, SVS 5046 daily Arctic sea ice) and the listed GEOS Aerosols (SVS 5669), Global Sea Surface Currents and Temperature (SVS 3912), Global Temperature Anomalies (SVS 5450) and ISS Lightning (SVS 5011); the Caldwell 73 sonification informed the scanning design |
 
 ## Validity
 
-Every NASA file is pinned with its source URL and SHA-256. Every mapping is a fixed rule with unit tests: 147 unit tests and 177 browser tests at this checkpoint. For The Air We Share, tests check that each of NASA's six stories is dominated by the aerosol NASA names, at least twice the next one, and that grey land and Antarctica stay silent. Night Lights is cross-checked against NASA's separately published SVS 5276 series (r = 0.999 for the world). Currents of Heat reads temperature from NASA's numeric colour scale, and its readings behave like the real ocean: the western Pacific warm pool at 29.5 °C, the Labrador Sea at 2.8 °C, and warming from each pole toward the equator.
+Every NASA file is pinned with its source URL and SHA-256. Every mapping is a fixed rule with unit tests: 155 unit tests and 193 browser tests at TerraJuke 10.4.0. For The Air We Share, tests check that each of NASA's six stories is dominated by the aerosol NASA names, at least twice the next one, and that grey land and Antarctica stay silent. Night Lights is cross-checked against NASA's separately published SVS 5276 series (r = 0.999 for the world). Currents of Heat reads temperature from NASA's numeric colour scale, and its readings behave like the real ocean: the western Pacific warm pool at 29.5 °C, the Labrador Sea at 2.8 °C, and warming from each pole toward the equator.
 
 Each record states its limits: pixels are not measurements; GEOS is a model analysis; colour strength is not optical depth; one aerosol moment, not a live feed; equal note lengths do not encode elapsed time. No user study has been run, and TerraJuke claims no learning gains.
 
 ## 30-second demo
 
-The official guide allows a video of **30 seconds or less** (or at most 7 slides); longer is ineligible. The shot list,
+**Public video: https://youtu.be/bZC6O_t4LHc** (29.4 s, English subtitles, narration by an AI text-to-speech voice, disclosed in the portal's SI field). The official guide allows a video of **30 seconds or less** (or at most 7 slides); longer is ineligible. The shot list,
 captions and cards are in [docs/video/](video/SHOT-LIST.md); the portal text is in [PORTAL-DRAFT.md](PORTAL-DRAFT.md).
 
 ## Credits

@@ -6,6 +6,10 @@ Intelligence (SI), NASA Data, Space Agency Partner Data and Other References. Ev
 must open without sign-in; the demo is a video of 30 seconds or less or at most 7 slides. Uploading and pressing
 Submit are for a person to do. Facts below match the live site (TerraJuke 9.0.0 or later).
 
+> **Submitted 15 Nov 2026, 16:56 MYT** (TerraJuke 10.1.1 live), with the text below. Since then Create, Explore Data
+> and About were redesigned for all ages (10.2.0–10.4.0) and the tests grew to 155 unit and 193 browser. Nothing
+> below became untrue; if you edit before 23:59, the Validity line's counts are the only numbers to refresh.
+
 ---
 
 ## Project Name

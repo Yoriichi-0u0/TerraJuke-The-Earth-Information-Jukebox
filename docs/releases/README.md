@@ -38,6 +38,11 @@ tests and docs. Rollback = revert the merge commit on `main` (Vercel redeploys);
 
 | Version | Date | Headline |
 |---|---|---|
+| [10.4.0](v10.4.0.md) | 2026-11-15 | About for all ages: why a jukebox, the eight records, access, AI use, the team |
+| [10.3.0](v10.3.0.md) | 2026-11-15 | Explore Data for all ages: every record's kind of number, charts and CSVs; demo video public |
+| [10.2.0](v10.2.0.md) | 2026-11-15 | Create for all ages: three steps, plain data choices, what you change vs what the data decides |
+| [10.1.1](v10.1.1.md) | 2026-11-15 | The 3D globe never blanks when its map changes; narrated demo video |
+| [10.1.0](v10.1.0.md) | 2026-11-15 | Easier for all ages on Home and Listen; submission checklist |
 | [10.0.1](v10.0.1.md) | 2026-11-15 | Phone fix: NASA maps visible and touchable on phones; live QA log |
 | [10.0.0](v10.0.0.md) | 2026-11-15 | Storm Drums (NASA SVS 5011), AI watermarks, 30-second demo kit and portal draft |
 | [9.0.0](v9.0.0.md) | 2026-11-15 | The Warming Map (NASA SVS 5450) and the Aurora Broadcast identity |
