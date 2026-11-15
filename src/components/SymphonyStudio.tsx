@@ -42,8 +42,8 @@ function StudioContent(){
       {page==='home'&&<HomeIntro motion={motion}/>}
       {page==='listen'&&!story&&<JukeboxHome motion={motion}/>}
       {story&&(station==='arctic'?<ArcticStation/>:<><div className="st-station-toolbar"><button className="sp-text-button" onClick={()=>goToPage('listen')}>← {t('Back to the jukebox')}</button><span>{t('STATION 01 · CLIMATE SPIRAL')}</span></div><header className="sp-page-heading sp-listen-heading"><p className="ss-kicker">{t('LISTEN / YOUR FIRST EARTH STORY')}</p><h1 tabIndex={-1}>{t('A little looking. A little listening.')}</h1><p>{t('Follow three short steps. No settings to learn. Sound starts only when you press Play.')}</p></header><GuidedStory key={route} initialMoving={new URLSearchParams(route.split('?')[1]).get('visual')==='motion'} motion={motion} onPlayingChange={ignorePlayback} onExplore={()=>goToPage('create')} onData={()=>goToPage('data')}/></>)}
-      {(page==='create'||page==='data')&&<label className="st-context-select">{t('Earth Station')}<select aria-label={t('Earth Station')} value={activeStation} onChange={e=>goToPage(page,e.target.value as 'climate'|'arctic')}><option value="climate">{t('Climate Spiral')}</option><option value="arctic">{t('Arctic September')}</option></select></label>}
-      {page==='create'&&<CreatePage key={activeStation} station={activeStation} settings={settings} setSettings={setSettings}/>}
+      {page==='data'&&<label className="st-context-select">{t('Earth Station')}<select aria-label={t('Earth Station')} value={activeStation} onChange={e=>goToPage(page,e.target.value as 'climate'|'arctic')}><option value="climate">{t('Climate Spiral')}</option><option value="arctic">{t('Arctic September')}</option></select></label>}
+      {page==='create'&&<CreatePage key={activeStation} station={activeStation} onStation={next=>goToPage('create',next)} settings={settings} setSettings={setSettings}/>}
       {page==='data'&&(activeStation==='arctic'?<ArcticDataPage/>:<DataPage settings={settings} setSettings={setSettings}/>)}
       {page==='about'&&<AboutPage/>}
     </main>

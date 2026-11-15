@@ -5,6 +5,13 @@ Treat entries as settled: do not re-ask unless new facts contradict them (then a
 Earlier decisions live in dated docs such as [TERRAJUKE-3-DECISIONS.md](TERRAJUKE-3-DECISIONS.md) and
 [TEAM-HANDOFF.md](TEAM-HANDOFF.md).
 
+## 2026-11-15 17:20 · Team uploads the video; Create is the first page to balance
+- **Decided by:** Jacy ("I will upload manually. You may proceed with enhancing and improving 'Create' page first").
+- **What:** the narrated cut is approved; a person uploads it (YouTube asked for identity verification, and the
+  built-in browser cannot attach local files). Create gets the all-ages treatment first: three steps, two plain data
+  choices instead of the "Earth Station" menu, a "you choose / the data decides" box, and a way to Your Record.
+  Explore Data and About follow. No new data, sound rules or records.
+
 ## 2026-11-15 16:30 · Demo narration: AI voice speaking as the team, no on-screen label
 - **Decided by:** Jacy ("add narration sound to the video"; chose the Kokoro AI voice and "As Team BoboMimi Chia and
   Jacy but without AI label").
