@@ -12,6 +12,12 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Fixed
+- **Listen is about 5 MB lighter.** The 3D record shelf used Moving Earth's 5.3 MB animated GIF as a flat sleeve
+  texture, so every visit to Listen downloaded it. The sleeve now uses a 23 kB still from the same GIF (provenance
+  in `public/frames/untethered-stage-960.provenance.json`); the GIF loads only when Moving Earth is chosen. A test
+  checks it.
+
 ### Changed
 - Space Apps project page resubmitted at 19:13 with ten typos fixed in its NASA Data and references lists and the
   broken Blue Marble link corrected; nothing else on the page changed.

@@ -1,0 +1,16 @@
+{
+  "asset": "/frames/untethered-stage-960.webp",
+  "createdOn": "2026-11-15",
+  "method": "Frame 12 (0-based) of the original bundled GIF, decoded and scaled to 960 px wide (Lanczos, aspect kept) with FFmpeg 9.0.2 (ffmpeg -i public/frames/untethered-earth.gif -vf \"select=eq(n\\,12),scale=960:-2:flags=lanczos\" -frames:v 1 frame.png), then encoded with cwebp 1.6.0 (cwebp -q 80 frame.png). No generated imagery.",
+  "use": "Texture for the Moving Earth sleeve on the 3D record shelf, so the 5.3 MB GIF is fetched only when the record is played. Not sampled for sonification.",
+  "sourceGif": "/frames/untethered-earth.gif",
+  "sourceGifSha256": "45329ca71deda4d7b2df92190d6f788b4bf914e1af3563735463b81a236d55e3",
+  "sha256": "74d197b1369ebf001072dd09838eca55f8c7fd38ad2543aa48a5d9b2748b6ed3",
+  "dimensions": [
+    960,
+    540
+  ],
+  "credit": "NASA / Earth Information Center, as identified by the attributed earth.gov asset mirror. Full production credits and animation date not supplied.",
+  "provenanceReference": "/frames/provenance.json",
+  "interpretation": "A still from the original archived animation; not a live satellite observation or a scientific measurement."
+}
