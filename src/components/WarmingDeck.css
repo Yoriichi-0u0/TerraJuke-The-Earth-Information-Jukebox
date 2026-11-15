@@ -19,3 +19,6 @@
 .warming-cbar{display:block;width:min(260px,62%);height:auto;margin:8px auto 0}
 .warming-media .air-caption{margin:0;padding:8px 16px 4px;min-height:3.4em}
 @media(max-width:520px){.warming-decades{grid-template-columns:repeat(8,minmax(0,1fr));gap:3px}.warming-decades button{height:52px}}
+/* Phones: the paired artwork gives .jb-media a fixed height; the map must keep its 2:1 shape instead of shrinking to 0. */
+.ss.ss-pages .jb-media.warming-media,.ss.ss-pages .jb-media.ice-media{height:auto !important;min-height:0}
+.warming-map,.ice-globe{flex:none}

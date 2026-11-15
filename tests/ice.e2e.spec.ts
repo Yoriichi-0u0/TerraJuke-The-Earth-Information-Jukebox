@@ -16,7 +16,7 @@ test('the shelf opens The Ice Year with NASA’s frame, source and the 5W1H expl
   await expect(page.getByRole('button',{name:'Select record: The Ice Year',exact:true})).toHaveAttribute('aria-pressed','true');
   await expect(page.getByRole('img',{name:/NASA globe of the Arctic seen from above the North Pole on 15 September 2024/})).toBeVisible();
   const shown=page.locator('.ice-globe img.is-shown');await expect(shown).toHaveAttribute('src','/nasa/svs5046/2024-09-15.webp');
-  expect(await shown.evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth)).toBe(1600);
+  await expect.poll(()=>shown.evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth),{timeout:15_000}).toBe(1600);
   const story=page.getByRole('region',{name:/The Ice Year: what you are hearing/});
   await expect(story.locator('dt')).toHaveText(['What is this sound?','Who made the data and the picture?','When is it from?','Where on Earth?','Why listen?','How does it become sound?']);
   await expect(story).toContainText('GCOM-W1');await expect(story).toContainText('at least 15% of the sea is frozen');
