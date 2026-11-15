@@ -316,3 +316,7 @@
 .ss.ss-pages .ln-card{scroll-margin-top:16px}
 .ss.ss-pages .ln-card.is-arrived{border-color:var(--ef-accent);box-shadow:0 0 0 2px var(--ef-accent)}
 .ss.ss-pages .hi-learn{color:var(--ef-accent);font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.ss.ss-pages .ln-summary{margin:18px 0 0;padding:18px 20px;border-radius:16px;border:1px solid var(--ef-accent);background:var(--ef-panel);color:var(--ef-text)}
+.ss.ss-pages .ln-summary h2{margin:0 0 8px;font-size:1.15rem}
+.ss.ss-pages .ln-summary p{margin:0 0 8px;font-size:.95rem;line-height:1.55;color:var(--ef-muted)}
+.ss.ss-pages .ln-summary a{color:var(--ef-accent);font-weight:600;text-decoration:underline;text-underline-offset:3px}

@@ -13,6 +13,10 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 ## [Unreleased]
 
 ### Added
+- Learn ends with **What all eight records share** once every question is answered: more of something plays higher
+  or louder, less plays lower or quieter, and a brighter picture is not a measurement.
+
+### Added
 - Every record's "About this sound" card ends with **Test your ears: one question about this record →**, which
   opens that record's question on Learn, scrolled into view and highlighted. The questions now live in
   `src/data/learnQuestions.ts`.
