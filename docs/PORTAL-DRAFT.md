@@ -25,7 +25,7 @@ cannot see them, and makes every visitor listen more closely to a changing plane
 
 ## Link to Project Demo
 
-`<paste the public YouTube or Google Drive link to the ≤30-second video here>` (kit: `docs/video/`)
+https://youtu.be/bZC6O_t4LHc (Public on YouTube, 0:30 as YouTube shows it; file 29.4 s; English subtitles; kit: `docs/video/`)
 
 ## Link to Final Project
 
