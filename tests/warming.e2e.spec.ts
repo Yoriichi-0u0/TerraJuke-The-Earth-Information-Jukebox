@@ -63,14 +63,17 @@ test('the 3D globe keeps showing a map while Side B changes the decade (never bl
   test.skip(!(await page.evaluate(()=>{const c=document.createElement('canvas');return Boolean(c.getContext('webgl2')??c.getContext('webgl'));})),'no WebGL here');
   await expect(globe).toHaveAttribute('data-globe-renderer','three',{timeout:15_000});
   // React hides (display:none) or removes a suspended canvas; sample every frame for a canvas that is not visible.
+  // Only while the globe is on screen and drawn in 3D: off screen the app pauses the 3D globe on purpose (small
+  // phones scroll it away when the map below is tapped), and the flat globe shows whenever 3D is not ready.
   await page.evaluate(()=>{const w=window as unknown as {blanked:number};w.blanked=0;
-    const look=()=>{const c=document.querySelector<HTMLCanvasElement>('.air-globe-3d canvas');if(!c||!c.checkVisibility()||c.getBoundingClientRect().height<1)w.blanked++;requestAnimationFrame(look);};look();});
+    const look=()=>{const t=document.querySelector<HTMLElement>('.air-turntable')!,r=t.querySelector('.air-globe')!.getBoundingClientRect(),onScreen=r.bottom>0&&r.top<innerHeight;
+      const c=document.querySelector<HTMLCanvasElement>('.air-globe-3d canvas');
+      if(onScreen&&t.dataset.globeRenderer==='three'&&(!c||!c.checkVisibility()||c.getBoundingClientRect().height<1))w.blanked++;requestAnimationFrame(look);};look();});
   await page.getByRole('button',{name:'Side B: touch a place',exact:true}).click();
   const map=page.getByRole('application',{name:/Temperature map\. Arrow keys/}),box=(await map.boundingBox())!;
   await map.click({position:{x:(10+180)/360*box.width,y:(90-50)/180*box.height}});
   await expect.poll(async()=>(await events(page)).filter(e=>e.kind==='decade').length,{timeout:15_000}).toBe(15);
   expect(await page.evaluate(()=>(window as unknown as {blanked:number}).blanked)).toBe(0);
-  await expect(page.locator('.air-globe-3d canvas')).toHaveCount(1);
 });
 
 for(const theme of ['dark','light'])test(`The Warming Map fits phones and passes axe (${theme})`,{tag:'@full'},async({page})=>{

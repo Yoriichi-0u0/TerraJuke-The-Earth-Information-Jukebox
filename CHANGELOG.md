@@ -12,6 +12,13 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Fixed
+- On phones held sideways, Play on Listen was below the first screen: the three-step strip added in 10.1.0 pushed
+  it down. On short landscape screens the strip now gives way (Guide me still explains the player). Found by a full
+  emulated-device run against production.
+- The "globe never blanks" test only counts frames while the globe is on screen and drawn in 3D; small phones scroll
+  it away when the map is tapped, and the app pauses the 3D globe off screen on purpose.
+
 ## [10.4.4] - 2026-11-15 20:00 · PRs #64, #65 · live
 
 Climate Spiral card links its data. Production: merge `ab22c0d`, bundle `index-C37ZZu1F.js`.
