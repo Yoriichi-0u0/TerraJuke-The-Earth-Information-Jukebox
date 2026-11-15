@@ -12,6 +12,14 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [10.4.0] - 2026-11-15 19:00 · PRs #50, #51, #52 · live
+
+About for all ages; the Space Apps project was submitted at 16:56. Production: merge `c7310dc`, bundle
+`index-CataseTm.js`. Notes: [docs/releases/v10.4.0.md](docs/releases/v10.4.0.md).
+
+### Added
+- The submission checklist records the NASA Space Apps submission at 15 Nov 2026 16:56 MYT (PR #50, by the team).
+
 ### Changed
 - **About is rewritten for all ages.** It answers "why a jukebox?" in three cards (pick a record, hear it, check it),
   lists the eight records with their sources and links to hear each one, explains the two ways to listen (the
