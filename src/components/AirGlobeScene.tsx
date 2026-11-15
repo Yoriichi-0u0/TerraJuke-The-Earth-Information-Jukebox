@@ -1,10 +1,10 @@
 // Three.js: NASA's GEOS aerosol still wrapped on a globe that turns under a fixed needle.
 // The needle is the front meridian; the longitude under it is the slice being played.
 // Presentation only: it follows the audio clock's step events and never schedules sound.
-import {useEffect,useMemo,useRef} from 'react';
+import {useEffect,useMemo,useRef,useState} from 'react';
 import {Canvas,useFrame,useLoader,useThree} from '@react-three/fiber';
 import {AdditiveBlending,BackSide,BufferGeometry,Float32BufferAttribute,SRGBColorSpace,TextureLoader} from 'three';
-import type {Group,Mesh,MeshBasicMaterial} from 'three';
+import type {Group,Mesh,MeshBasicMaterial,Texture} from 'three';
 import {STEP_DEG,type GlobeTarget} from './AirTurntable';
 
 const RAD=Math.PI/180;
@@ -27,8 +27,18 @@ function Stars(){
 
 function Globe({target,playing,pulse,motion,accent,texture:textureUrl,onReady,onUnavailable}:Props){
   const {invalidate,gl}=useThree();
-  const texture=useLoader(TextureLoader,textureUrl);
-  useMemo(()=>{texture.colorSpace=SRGBColorSpace;texture.anisotropy=4;},[texture]);
+  // The first map suspends until loaded; later maps (a new decade or month) load in the background while the globe
+  // keeps showing the previous one, so changing the map never blanks the canvas.
+  const firstUrl=useRef(textureUrl).current,first=useLoader(TextureLoader,firstUrl);
+  useMemo(()=>{first.colorSpace=SRGBColorSpace;first.anisotropy=4;},[first]);
+  const [texture,setTexture]=useState<Texture>(first);
+  useEffect(()=>{
+    if(textureUrl===firstUrl){setTexture(first);return;}
+    let live=true;
+    new TextureLoader().load(textureUrl,t=>{if(!live){t.dispose();return;}t.colorSpace=SRGBColorSpace;t.anisotropy=4;setTexture(t);invalidate();});
+    return()=>{live=false;};
+  },[textureUrl,firstUrl,first,invalidate]);
+  useEffect(()=>()=>{if(texture!==first)texture.dispose();},[texture,first]);
   const tilt=useRef<Group>(null),spin=useRef<Mesh>(null),needle=useRef<Mesh>(null),glow=useRef<Mesh>(null),stars=useRef<Group>(null);
   const pulseAt=useRef(0);
   useEffect(()=>{pulseAt.current=performance.now();invalidate();},[pulse,invalidate]);

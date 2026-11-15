@@ -12,6 +12,15 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Fixed
+- The 3D globe went blank whenever its NASA map changed: on Side B of The Warming Map (each decade) and while Storm
+  Drums moved from month to month. It now keeps showing the previous map until the next one has loaded. A test
+  samples every frame to make sure it never disappears.
+
+### Changed
+- Demo video: narration added (an AI text-to-speech voice reading the team's script, acknowledged in the portal's
+  SI section and the video's metadata); captions match the spoken words.
+
 ## [10.1.0] - 2026-11-15 16:00 · PRs #41, #42 · live
 
 Easier for all ages, plus the submission kit. Production: merge `22cf545`, bundle `index-CTxge_2e.js`.
