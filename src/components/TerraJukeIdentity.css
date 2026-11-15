@@ -261,3 +261,24 @@
 .ss.ss-pages .rn-wait{margin:0;font-size:.85rem;color:var(--ef-muted)}
 .ss.ss-pages .rn-links{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:auto;padding-top:6px}
 .ss.ss-pages .rn-links a,.ss.ss-pages .rn-card .rn-links button{box-shadow:none;border-radius:0;font-size:.88rem;color:var(--ef-accent);background:none;border:0;padding:6px 0;min-height:32px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+/* About: why a jukebox, the eight records, access and AI, the team. */
+.ss.ss-pages .ab-why{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ss.ss-pages .ab-why li{padding:18px 20px;border-radius:16px;border:1px solid var(--ef-border);background:var(--ef-panel);color:var(--ef-text)}
+.ss.ss-pages .ab-why li>svg,.ss.ss-pages .ab-pair .sp-card>svg,.ss.ss-pages .ab-team>svg{color:var(--ef-accent)}
+.ss.ss-pages .ab-why h2{margin:8px 0 6px;font-size:1.1rem}
+.ss.ss-pages .ab-why p{margin:0;font-size:.94rem;line-height:1.55;color:var(--ef-muted)}
+.ss.ss-pages .ab-records{margin-bottom:22px}
+.ss.ss-pages .ab-records ol{list-style:none;margin:0 0 6px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:6px 18px}
+.ss.ss-pages .ab-records li{display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--ef-border)}
+.ss.ss-pages .ab-records .ab-num{grid-row:span 2;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;color:var(--ef-accent)}
+.ss.ss-pages .ab-records li a{font-size:1rem;color:var(--ef-text)}
+.ss.ss-pages .ab-records li small{font-size:.8rem;color:var(--ef-muted)}
+.ss.ss-pages .ab-pair{margin:22px 0}
+.ss.ss-pages .ab-pair h2{margin-top:8px}
+.ss.ss-pages .ab-list{margin:0 0 10px;padding-left:1.1em;display:grid;gap:6px;font-size:.94rem;line-height:1.55;color:var(--ef-muted)}
+.ss.ss-pages .ab-team{display:flex;gap:16px;align-items:flex-start;margin-bottom:22px}
+.ss.ss-pages .ab-team>svg{flex:none;margin-top:4px}
+.ss.ss-pages .ab-team h2{margin:0 0 6px}
+.ss.ss-pages .ab-team .sp-source-links a{display:inline-flex;align-items:center;gap:6px}
+@media (max-width:650px){.ss.ss-pages .ab-why{grid-template-columns:1fr}.ss.ss-pages .ab-team{flex-direction:column;gap:8px}}
