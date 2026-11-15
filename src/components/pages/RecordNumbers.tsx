@@ -47,7 +47,7 @@ function Bars({series}:{series:Series}){
   const first=series.points[0],last=series.points[series.points.length-1];
   return <svg className="rn-bars" viewBox={`0 0 ${w} ${h+16}`} role="img" aria-label={`${series.label}: ${first.x} ${series.signed?fmt(first.v):first.v} ${series.unit}, ${last.x} ${series.signed?fmt(last.v):last.v} ${series.unit}. ${series.takeaway}`}>
     <line x1="0" x2={w} y1={zero} y2={zero} className="rn-zero"/>
-    {vs.map((v,i)=><rect key={i} x={i*bw+bw*.12} width={Math.max(.8,bw*.76)} y={Math.min(y(v),zero)} height={Math.max(.8,Math.abs(y(v)-zero))} className={v<0?'rn-cool':'rn-warm'}/>)}
+    {vs.map((v,i)=><rect key={i} x={i*bw+bw*.12} width={Math.max(.8,bw*.76)} y={Math.min(y(v),zero)} height={Math.max(.8,Math.abs(y(v)-zero))} className={series.signed?(v<0?'rn-cool':'rn-warm'):'rn-plain'}/>)}
     <text x="0" y={h+13}>{first.x}</text><text x={w} y={h+13} textAnchor="end">{last.x}</text>
   </svg>;
 }
