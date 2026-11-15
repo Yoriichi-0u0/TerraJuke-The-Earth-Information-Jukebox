@@ -12,6 +12,11 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [10.4.1] - 2026-11-15 19:50 · PRs #54, #55, #56, #57, #58 · live
+
+Listen 5 MB lighter; submission records. Production: merge `889d589`, bundle `index-CO58xPMo.js`.
+Notes: [docs/releases/v10.4.1.md](docs/releases/v10.4.1.md).
+
 ### Fixed
 - **Listen is about 5 MB lighter.** The 3D record shelf used Moving Earth's 5.3 MB animated GIF as a flat sleeve
   texture, so every visit to Listen downloaded it. The sleeve now uses a 23 kB still from the same GIF (provenance
@@ -284,7 +289,8 @@ Notes: [docs/releases/v7.0.0.md](docs/releases/v7.0.0.md).
 ## [1.0.0] - 2026-10-14 · Earth FM
 - First visual and climate sonification, connected to GitHub and Vercel; `main` is the single production branch.
 
-[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v10.4.0...main
+[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v10.4.1...main
+[10.4.1]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.1
 [10.4.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.0
 [10.3.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.3.0
 [10.2.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.2.0
