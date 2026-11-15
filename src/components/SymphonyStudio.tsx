@@ -6,6 +6,7 @@ import AppearanceSelector from './AppearanceSelector';
 import GuidedStory from './GuidedStory';
 import {CreatePage,DataChoice,DataPage} from './pages/ClimatePages';
 import AboutPage from './pages/AboutPage';
+import LearnPage from './pages/LearnPage';
 import ArcticStation from './pages/ArcticStation';
 import ArcticDataPage from './pages/ArcticDataPage';
 import {stationFromSearch} from '../data/earthStations';
@@ -21,7 +22,7 @@ import './EarthStations.css';
 import './StudioIdentity.css';
 import './TerraJukeIdentity.css';
 const RecordNumbers=lazy(()=>import('./pages/RecordNumbers'));
-const pageNames:Record<StudioPage,string>={home:'Home',listen:'Listen',create:'Create',data:'Explore Data',about:'About'};
+const pageNames:Record<StudioPage,string>={home:'Home',listen:'Listen',create:'Create',data:'Explore Data',learn:'Learn',about:'About'};
 const ignorePlayback=(_value:boolean)=>{};
 function StudioContent(){
   const {t}=useStudioLanguage();
@@ -44,7 +45,7 @@ function StudioContent(){
     const target=location.hash?document.getElementById(location.hash.slice(1)):null;if(target){target.scrollIntoView();}else{window.scrollTo({top:0,behavior:'instant'});content.current?.querySelector<HTMLElement>('h1')?.focus({preventScroll:true});}},[route]);
   function link(event:MouseEvent<HTMLAnchorElement>,target:StudioPage){if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;event.preventDefault();goToPage(target,target==='listen'?'all':activeStation);}
   return <div className={`ss ss-pages ss-observatory${motion?' ss-motion':''}`} lang="en"><a className="sp-skip" href="#page-content">{t('Skip to content')}</a>
-    <header className="sp-header"><a className="sp-brand" href="/" onClick={e=>link(e,'home')} aria-label={t('TerraJuke home')}><img className="sp-brand-icon" src="/brand/terrajuke.png" alt="" width="40" height="40"/><span>TerraJuke</span></a><nav className="sp-nav" aria-label={t('Main navigation')}>{(['home','listen','create','data','about'] as StudioPage[]).map(target=><a key={target} href={pageUrl(target,target==='listen'?'all':activeStation)} aria-current={page===target?'page':undefined} onClick={e=>link(e,target)}>{t(pageNames[target])}</a>)}</nav><div className="sp-preferences"><AppearanceSelector/></div></header>
+    <header className="sp-header"><a className="sp-brand" href="/" onClick={e=>link(e,'home')} aria-label={t('TerraJuke home')}><img className="sp-brand-icon" src="/brand/terrajuke.png" alt="" width="40" height="40"/><span>TerraJuke</span></a><nav className="sp-nav" aria-label={t('Main navigation')}>{(['home','listen','create','data','learn','about'] as StudioPage[]).map(target=><a key={target} href={pageUrl(target,target==='listen'?'all':activeStation)} aria-current={page===target?'page':undefined} onClick={e=>link(e,target)}>{t(pageNames[target])}</a>)}</nav><div className="sp-preferences"><AppearanceSelector/></div></header>
     <main id="page-content" ref={content} className={`sp-page sp-page-${page}`}>
       {page==='home'&&<HomeIntro motion={motion}/>}
       {page==='listen'&&!story&&<JukeboxHome motion={motion}/>}
@@ -52,6 +53,7 @@ function StudioContent(){
       
       {page==='create'&&<CreatePage key={activeStation} station={activeStation} onStation={next=>goToPage('create',next)} settings={settings} setSettings={setSettings}/>}
       {page==='data'&&<>{activeStation==='arctic'?<><DataChoice station="arctic" onStation={next=>goToPage('data',next)}/><ArcticDataPage/></>:<DataPage chooser={<DataChoice station="climate" onStation={next=>goToPage('data',next)}/>} settings={settings} setSettings={setSettings}/>}<Suspense fallback={null}><RecordNumbers/></Suspense></>}
+      {page==='learn'&&<LearnPage/>}
       {page==='about'&&<AboutPage/>}
     </main>
     <footer className="sp-footer"><span>TerraJuke <small>{t('THE EARTH INFORMATION JUKEBOX')}</small></span><div><a href="/about" aria-current={page==='about'?'page':undefined} onClick={e=>link(e,'about')}>{t('About & sources')}</a><label><input type="checkbox" checked={motion} onChange={e=>setMotion(e.target.checked)}/>{t('Motion effects')}</label></div></footer>

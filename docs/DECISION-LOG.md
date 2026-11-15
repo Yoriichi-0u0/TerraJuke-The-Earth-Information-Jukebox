@@ -5,6 +5,13 @@ Treat entries as settled: do not re-ask unless new facts contradict them (then a
 Earlier decisions live in dated docs such as [TERRAJUKE-3-DECISIONS.md](TERRAJUKE-3-DECISIONS.md) and
 [TEAM-HANDOFF.md](TEAM-HANDOFF.md).
 
+## 2026-11-15 20:25 · A Learn page with one question per record
+- **Decided by:** Jacy ("make it more educational… observation, Q&A… a separate page, not squeezing everything in
+  one page"); content by Claude.
+- **What:** `/learn` with eight cards. Each answer and explanation is taken from the record's fixed sound rule and
+  facts its tests already check (less ice lower; warmer higher; more lightning louder; brighter pixels are not
+  temperature). Answers stay in the page; nothing is stored. No claim of learning gains.
+
 ## 2026-11-15 19:13 · Portal typos fixed and resubmitted
 - **Decided by:** Jacy ("Yes, fix and resubmit").
 - **What:** Claude edited only the 11 faulty entries on the Space Apps project page (ten typos, one broken Blue

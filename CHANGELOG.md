@@ -12,6 +12,12 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Added
+- **Learn** (`/learn`), a new page between Explore Data and About: one "listen for" prompt and one question per
+  record, with instant feedback that says why, following each record's own sound rule (for example, The Ice Year:
+  "In which month is the note lowest?" September, because less sea ice plays a lower note). Each card links to hear
+  the record. Nothing is saved or sent, and the page says it is practice, not a study.
+
 ### Fixed
 - On phones held sideways, Play on Listen was below the first screen: the three-step strip added in 10.1.0 pushed
   it down. On short landscape screens the strip now gives way (Guide me still explains the player). Found by a full

@@ -47,6 +47,10 @@
       "destination": "/index.html"
     },
     {
+      "source": "/learn",
+      "destination": "/index.html"
+    },
+    {
       "source": "/about",
       "destination": "/index.html"
     }

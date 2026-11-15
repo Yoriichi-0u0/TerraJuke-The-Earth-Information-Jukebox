@@ -1,4 +1,4 @@
-export const PAGE_PATHS = {home:'/',listen:'/listen',create:'/create',data:'/data',about:'/about'} as const;
+export const PAGE_PATHS = {home:'/',listen:'/listen',create:'/create',data:'/data',learn:'/learn',about:'/about'} as const;
 export type StudioPage = keyof typeof PAGE_PATHS;
 export function pageForPath(path:string):StudioPage {
   const normalized=path.replace(/\/+$/,'') || '/';
