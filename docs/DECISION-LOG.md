@@ -5,6 +5,13 @@ Treat entries as settled: do not re-ask unless new facts contradict them (then a
 Earlier decisions live in dated docs such as [TERRAJUKE-3-DECISIONS.md](TERRAJUKE-3-DECISIONS.md) and
 [TEAM-HANDOFF.md](TEAM-HANDOFF.md).
 
+## 2026-11-15 18:00 · Explore Data shows every record's kind of number
+- **Decided by:** Jacy ("Yes, Explore Data"); the design is Claude's.
+- **What:** Explore Data labels each of the eight records honestly as NASA measurements, read from NASA's colour
+  scale, counted from NASA's map, or picture brightness only, and offers the pinned series (the same committed files
+  the decks play) as charts and CSVs. Records whose numbers are worked out live in the browser (Night Lights, The Air
+  We Share, Currents of Heat) say so and have no download. No new data or sound rules.
+
 ## 2026-11-15 17:20 · Team uploads the video; Create is the first page to balance
 - **Decided by:** Jacy ("I will upload manually. You may proceed with enhancing and improving 'Create' page first").
 - **What:** the narrated cut is approved; a person uploads it (YouTube asked for identity verification, and the

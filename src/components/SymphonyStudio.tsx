@@ -1,10 +1,10 @@
-import {useEffect,useRef,useState} from 'react';
+import {lazy,Suspense,useEffect,useRef,useState} from 'react';
 import type {MouseEvent} from 'react';
 import HomeIntro from './HomeIntro';
 import JukeboxHome from './JukeboxHome';
 import AppearanceSelector from './AppearanceSelector';
 import GuidedStory from './GuidedStory';
-import {CreatePage,DataPage} from './pages/ClimatePages';
+import {CreatePage,DataChoice,DataPage} from './pages/ClimatePages';
 import AboutPage from './pages/AboutPage';
 import ArcticStation from './pages/ArcticStation';
 import ArcticDataPage from './pages/ArcticDataPage';
@@ -20,6 +20,7 @@ import './Observatory.css';
 import './EarthStations.css';
 import './StudioIdentity.css';
 import './TerraJukeIdentity.css';
+const RecordNumbers=lazy(()=>import('./pages/RecordNumbers'));
 const pageNames:Record<StudioPage,string>={home:'Home',listen:'Listen',create:'Create',data:'Explore Data',about:'About'};
 const ignorePlayback=(_value:boolean)=>{};
 function StudioContent(){
@@ -42,9 +43,9 @@ function StudioContent(){
       {page==='home'&&<HomeIntro motion={motion}/>}
       {page==='listen'&&!story&&<JukeboxHome motion={motion}/>}
       {story&&(station==='arctic'?<ArcticStation/>:<><div className="st-station-toolbar"><button className="sp-text-button" onClick={()=>goToPage('listen')}>← {t('Back to the jukebox')}</button><span>{t('STATION 01 · CLIMATE SPIRAL')}</span></div><header className="sp-page-heading sp-listen-heading"><p className="ss-kicker">{t('LISTEN / YOUR FIRST EARTH STORY')}</p><h1 tabIndex={-1}>{t('A little looking. A little listening.')}</h1><p>{t('Follow three short steps. No settings to learn. Sound starts only when you press Play.')}</p></header><GuidedStory key={route} initialMoving={new URLSearchParams(route.split('?')[1]).get('visual')==='motion'} motion={motion} onPlayingChange={ignorePlayback} onExplore={()=>goToPage('create')} onData={()=>goToPage('data')}/></>)}
-      {page==='data'&&<label className="st-context-select">{t('Earth Station')}<select aria-label={t('Earth Station')} value={activeStation} onChange={e=>goToPage(page,e.target.value as 'climate'|'arctic')}><option value="climate">{t('Climate Spiral')}</option><option value="arctic">{t('Arctic September')}</option></select></label>}
+      
       {page==='create'&&<CreatePage key={activeStation} station={activeStation} onStation={next=>goToPage('create',next)} settings={settings} setSettings={setSettings}/>}
-      {page==='data'&&(activeStation==='arctic'?<ArcticDataPage/>:<DataPage settings={settings} setSettings={setSettings}/>)}
+      {page==='data'&&<>{activeStation==='arctic'?<><DataChoice station="arctic" onStation={next=>goToPage('data',next)}/><ArcticDataPage/></>:<DataPage chooser={<DataChoice station="climate" onStation={next=>goToPage('data',next)}/>} settings={settings} setSettings={setSettings}/>}<Suspense fallback={null}><RecordNumbers/></Suspense></>}
       {page==='about'&&<AboutPage/>}
     </main>
     <footer className="sp-footer"><span>TerraJuke <small>{t('THE EARTH INFORMATION JUKEBOX')}</small></span><div><a href="/about" aria-current={page==='about'?'page':undefined} onClick={e=>link(e,'about')}>{t('About & sources')}</a><label><input type="checkbox" checked={motion} onChange={e=>setMotion(e.target.checked)}/>{t('Motion effects')}</label></div></footer>

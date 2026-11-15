@@ -236,3 +236,28 @@
   .ss.ss-pages .cr-photo{flex-wrap:wrap;padding:16px}
   .ss.ss-pages .cr-photo-link{margin-left:0;width:100%;text-align:center}
 }
+
+/* Explore Data: all eight records and what their numbers are. */
+.ss.ss-pages .rn{margin:34px 0 0}
+.ss.ss-pages .rn h2{margin:8px 0 8px;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.2;color:var(--ef-text)}
+.ss.ss-pages .rn-lead{max-width:760px;margin:0 0 18px;font-size:.98rem;line-height:1.6;color:var(--ef-muted)}
+.ss.ss-pages .rn-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:12px}
+.ss.ss-pages .rn-card{display:flex;flex-direction:column;gap:8px;min-width:0;padding:16px 18px;border-radius:16px;border:1px solid var(--ef-border);background:var(--ef-panel);color:var(--ef-text)}
+.ss.ss-pages .rn-head{display:flex;align-items:baseline;gap:10px}
+.ss.ss-pages .rn-num{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;color:var(--ef-accent)}
+.ss.ss-pages .rn-card h3{margin:0;font-size:1.08rem;line-height:1.3}
+.ss.ss-pages .rn-kind{align-self:flex-start;margin:0;padding:3px 10px;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.02em;border:1px solid currentColor;color:var(--ef-accent)}
+.ss.ss-pages .rn-card[data-kind=colour] .rn-kind{color:var(--ef-secondary,var(--ef-accent))}
+.ss.ss-pages .rn-card[data-kind=pixels] .rn-kind{color:var(--ef-muted)}
+.ss.ss-pages .rn-what{margin:0;font-size:.9rem;line-height:1.5;color:var(--ef-muted)}
+.ss.ss-pages .rn-card figure{margin:4px 0 0}
+.ss.ss-pages .rn-card figcaption{font-size:.8rem;color:var(--ef-muted)}
+.ss.ss-pages .rn-bars{display:block;width:100%;height:auto;margin-top:6px}
+.ss.ss-pages .rn-bars .rn-warm{fill:var(--ef-accent)}
+.ss.ss-pages .rn-bars .rn-cool{fill:var(--ef-secondary,#7c6cff)}
+.ss.ss-pages .rn-bars .rn-zero{stroke:var(--ef-border);stroke-width:1}
+.ss.ss-pages .rn-bars text{font-size:11px;fill:var(--ef-muted)}
+.ss.ss-pages .rn-take{margin:4px 0 0;font-size:.9rem;line-height:1.45;color:var(--ef-text)}
+.ss.ss-pages .rn-wait{margin:0;font-size:.85rem;color:var(--ef-muted)}
+.ss.ss-pages .rn-links{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:auto;padding-top:6px}
+.ss.ss-pages .rn-links a,.ss.ss-pages .rn-card .rn-links button{box-shadow:none;border-radius:0;font-size:.88rem;color:var(--ef-accent);background:none;border:0;padding:6px 0;min-height:32px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}

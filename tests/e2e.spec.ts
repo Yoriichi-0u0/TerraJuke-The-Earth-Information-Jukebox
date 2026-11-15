@@ -747,7 +747,7 @@ test('Listen opens the jukebox and each station story keeps the five-page layout
  await page.reload();await expect(page.getByRole('heading',{name:'Listen to the ice record.'})).toBeVisible();
  await page.getByRole('navigation').getByRole('link',{name:'Explore Data',exact:true}).click();await expect(page).toHaveURL(/\/data\?station=arctic$/);
  await expect(page.getByRole('heading',{name:'Every ice note has an observation.'})).toBeVisible();
- await page.getByLabel('Earth Station',{exact:true}).selectOption('climate');await expect(page.getByRole('heading',{name:'Every note has a number.'})).toBeVisible();
+ await page.getByRole('group',{name:'Choose the data'}).getByRole('button',{name:/Earth’s temperature/}).click();await expect(page.getByRole('heading',{name:'Every note has a number.'})).toBeVisible();
  await page.goBack();await expect(page.getByRole('heading',{name:'Every ice note has an observation.'})).toBeVisible();
 });
 
