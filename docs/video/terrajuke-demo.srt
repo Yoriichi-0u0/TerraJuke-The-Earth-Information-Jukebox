@@ -1,0 +1,28 @@
+1
+00:00:00,000 --> 00:00:02,000
+Hi! We're Chia and Jacy, team BoboMimi.
+
+2
+00:00:02,000 --> 00:00:05,000
+Our challenge: the Earth Information Jukebox.
+
+3
+00:00:05,000 --> 00:00:10,000
+This is TerraJuke: hear NASA's view of our planet.
+
+4
+00:00:10,000 --> 00:00:15,000
+Pick a NASA visualization and press Play.
+Its colours become real values: warmer plays higher.
+
+5
+00:00:15,000 --> 00:00:20,000
+Touch any place to hear its story, from 1890 to today.
+
+6
+00:00:20,000 --> 00:00:25,000
+Seven NASA records, with captions and keyboard control.
+
+7
+00:00:25,000 --> 00:00:30,000
+Imagine every Earth Information Center screen you can also hear. TerraJuke.

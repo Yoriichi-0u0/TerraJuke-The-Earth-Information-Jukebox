@@ -50,18 +50,14 @@ Around the shelf: the **Record Journey**, an animated "from orbit to your ears" 
 
 ## Validity
 
-Every NASA file is pinned with its source URL and SHA-256. Every mapping is a fixed rule with unit tests: 128 unit tests and 161 browser tests at this checkpoint. For The Air We Share, tests check that each of NASA's six stories is dominated by the aerosol NASA names, at least twice the next one, and that grey land and Antarctica stay silent. Night Lights is cross-checked against NASA's separately published SVS 5276 series (r = 0.999 for the world). Currents of Heat reads temperature from NASA's numeric colour scale, and its readings behave like the real ocean: the western Pacific warm pool at 29.5 °C, the Labrador Sea at 2.8 °C, and warming from each pole toward the equator.
+Every NASA file is pinned with its source URL and SHA-256. Every mapping is a fixed rule with unit tests: 147 unit tests and 177 browser tests at this checkpoint. For The Air We Share, tests check that each of NASA's six stories is dominated by the aerosol NASA names, at least twice the next one, and that grey land and Antarctica stay silent. Night Lights is cross-checked against NASA's separately published SVS 5276 series (r = 0.999 for the world). Currents of Heat reads temperature from NASA's numeric colour scale, and its readings behave like the real ocean: the western Pacific warm pool at 29.5 °C, the Labrador Sea at 2.8 °C, and warming from each pole toward the equator.
 
 Each record states its limits: pixels are not measurements; GEOS is a model analysis; colour strength is not optical depth; one aerosol moment, not a live feed; equal note lengths do not encode elapsed time. No user study has been run, and TerraJuke claims no learning gains.
 
-## 90-second demo
+## 30-second demo
 
-- **0:00–0:10.** Home: the guide's light moves across the player. "NASA watches the whole planet. TerraJuke lets you hear it." On the shelf, choose **The Air We Share** (it opens on Listen).
-- **0:10–0:35.** Press **Meet the four instruments** for five seconds, then **Play the world**. The globe turns under the needle; the meters jump. "Each slice of longitude is a step in the groove. Dust plays strings, smoke plays brass, sea salt plays the ocean bed, sulfate rings like glass." Solo **Dust** over Africa and the Atlantic: "that's the Sahara crossing an ocean."
-- **0:35–0:50.** Side B: **Hurricane Erin**. The caption and screen reader read NASA's story; the sea-salt track swells.
-- **0:50–1:05.** Close your eyes: focus the map, press → a few times. "Every slice is described out loud. The same music works without the picture."
-- **1:05–1:20.** Flip to **Climate Spiral** Side B: twelve Januaries rise from G3 to A4. "Here the notes are the measurements."
-- **1:20–1:30.** Press **Play the whole jukebox** and let the title card roll. Scroll to the Record Journey ending at "You". "From a satellite, through NASA, to your ears, wherever you are. TerraJuke."
+The official guide allows a video of **30 seconds or less** (or at most 7 slides); longer is ineligible. The shot list,
+captions and cards are in [docs/video/](video/SHOT-LIST.md); the portal text is in [PORTAL-DRAFT.md](PORTAL-DRAFT.md).
 
 ## Credits
 

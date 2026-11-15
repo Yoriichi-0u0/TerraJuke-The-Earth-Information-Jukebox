@@ -12,6 +12,14 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Added
+- Submission kit: a 30-second demo shot list, English captions and title/end cards in `docs/video/`, and the portal
+  text for all eight fields in `docs/PORTAL-DRAFT.md` (official limit: video ≤ 30 s or ≤ 7 slides).
+
+### Changed
+- AI-generated images (vinyl record art, TerraJuke icon and artwork) now carry a visible "AI-GENERATED" watermark or
+  "AI" badge, as the Space Apps rules require (`scripts/watermark-si.mjs`).
+
 ## [9.0.0] - 2026-11-15 02:15 · PRs #32, #33 · live
 
 The Warming Map and the Aurora Broadcast identity. Production: https://terrajuke.vercel.app, merge `4b9d8a2`,
