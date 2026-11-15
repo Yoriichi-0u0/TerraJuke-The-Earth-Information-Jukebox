@@ -4,7 +4,7 @@
 (SVS 5313), 03 The Air We Share (SVS 5669), 04 Currents of Heat (SVS 3912), 05 Moving Earth (EIC clip via an
 attributed mirror; bytes not verifiable against NASA), 06 The Ice Year (SVS 5046), 07 The Warming Map (SVS 5450),
 08 Storm Drums (SVS 5011). Records 06 and 07 below are the *old* records that were replaced; their replacements and
-08 are listed under "Added after this check". No NASA file or record data file changed after 10.0.0 (15 Nov 14:36); all 112 hashes in the provenance files re-checked against the bundled files on 15 Nov 19:15 (0 mismatches; 4 recorded originals are not bundled).
+08 are listed under "Added after this check". No NASA file or record data file changed after 10.0.0 (15 Nov 14:36); all 112 hashes in the provenance files re-checked against the bundled files on 15 Nov 18:58 (0 mismatches; 4 recorded originals are not bundled).
 
 Checked by Jacy's Claude at Jacy's request on production 7.0.0 (`8ec8e34`). Question for each record: is the sound
 made from an original NASA source, are the bundled files the bytes NASA published, and is it a remix?

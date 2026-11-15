@@ -13,6 +13,9 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 ## [Unreleased]
 
 ### Changed
+- Final submission check (19:05): everything public was verified signed out (site, code, video 29 s, NASA sources,
+  hashes, AI disclosure) and recorded at the top of the submission checklist, with the steps only a signed-in person
+  can do; the portal draft gains an optional refreshed description.
 - Records tidied after 10.4.0: the release index and changelog links now include 10.1.0–10.4.0; SUBMISSION.md
   says eight records, the five all-ages pages, the public video and current test counts (155 unit, 193 browser);
   the portal draft notes the 16:56 submission; the handoff has a current status section; source verification lists

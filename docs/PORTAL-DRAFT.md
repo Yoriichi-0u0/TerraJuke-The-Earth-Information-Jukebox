@@ -72,6 +72,20 @@ warmest). 147 unit tests and 177 browser tests run before every release.
 **Tools.** TypeScript, React 19, Vite, Three.js with react-three-fiber, Anime.js, lucide-react, Web Audio API,
 Playwright and axe-core for testing, Vercel for hosting, macOS sips, cwebp and ffmpeg for preparing NASA images.
 
+### Optional refresh (only if you edit before 23:59)
+
+Replace the first paragraph of the Detailed Project Description with:
+
+> **What it does.** Five pages, each made plain for all ages. Home introduces the project and guides the eye with a
+> moving light across a drawn player. Listen is the jukebox: three steps (pick a record, press Play, flip to Side B),
+> eight records on a 3D shelf, a player, Play the whole jukebox, Mystery Record and Your Record (a personal image
+> that never leaves the device). Create lets you choose the instrument and style while the data still chooses every
+> note. Explore Data says each number in a sentence and labels every record as NASA measurements, read from NASA's
+> colour scale, counted from NASA's map, or picture brightness only, with charts and CSV downloads. About answers
+> "why a jukebox?" and how AI was used.
+
+And in **Validity**, replace the last sentence with: "155 unit tests and 193 browser tests run before every release."
+
 ## Use of Super Intelligence (SI)
 
 - **Code and documentation:** written with AI coding assistants under the team's direction: Anthropic Claude

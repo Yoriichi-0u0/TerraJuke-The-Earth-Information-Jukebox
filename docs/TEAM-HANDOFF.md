@@ -1,6 +1,6 @@
 # Team handoff: Jacy's Claude takes over (14–15 November 2026)
 
-## Status now (15 November 2026, 19:15 MYT)
+## Status now (15 November 2026, 19:00 MYT)
 
 - **Who holds the repository:** still Jacy and her Claude Code. Chia's session has not resumed; it must `git pull`
   and read this section, [CHANGELOG.md](../CHANGELOG.md) and [DECISION-LOG.md](DECISION-LOG.md) before pushing.
