@@ -38,6 +38,7 @@ tests and docs. Rollback = revert the merge commit on `main` (Vercel redeploys);
 
 | Version | Date | Headline |
 |---|---|---|
+| [10.4.1](v10.4.1.md) | 2026-11-15 | Listen 5 MB lighter on phones; portal resubmitted with typo fixes |
 | [10.4.0](v10.4.0.md) | 2026-11-15 | About for all ages: why a jukebox, the eight records, access, AI use, the team |
 | [10.3.0](v10.3.0.md) | 2026-11-15 | Explore Data for all ages: every record's kind of number, charts and CSVs; demo video public |
 | [10.2.0](v10.2.0.md) | 2026-11-15 | Create for all ages: three steps, plain data choices, what you change vs what the data decides |
