@@ -1,5 +1,9 @@
 # TerraJuke — curated Earth Stations
 
+> **Update, 15 Nov 2026:** the "Earth Station" menu on Create and Explore Data was replaced by two data buttons
+> (Earth's temperature, Arctic sea ice) in 10.2.0 and 10.3.0. The guided stories (`/listen?station=climate|arctic`)
+> and the Arctic September series below are unchanged. The rest of this file is the original design record.
+
 ## Plan and design review
 
 The approved direction is a science listening platform: retain the five-page Studio, make animated visual sonification discoverable, and add one complete curated station. Work stays on main and the user has authorized publication through the existing Vercel production workflow. No human approval gate or participant recruitment is required for implementation.
