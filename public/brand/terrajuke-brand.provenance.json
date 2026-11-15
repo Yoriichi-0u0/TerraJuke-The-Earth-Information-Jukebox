@@ -11,5 +11,17 @@
   },
   "revisions": "An earlier draft placed a blue double music note at the centre; it was replaced by a tonearm and stylus because it resembled an existing music-app icon.",
   "meaning": "Original AI-generated brand artwork. The Earth shown is illustrative: it is not NASA imagery, a scientific map or a sonification input, and no NASA logo is used.",
-  "replaces": "The 13 Nov 2026 blue-tile record mark (terrajuke.svg)."
+  "replaces": "The 13 Nov 2026 blue-tile record mark (terrajuke.svg).",
+  "watermark": {
+    "addedOn": "2026-11-15",
+    "by": "scripts/watermark-si.mjs",
+    "why": "Space Apps Project Submission Guide: SI-generated images and videos must include a visible watermark.",
+    "what": "A visible label burned into the pixels: 'AI-GENERATED ART'/'AI-GENERATED ARTWORK' pill, or a round 'AI' badge on icons."
+  },
+  "sha256AfterWatermark": {
+    "terrajuke-art-1200.jpg": "6da1c8dcd131d4af49abad808e3d220ee50bca4588192f377ac4a4ccb882e65e",
+    "terrajuke-touch-180.png": "01cf1b0525ca3d616bd43b8a46ebb83e817a2ab61f3312768ad3bede615b4627",
+    "terrajuke-mark-512.png": "fcd07bdf2feabd2d167c467f32945533147c7b8c08deec499cf5b2e7cb5d92eb",
+    "terrajuke.png": "ecaf21117e69aeaedbdabee4c41e32bd4cbd5cda4da58e801811a9060b4eabf2"
+  }
 }

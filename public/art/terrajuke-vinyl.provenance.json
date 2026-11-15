@@ -11,5 +11,12 @@
   "dimensions": [
     512,
     512
-  ]
+  ],
+  "watermark": {
+    "addedOn": "2026-11-15",
+    "by": "scripts/watermark-si.mjs",
+    "why": "Space Apps Project Submission Guide: SI-generated images and videos must include a visible watermark.",
+    "what": "A visible label burned into the pixels: 'AI-GENERATED ART'/'AI-GENERATED ARTWORK' pill, or a round 'AI' badge on icons."
+  },
+  "sha256AfterWatermark": "4f02c8092100126becfba0045a9f4df520591472d2616b873e9bd6bca0f5eef5"
 }
