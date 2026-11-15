@@ -12,6 +12,10 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Fixed
+- Keyboard and screen-reader users keep their place when they switch the data on Create or Explore Data: focus
+  stays on the chosen data button instead of jumping to the page heading and the top of the page.
+
 ### Added
 - Evening QA re-check logged in `docs/evidence/qa-2026-11-15.md`: no console errors on any page or record link,
   Listen 3.0 MB on a phone, and the new page tests 76/76 on Chromium and ten emulated iPhone, iPad and Android

@@ -35,7 +35,13 @@ function StudioContent(){
   useEffect(()=>{const preference=matchMedia('(prefers-reduced-motion: reduce)');const update=()=>{if(preference.matches)setMotion(false);};preference.addEventListener('change',update);return()=>preference.removeEventListener('change',update);},[]);
   useEffect(()=>{const update=()=>setRoute(location.pathname+location.search);window.addEventListener('popstate',update);return()=>window.removeEventListener('popstate',update);},[]);
   useEffect(()=>{const previous=document.title;document.title=`TerraJuke — ${page==='home'?t('The Earth Information Jukebox'):t(pageNames[page])}`;return()=>{document.title=previous;};},[page]);
-  useEffect(()=>{const target=location.hash?document.getElementById(location.hash.slice(1)):null;if(target){target.scrollIntoView();}else{window.scrollTo({top:0,behavior:'instant'});content.current?.querySelector<HTMLElement>('h1')?.focus({preventScroll:true});}},[route]);
+  const lastRoute=useRef(route);
+  useEffect(()=>{
+    // Switching the data on Create or Explore Data keeps the place: focus stays on the chosen data button.
+    const samePage=lastRoute.current.split('?')[0]===route.split('?')[0]&&lastRoute.current!==route;lastRoute.current=route;
+    const chosen=samePage?content.current?.querySelector<HTMLElement>('.cr-datasets [aria-pressed="true"]'):null;
+    if(chosen){chosen.focus({preventScroll:true});return;}
+    const target=location.hash?document.getElementById(location.hash.slice(1)):null;if(target){target.scrollIntoView();}else{window.scrollTo({top:0,behavior:'instant'});content.current?.querySelector<HTMLElement>('h1')?.focus({preventScroll:true});}},[route]);
   function link(event:MouseEvent<HTMLAnchorElement>,target:StudioPage){if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;event.preventDefault();goToPage(target,target==='listen'?'all':activeStation);}
   return <div className={`ss ss-pages ss-observatory${motion?' ss-motion':''}`} lang="en"><a className="sp-skip" href="#page-content">{t('Skip to content')}</a>
     <header className="sp-header"><a className="sp-brand" href="/" onClick={e=>link(e,'home')} aria-label={t('TerraJuke home')}><img className="sp-brand-icon" src="/brand/terrajuke.png" alt="" width="40" height="40"/><span>TerraJuke</span></a><nav className="sp-nav" aria-label={t('Main navigation')}>{(['home','listen','create','data','about'] as StudioPage[]).map(target=><a key={target} href={pageUrl(target,target==='listen'?'all':activeStation)} aria-current={page===target?'page':undefined} onClick={e=>link(e,target)}>{t(pageNames[target])}</a>)}</nav><div className="sp-preferences"><AppearanceSelector/></div></header>
