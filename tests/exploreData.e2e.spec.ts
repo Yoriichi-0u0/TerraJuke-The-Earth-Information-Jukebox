@@ -12,6 +12,11 @@ test('Explore Data explains the number in plain words and switches data with the
   await expect(page).toHaveURL(/\/data\?station=arctic$/);
   await expect(page.getByRole('heading',{name:'Every ice note has an observation.'})).toBeVisible();
   await expect(page.getByRole('group',{name:'Choose the data'}).getByRole('button',{name:/Arctic sea ice/})).toHaveAttribute('aria-pressed','true');
+  await expect(page.getByRole('group',{name:'Choose the data'}).getByRole('button',{name:/Arctic sea ice/})).toBeFocused();
+  await page.keyboard.press('Shift+Tab');await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/\/data$/);await expect(page.getByRole('group',{name:'Choose the data'}).getByRole('button',{name:/Earth’s temperature/})).toBeFocused();
+  await page.getByRole('navigation').getByRole('link',{name:'About',exact:true}).click();
+  await expect(page.getByRole('heading',{level:1})).toBeFocused();
 });
 
 test('all eight records say what kind of number they play, with charts, takeaways and CSVs from the pinned data',async({page})=>{

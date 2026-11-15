@@ -14,6 +14,7 @@ test('Create explains itself: three steps, two datasets, and what you change ver
   await data.getByRole('button',{name:/Arctic sea ice/}).click();
   await expect(page).toHaveURL(/\/create\?station=arctic$/);
   await expect(page.getByRole('group',{name:'Choose the data'}).getByRole('button',{name:/Arctic sea ice/})).toHaveAttribute('aria-pressed','true');
+  await expect(page.getByRole('group',{name:'Choose the data'}).getByRole('button',{name:/Arctic sea ice/})).toBeFocused();
   await expect(page.getByRole('region',{name:'What you change and what the data decides'})).toContainText('More sea ice plays a higher note');
   await expect(page.getByText('Arctic September · 12 selected years · 1987–2022')).toBeVisible();
 });
