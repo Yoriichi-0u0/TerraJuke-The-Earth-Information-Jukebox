@@ -12,6 +12,11 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [11.0.0] - 2026-11-15 20:42 · PRs #66, #67, #68 · live
+
+Learn: a sixth page for listening and thinking; Play on landscape phones. Production: merge `0997252`, bundle
+`index-CupJFpu0.js`. Notes: [docs/releases/v11.0.0.md](docs/releases/v11.0.0.md).
+
 ### Added
 - **Learn** (`/learn`), a new page between Explore Data and About: one "listen for" prompt and one question per
   record, with instant feedback that says why, following each record's own sound rule (for example, The Ice Year:
@@ -337,7 +342,8 @@ Notes: [docs/releases/v7.0.0.md](docs/releases/v7.0.0.md).
 ## [1.0.0] - 2026-10-14 · Earth FM
 - First visual and climate sonification, connected to GitHub and Vercel; `main` is the single production branch.
 
-[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v10.4.4...main
+[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v11.0.0...main
+[11.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v11.0.0
 [10.4.4]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.4
 [10.4.3]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.3
 [10.4.2]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.2
