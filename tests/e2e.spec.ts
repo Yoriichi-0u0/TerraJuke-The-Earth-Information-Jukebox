@@ -659,6 +659,8 @@ test('homepage globe rotates gently, pauses for interaction, and obeys motion pr
   await page.emulateMedia({reducedMotion:'no-preference'});
   await page.goto('/listen');
   await page.locator('.jb-earth-extra summary').click();
+  // The globe only turns while it is on screen; the taller eight-record shelf leaves it below the fold.
+  await page.locator('.jb-earth-extra .earth-globe').scrollIntoViewIfNeeded();
   const coordinates=page.locator('.jb-earth-extra .earth-globe__coordinates text');
   const initial=await coordinates.textContent();
   await expect.poll(()=>coordinates.textContent()).not.toBe(initial);
