@@ -12,6 +12,11 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [11.1.0] - 2026-11-15 21:11 · PRs #69, #70, #71 · live
+
+Learn joins the rest of the site. Production: merge `a60d4b9`, bundle `index-DSn4F_f4.js`.
+Notes: [docs/releases/v11.1.0.md](docs/releases/v11.1.0.md).
+
 ### Added
 - Learn ends with **What all eight records share** once every question is answered: more of something plays higher
   or louder, less plays lower or quieter, and a brighter picture is not a measurement.
@@ -352,7 +357,8 @@ Notes: [docs/releases/v7.0.0.md](docs/releases/v7.0.0.md).
 ## [1.0.0] - 2026-10-14 · Earth FM
 - First visual and climate sonification, connected to GitHub and Vercel; `main` is the single production branch.
 
-[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v11.0.0...main
+[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v11.1.0...main
+[11.1.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v11.1.0
 [11.0.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v11.0.0
 [10.4.4]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.4
 [10.4.3]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.3
