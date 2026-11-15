@@ -28,7 +28,8 @@ deadline is earlier. **Do everything before 21:00 MYT.** Tick each box in this f
   - [ ] The end card's small print mentions AI assistance. The narration voice is AI: say so in the YouTube description
   and the portal's SI field (already in `docs/PORTAL-DRAFT.md`); the MP4's own metadata says so too.
   - [ ] No person under 18 visible or heard
-- [ ] Upload to **YouTube (Public or Unlisted)** or Google Drive ("Anyone with the link"). Title: "TerraJuke: The Earth
+- [x] Done 15 Nov: **https://youtu.be/bZC6O_t4LHc**, Public, with `docs/video/terrajuke-demo-29s.srt` as English subtitles. The 30.0 s file showed as 0:31 on YouTube, so it was sped up 2% to 29.4 s (shows 0:30; nothing cut, metadata kept): `terrajuke-demo-29s-narrated.mp4`. The 0:31 upload stays a private draft.
+- [x] Upload to **YouTube (Public or Unlisted)** or Google Drive ("Anyone with the link"). Title: "TerraJuke: The Earth
   Information Jukebox (NASA Space Apps 2026, Team BoboMimi)". On YouTube, also upload
   `docs/video/terrajuke-demo.srt` as English subtitles. Description line: "Footage and music: the live TerraJuke
   app. Narration: AI text-to-speech (Kokoro). Edited with AI assistance (Claude Code)."
@@ -40,7 +41,7 @@ Paste from [`docs/PORTAL-DRAFT.md`](PORTAL-DRAFT.md), field by field:
 
 - [ ] Project Name
 - [ ] High-Level Project Summary
-- [ ] Link to Project Demo → the public video link from step 2
+- [ ] Link to Project Demo → https://youtu.be/bZC6O_t4LHc
 - [ ] Link to Final Project → https://terrajuke.vercel.app (and the GitHub link in the description)
 - [ ] Detailed Project Description
 - [ ] Use of Super Intelligence (SI): answer honestly (Claude, Codex/ChatGPT, ChatGPT images with watermarks; any AI voice in the video)
