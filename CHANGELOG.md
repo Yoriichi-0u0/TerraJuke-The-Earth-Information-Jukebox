@@ -12,6 +12,12 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Added
+- Every record's "About this sound" card ends with **Test your ears: one question about this record →**, which
+  opens that record's question on Learn, scrolled into view and highlighted. The questions now live in
+  `src/data/learnQuestions.ts`.
+- Home's "Explore together" card ends with **Then test your ears on Learn →**.
+
 ## [11.0.0] - 2026-11-15 20:42 · PRs #66, #67, #68 · live
 
 Learn: a sixth page for listening and thinking; Play on landscape phones. Production: merge `0997252`, bundle

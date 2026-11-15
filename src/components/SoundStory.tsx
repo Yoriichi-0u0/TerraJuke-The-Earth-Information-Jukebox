@@ -3,6 +3,7 @@ import type {CSSProperties} from 'react';
 import {Clock,HelpCircle,MapPin,Music,Users,Wand2} from 'lucide-react';
 import type {JukeboxRecord} from '../data/jukeboxRecords';
 import {SOUND_STORIES} from '../data/soundStories';
+import {LEARN} from '../data/learnQuestions';
 import {useStudioLanguage} from '../lib/studioLanguage';
 import './SoundStory.css';
 
@@ -15,5 +16,6 @@ export default function SoundStory({record}:{record:JukeboxRecord}){
     <header><p>{t('ABOUT THIS SOUND · 5W1H')}</p><h2 id="ss-story-title">{t(record.title)}: {t('what you are hearing')}</h2></header>
     <dl>{ROWS.map(([key,label,Icon])=><div key={key} data-w={key}><dt><Icon size={16} aria-hidden="true"/><span>{t(label)}</span></dt><dd>{t(story[key])}</dd></div>)}</dl>
     <p className="ss-story-source">{t('Source')}: <a href={record.sourceUrl} target="_blank" rel="noreferrer">{record.source} ↗</a></p>
+    {LEARN[record.id]&&<p className="ss-story-learn"><a href={`/learn#learn-${record.id}`}>{t('Test your ears: one question about this record')} →</a></p>}
   </section>;
 }

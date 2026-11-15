@@ -29,3 +29,19 @@ for(const theme of ['dark','light'])test(`Learn fits a small phone and passes ax
   const scan=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
   expect(scan.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))).toEqual([]);
 });
+
+test('every record links to its own Learn question, which opens in view and highlighted',async({page})=>{
+  await page.goto('/listen?record=ice');
+  const link=page.getByRole('region',{name:/The Ice Year: what you are hearing/}).getByRole('link',{name:/Test your ears/});
+  await expect(link).toHaveAttribute('href','/learn#learn-ice');
+  await link.click();await expect(page).toHaveURL(/\/learn#learn-ice$/);
+  const card=page.locator('#learn-ice');await expect(card).toBeInViewport();await expect(card).toContainText('In which month is the note lowest?');
+  await expect(card).toHaveClass(/is-arrived/);await expect(page.locator('.ln-card.is-arrived')).toHaveCount(1);
+});
+
+test('Home leads to Learn from its "Explore together" card',async({page})=>{
+  await page.goto('/');
+  const link=page.getByRole('link',{name:/Then test your ears on Learn/});
+  await expect(link).toHaveAttribute('href','/learn');
+  await link.click();await expect(page).toHaveURL(/\/learn$/);await expect(page.getByRole('heading',{level:1})).toHaveText('What did you hear?');
+});

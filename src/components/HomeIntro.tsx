@@ -77,7 +77,7 @@ export default function HomeIntro({motion}:{motion:boolean}){
       <div className="hi-pillars">
         <article><Eye size={22} aria-hidden="true"/><h3>{t('See')}</h3><p>{t('Every record is a real NASA picture of Earth: warming, ice, lightning, oceans, air and night lights.')}</p></article>
         <article><Ear size={22} aria-hidden="true"/><h3>{t('Hear')}</h3><p>{t('The colours and numbers in each picture become notes. Usually, more or warmer plays higher. Same picture, same music, every time.')}</p></article>
-        <article><Captions size={22} aria-hidden="true"/><h3>{t('Explore together')}</h3><p>{t('Every sound is also written in words. It works with a keyboard, a screen reader, a phone or a big screen.')}</p></article>
+        <article><Captions size={22} aria-hidden="true"/><h3>{t('Explore together')}</h3><p>{t('Every sound is also written in words. It works with a keyboard, a screen reader, a phone or a big screen.')} <a className="hi-learn" href="/learn" onClick={e=>{if(e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;e.preventDefault();goToPage('learn');}}>{t('Then test your ears on Learn')} →</a></p></article>
       </div>
     </section>
 
