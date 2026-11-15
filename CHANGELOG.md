@@ -12,7 +12,14 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [10.3.0] - 2026-11-15 18:20 · PRs #47, #48, #49 · live
+
+Explore Data for all ages; the demo video is public. Production: merge `0a01aa0`, bundle `index-RfDQ54Yk.js`.
+Notes: [docs/releases/v10.3.0.md](docs/releases/v10.3.0.md).
+
 ### Added
+- The demo video is public on YouTube (https://youtu.be/bZC6O_t4LHc), with matching English subtitles
+  (`docs/video/terrajuke-demo-29s.srt`); the portal draft and checklist link it (PR #47, uploaded by the team).
 - **Explore Data: "All eight records, and what their numbers are."** Each record says which kind of number it plays
   (NASA measurements, read from NASA's colour scale, counted from NASA's map, or picture brightness only). The four
   records with a pinned series (Climate Spiral, The Ice Year, The Warming Map, Storm Drums) show a small chart, a
