@@ -12,7 +12,14 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
-## [10.4.1] - 2026-11-15 19:50 · PRs #54, #55, #56, #57, #58 · live
+### Changed
+- Explore Data's temperature charts (Climate Spiral, The Warming Map) colour warmer-than-normal bars orange and
+  cooler bars blue, as NASA's maps do, instead of teal and pink; other charts keep the accent colour.
+
+### Fixed
+- The 10.4.1 release time is 19:29, not 19:50.
+
+## [10.4.1] - 2026-11-15 19:29 · PRs #54, #55, #56, #57, #58 · live
 
 Listen 5 MB lighter; submission records. Production: merge `889d589`, bundle `index-CO58xPMo.js`.
 Notes: [docs/releases/v10.4.1.md](docs/releases/v10.4.1.md).

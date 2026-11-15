@@ -39,3 +39,15 @@ test('Explore Data fits a small phone without sideways scrolling',async({page})=
   await expect(page.getByRole('region',{name:'All eight records, and what their numbers are.'}).getByRole('listitem')).toHaveCount(8);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
+
+test('temperature charts colour warmer bars orange and cooler bars blue; other charts use one colour',async({page})=>{
+  await page.goto('/data');
+  const section=page.getByRole('region',{name:'All eight records, and what their numbers are.'});
+  const warming=section.getByRole('listitem').filter({hasText:'The Warming Map'}).locator('svg');
+  await expect(warming.locator('.rn-cool').first()).toBeVisible();await expect(warming.locator('.rn-warm').first()).toBeVisible();
+  const fill=(loc:import('@playwright/test').Locator)=>loc.first().evaluate(e=>getComputedStyle(e).fill);
+  const [cool,warm]=[await fill(warming.locator('.rn-cool')),await fill(warming.locator('.rn-warm'))];
+  const rgb=(c:string)=>c.match(/\d+/g)!.map(Number);
+  expect(rgb(cool)[2]).toBeGreaterThan(rgb(cool)[0]);expect(rgb(warm)[0]).toBeGreaterThan(rgb(warm)[2]);
+  await expect(section.getByRole('listitem').filter({hasText:'The Ice Year'}).locator('svg .rn-plain')).toHaveCount(12);
+});

@@ -253,8 +253,13 @@
 .ss.ss-pages .rn-card figure{margin:4px 0 0}
 .ss.ss-pages .rn-card figcaption{font-size:.8rem;color:var(--ef-muted)}
 .ss.ss-pages .rn-bars{display:block;width:100%;height:auto;margin-top:6px}
-.ss.ss-pages .rn-bars .rn-warm{fill:var(--ef-accent)}
-.ss.ss-pages .rn-bars .rn-cool{fill:var(--ef-secondary,#7c6cff)}
+/* Temperature charts follow the usual convention: warmer than normal is orange, cooler is blue (NASA's own maps
+   use the same direction). Other series use the accent colour. Both pass 3:1 graphic contrast in each theme. */
+.ss.ss-pages .rn-bars .rn-plain{fill:var(--ef-accent)}
+.ss.ss-pages .rn-bars .rn-warm{fill:#ff8a3d}
+.ss.ss-pages .rn-bars .rn-cool{fill:#5aa9ff}
+:root[data-theme='light'] .ss.ss-pages .rn-bars .rn-warm{fill:#c2410c}
+:root[data-theme='light'] .ss.ss-pages .rn-bars .rn-cool{fill:#1d6fd1}
 .ss.ss-pages .rn-bars .rn-zero{stroke:var(--ef-border);stroke-width:1}
 .ss.ss-pages .rn-bars text{font-size:11px;fill:var(--ef-muted)}
 .ss.ss-pages .rn-take{margin:4px 0 0;font-size:.9rem;line-height:1.45;color:var(--ef-text)}
