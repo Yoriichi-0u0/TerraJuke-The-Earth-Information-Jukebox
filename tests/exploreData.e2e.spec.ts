@@ -13,7 +13,8 @@ test('Explore Data explains the number in plain words and switches data with the
   await expect(page.getByRole('heading',{name:'Every ice note has an observation.'})).toBeVisible();
   await expect(page.getByRole('group',{name:'Choose the data'}).getByRole('button',{name:/Arctic sea ice/})).toHaveAttribute('aria-pressed','true');
   await expect(page.getByRole('group',{name:'Choose the data'}).getByRole('button',{name:/Arctic sea ice/})).toBeFocused();
-  await page.keyboard.press('Shift+Tab');await page.keyboard.press('Enter');
+  // Safari's default Tab order skips buttons, so focus the button directly, then use the keyboard.
+  await page.getByRole('group',{name:'Choose the data'}).getByRole('button',{name:/Earth’s temperature/}).focus();await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/\/data$/);await expect(page.getByRole('group',{name:'Choose the data'}).getByRole('button',{name:/Earth’s temperature/})).toBeFocused();
   await page.getByRole('navigation').getByRole('link',{name:'About',exact:true}).click();
   await expect(page.getByRole('heading',{level:1})).toBeFocused();

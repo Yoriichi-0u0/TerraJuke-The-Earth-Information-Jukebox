@@ -50,7 +50,7 @@ export default defineConfig({
             ['webkit-iphone-se', 'iPhone SE'], ['webkit-iphone-pro-max', 'iPhone 15 Pro Max'], ['webkit-iphone-landscape', 'iPhone 13 landscape'],
             ['webkit-ipad', 'iPad (gen 7)'], ['webkit-ipad-pro-landscape', 'iPad Pro 11 landscape'], ['webkit-desktop', 'Desktop Safari'],
             ['android-pixel', 'Pixel 7'], ['android-small', 'Galaxy S9+'], ['android-tablet', 'Galaxy Tab S4'],
-          ] as const).map(([name, device]) => ({ name, testMatch: ['**/climateSpiralFirstVisit.e2e.spec.ts','**/home.e2e.spec.ts','**/ice.e2e.spec.ts','**/soundShape.e2e.spec.ts','**/warming.e2e.spec.ts','**/storm.e2e.spec.ts'], use: { ...devices[device], launchOptions: {} } })),
+          ] as const).map(([name, device]) => ({ name, testMatch: ['**/climateSpiralFirstVisit.e2e.spec.ts','**/home.e2e.spec.ts','**/ice.e2e.spec.ts','**/soundShape.e2e.spec.ts','**/warming.e2e.spec.ts','**/storm.e2e.spec.ts','**/create.e2e.spec.ts','**/exploreData.e2e.spec.ts','**/about.e2e.spec.ts','**/learn.e2e.spec.ts','**/listenWeight.e2e.spec.ts'], use: { ...devices[device], launchOptions: {} } })),
         ]
       : []),
     // Opt-in installed browsers (PLAYWRIGHT_BRANDS=1): the real Google Chrome and Microsoft Edge apps on this machine.
