@@ -1,6 +1,6 @@
 import {lazy,Suspense,useEffect,useId,useMemo,useRef,useState} from 'react';
 import type {CSSProperties,ReactNode} from 'react';
-import {ArrowDown,ArrowUpRight,AudioLines,ChevronLeft,ChevronRight,Disc3,Eye,ImagePlus,Play,ShieldCheck,Square,Volume2} from 'lucide-react';
+import {ArrowDown,ArrowUpRight,AudioLines,ChevronLeft,ChevronRight,Disc3,Eye,FlipHorizontal2,ImagePlus,Play,ShieldCheck,Square,Volume2} from 'lucide-react';
 import {jukeboxRecords,measurementRecord} from '../data/jukeboxRecords';
 import type {JukeboxRecord,JukeboxRecordId} from '../data/jukeboxRecords';
 import {defaults} from '../lib/symphony';
@@ -132,9 +132,9 @@ function ClimateDeck({record,motion,volume,onVolume}:{record:JukeboxRecord;motio
   const shown=inspected?{...current,progress:grooveIndex/data.points.length,position:`${String(grooveIndex+1).padStart(2,'0')} / 12`,note:inspected.note??'—',frequency:inspected.frequencyHz===null?'—':`${inspected.frequencyHz.toFixed(2)} Hz`,signal:{...current.signal,note:inspected.note??'—',frequency:inspected.frequencyHz}}:current;
   const effective=side==='a'?record:{...measurementRecord,id:record.id,number:record.number,title:record.title};
   const controls=<><div className="jb-side-selector" role="group" aria-label={t('Choose a side of Climate Spiral')}>
-    <button type="button" aria-label={t('Side A: hear the picture')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('Hear the picture')}<small>{t('Visual sound')}</small></span></button>
-    <button type="button" aria-label={t('Side B: hear the measurements')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('Hear the measurements')}<small>{t('Measurement sound')}</small></span></button>
-  </div><div className="jb-science-cue"><p>{t(side==='a'?'Brightness → pitch. Not temperature.':'January anomaly (°C) · relative to 1951–1980.')}</p>{side==='a'&&<button className="jb-manual-toggle" type="button" data-manual={manual} disabled={!visual.visual.ready} aria-controls={manual?'earth-scratch-controls':undefined} onClick={changeMode}>{t(manual?'Back to playback':'Play with Earth')}<span aria-hidden="true">{manual?' ↗':' ↔'}</span></button>}</div></>;
+    <button type="button" aria-label={t('Side A: hear the picture')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('Hear the picture')}<small>{t('The picture’s colours')}</small></span></button>
+    <button type="button" aria-label={t('Side B: hear the measurements')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('Hear the measurements')}<small>{t('The real temperatures')}</small></span></button>
+  </div><div className="jb-science-cue"><p>{t(side==='a'?'Brighter picture, higher note. It is not the temperature.':'How much warmer or cooler each January was than 1951–1980 (°C).')}</p>{side==='a'&&<button className="jb-manual-toggle" type="button" data-manual={manual} disabled={!visual.visual.ready} aria-controls={manual?'earth-scratch-controls':undefined} onClick={changeMode}>{t(manual?'Back to playback':'Play with Earth')}<span aria-hidden="true">{manual?' ↗':' ↔'}</span></button>}</div></>;
   const picture=<VisualArtwork record={record} transport={visual} manual={manual}/>;
   const stripFeedback=instrument.error?'The strip could not play. Try Hear selected strip again.':instrument.notice?'Audio is ready. Press Hear selected strip again.':undefined;
   return <DeckConsole record={effective} {...shown} error={shown.error||(side==='a'&&!manual?stripFeedback:undefined)} onPlay={()=>{setInspectedObservation(null);if(side==='a'&&!manual)instrument.stop();current.onPlay();}} side={side} sideControls={controls} recordObject={<EarthRecord side={side} signal={shown.signal} motion={motion} onFlip={()=>changeSide(side==='a'?'b':'a')} grooves={side==='a'?visualGrooves:dataGrooves} position={grooveIndex} descriptionId={grooveDescription}/>}
@@ -172,6 +172,8 @@ export default function JukeboxHome({motion}:{motion:boolean}){
   const [stageReady,setStageReady]=useState(false);
   useEffect(()=>{
     if((navigator as unknown as {connection?:{saveData?:boolean}}).connection?.saveData)return;
+    // Low-memory phones skip the decorative 3D shelf; the list of records does the same job.
+    const memory=(navigator as unknown as {deviceMemory?:number}).deviceMemory;if(memory!==undefined&&memory<=2)return;
     const w=window as unknown as {requestIdleCallback?:(cb:()=>void,o?:{timeout:number})=>number;cancelIdleCallback?:(id:number)=>void};
     if(w.requestIdleCallback){const id=w.requestIdleCallback(()=>setStageReady(true),{timeout:2500});return()=>w.cancelIdleCallback?.(id);}
     const timer=window.setTimeout(()=>setStageReady(true),1200);return()=>window.clearTimeout(timer);
@@ -216,7 +218,15 @@ export default function JukeboxHome({motion}:{motion:boolean}){
   function chooseImage(file:File){selectPersonal();void personal.choose(file);}
   function moveShelf(direction:number){const element=shelf.current;if(element)element.scrollBy({left:direction*element.clientWidth*.8,behavior:motion?'smooth':'instant'});}
   return <div className="jb-home" style={{'--record-accent':record.accent} as CSSProperties}>
-    <header className="jb-intro"><div><p className="jb-eyebrow"><Disc3 size={15}/>{t('THE EARTH INFORMATION JUKEBOX')}</p><h1 tabIndex={-1}>{t('Your planet.')} <em>{t('On the record.')}</em></h1></div><p>{t('Choose an Earth story. Press Play.')}<span>{t('Sound made from NASA visuals and Earth observations.')}</span><span className="jb-intro-links"><button ref={guideButton} type="button" className="jb-guide-start" aria-pressed={guide} onClick={()=>guide?closeGuide():(stopShow(false),setGuide(true))}><Eye aria-hidden="true" size={14}/>{t('Guide me')}</button><a className="jb-shelf-link" href="#record-shelf">{t('Browse records')} <ArrowDown aria-hidden="true" size={14}/></a></span><button type="button" className="jb-show-start" aria-pressed={show!==null} onClick={()=>show?stopShow():startShow()}>{show?<><Square size={14} fill="currentColor"/>{t('Stop the show')}</>:<><Play size={15} fill="currentColor"/>{t('Play the whole jukebox')}</>}</button></p></header>
+    <header className="jb-intro"><div><p className="jb-eyebrow"><Disc3 size={15}/>{t('THE EARTH INFORMATION JUKEBOX')}</p><h1 tabIndex={-1}>{t('Your planet.')} <em>{t('On the record.')}</em></h1></div><p>{t('Pick a record. Press Play. Listen to Earth.')}<span>{t('Every record is a NASA picture of our planet, turned into music.')}</span><span className="jb-intro-links"><button ref={guideButton} type="button" className="jb-guide-start" aria-pressed={guide} onClick={()=>guide?closeGuide():(stopShow(false),setGuide(true))}><Eye aria-hidden="true" size={14}/>{t('Guide me')}</button><a className="jb-shelf-link" href="#record-shelf">{t('Browse records')} <ArrowDown aria-hidden="true" size={14}/></a></span><button type="button" className="jb-show-start" aria-pressed={show!==null} onClick={()=>show?stopShow():startShow()}>{show?<><Square size={14} fill="currentColor"/>{t('Stop the show')}</>:<><Play size={15} fill="currentColor"/>{t('Play the whole jukebox')}</>}</button></p></header>
+    <div className="jb-howto-wrap">
+      <ol className="jb-howto" aria-label={t('How to play')}>
+        <li><Disc3 aria-hidden="true" size={18}/><span><b>{t('1. Pick a record')}</b><small>{t('Each record is one NASA picture of Earth.')}</small></span></li>
+        <li><Play aria-hidden="true" size={18}/><span><b>{t('2. Press Play')}</b><small>{t('Hear the picture as music.')}</small></span></li>
+        <li><FlipHorizontal2 aria-hidden="true" size={18}/><span><b>{t('3. Flip to Side B')}</b><small>{t('Explore it yourself: tap the map or use the arrow keys.')}</small></span></li>
+      </ol>
+      <p className="jb-why"><b>{t('Why a jukebox?')}</b> {t('A jukebox plays the record you choose. Here, every record is a NASA picture of Earth.')}</p>
+    </div>
     <div className="jb-layout">
       <div className="jb-player" ref={player} role="region" aria-label={t('Record player')} tabIndex={-1}>
         <ShowContext.Provider value={{cue:show?.phase==='playing'?show.cue:null,onEnded,onStopped}}>
@@ -233,7 +243,7 @@ export default function JukeboxHome({motion}:{motion:boolean}){
           <div className={`jb-shelf-wrap${edges.left?' has-previous':''}${edges.right?' has-next':''}`}>
             <div className="jb-records" ref={shelf}>{jukeboxRecords.map((item,index)=><button key={item.id} className={`jb-record ${selected===item.id?'is-selected':''}`} aria-pressed={selected===item.id} aria-label={`${t('Select record')}: ${t(item.title)}`} onClick={()=>selectRecord(item.id)} onKeyDown={e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();const buttons=shelf.current?.querySelectorAll<HTMLButtonElement>('.jb-record');const next=e.key==='Home'?0:e.key==='End'?jukeboxRecords.length-1:(index+(e.key==='ArrowRight'?1:-1)+jukeboxRecords.length)%jukeboxRecords.length;buttons?.[next]?.focus();}}>
               <span className={`jb-sleeve jb-sleeve-${item.id}`} aria-hidden="true">{item.id==='spiral'?<img src={item.frame!.imageUrl} alt=""/>:item.posterUrl?<img src={item.posterUrl} alt=""/>:<span>↗</span>}<i/></span>
-              <span className="jb-record-copy"><small>{t(item.id==='spiral'||item.id==='nightlights'||item.id==='air'||item.id==='ocean'||item.id==='ice'||item.id==='warming'||item.id==='storm'?'SIDES A + B':item.kind==='visual'?'Visual':'Measurements')}</small><strong>{t(item.title)}</strong><span>{t(item.id==='motion'?'Still from the archived animation':item.subtitle)}</span></span><span className="jb-record-indicator" aria-hidden="true">{selected===item.id?<AudioLines size={17}/>:<ArrowUpRight size={17}/>}</span>
+              <span className="jb-record-copy"><small>{item.id==='spiral'&&<b className="jb-start-here">{t('START HERE')}</b>}{t(item.id==='spiral'||item.id==='nightlights'||item.id==='air'||item.id==='ocean'||item.id==='ice'||item.id==='warming'||item.id==='storm'?'SIDES A + B':item.kind==='visual'?'Visual':'Measurements')}</small><strong>{t(item.title)}</strong><span>{t(item.id==='motion'?'Still from the archived animation':item.subtitle)}</span></span><span className="jb-record-indicator" aria-hidden="true">{selected===item.id?<AudioLines size={17}/>:<ArrowUpRight size={17}/>}</span>
             </button>)}</div>
             {edges.left&&<button className="jb-shelf-arrow jb-shelf-previous" type="button" aria-label={t('Previous records')} onClick={()=>moveShelf(-1)}><ChevronLeft size={17}/></button>}
             {edges.right&&<button className="jb-shelf-arrow jb-shelf-next" type="button" aria-label={t('More records')} onClick={()=>moveShelf(1)}><ChevronRight size={17}/></button>}

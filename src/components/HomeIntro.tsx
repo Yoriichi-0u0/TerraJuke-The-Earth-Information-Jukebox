@@ -64,7 +64,7 @@ export default function HomeIntro({motion}:{motion:boolean}){
       <div className="hi-hero-copy">
         <p className="hi-kicker"><Disc3 size={14} aria-hidden="true"/>{t('NASA SPACE APPS 2026 · THE EARTH INFORMATION JUKEBOX')}</p>
         <h1 tabIndex={-1}>{t('Hear NASA’s view')} <em>{t('of our planet.')}</em></h1>
-        <p className="hi-lead">{t('TerraJuke turns NASA Earth visuals and Earth observations into sound, made live in your browser. Pick a record, press Play, and listen to Earth change.')}</p>
+        <p className="hi-lead">{t('NASA watches our planet from space and turns what it sees into pictures. TerraJuke turns those pictures into music. Pick one, press Play, and listen to Earth change.')}</p>
         <div className="hi-actions"><a className="hi-primary" href="/listen" onClick={e=>listen(e)}><AudioLines size={17} aria-hidden="true"/>{t('Open the jukebox')}<ArrowRight size={16} aria-hidden="true"/></a><a className="hi-secondary" href="#how-it-works">{t('How it works')}<ArrowDown size={15} aria-hidden="true"/></a></div>
         <p className="hi-fine">{t('Headphones help. Sound starts only when you press Play.')}</p>
       </div>
@@ -73,11 +73,11 @@ export default function HomeIntro({motion}:{motion:boolean}){
     </header>
 
     <section className="hi-what" aria-labelledby="hi-what-title">
-      <div className="hi-section-head"><p className="hi-kicker">{t('WHAT WE ARE DOING')}</p><h2 id="hi-what-title">{t('A jukebox for Earth information.')}</h2><p>{t('NASA’s Earth Information Center shows how our planet is changing in pictures. TerraJuke pairs those visuals with sound, so you can choose a visualization, hear its soundscape, and explore it in more than one way.')}</p></div>
+      <div className="hi-section-head"><p className="hi-kicker">{t('WHAT WE ARE DOING')}</p><h2 id="hi-what-title">{t('A jukebox for Earth information.')}</h2><p>{t('NASA’s Earth Information Center shows how our planet is changing in pictures. But a picture only works if you can see it, and it does not always explain itself. So we made a jukebox: a music machine where you pick a record and it plays. Every record here is a NASA picture of Earth.')}</p></div>
       <div className="hi-pillars">
-        <article><Eye size={22} aria-hidden="true"/><h3>{t('See')}</h3><p>{t('Every record is a pinned snapshot of a named source, mostly NASA visualizations, kept with its source link and retrieval date.')}</p></article>
-        <article><Ear size={22} aria-hidden="true"/><h3>{t('Hear')}</h3><p>{t('Fixed, published rules turn colour, brightness and values into notes in real time. Same picture, same notes, every time.')}</p></article>
-        <article><Captions size={22} aria-hidden="true"/><h3>{t('Explore together')}</h3><p>{t('Every note is also shown as text. Controls work with a keyboard and screen reader, and every record works with motion turned off.')}</p></article>
+        <article><Eye size={22} aria-hidden="true"/><h3>{t('See')}</h3><p>{t('Every record is a real NASA picture of Earth: warming, ice, lightning, oceans, air and night lights.')}</p></article>
+        <article><Ear size={22} aria-hidden="true"/><h3>{t('Hear')}</h3><p>{t('The colours and numbers in each picture become notes. Usually, more or warmer plays higher. Same picture, same music, every time.')}</p></article>
+        <article><Captions size={22} aria-hidden="true"/><h3>{t('Explore together')}</h3><p>{t('Every sound is also written in words. It works with a keyboard, a screen reader, a phone or a big screen.')}</p></article>
       </div>
     </section>
 

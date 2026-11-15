@@ -106,7 +106,7 @@ test('a first visit plays Side A, hears one silent-inspected groove, flips and p
   await expect(play).toHaveCount(1);await expect(play).toBeEnabled();
   const screen=page.viewportSize()!,bounds=await play.boundingBox();expect(bounds!.y+bounds!.height).toBeLessThanOrEqual(screen.height);
   await expect(sideA).toHaveAttribute('aria-pressed','true');
-  await expect(page.locator('.jb-science-cue')).toContainText('Brightness → pitch. Not temperature.');
+  await expect(page.locator('.jb-science-cue')).toContainText('Brighter picture, higher note. It is not the temperature.');
   await expect(readout).toContainText('PIXEL INPUT');
   expect(await notes(page)).toEqual([]);
   await play.tap();
@@ -139,7 +139,7 @@ test('a first visit plays Side A, hears one silent-inspected groove, flips and p
   expect((await notes(page)).length).toBe(afterFlip);
 
   // 4. The on-screen distinction between image-derived and measurement-derived notes.
-  await expect(page.locator('.jb-science-cue')).toContainText('January anomaly (°C) · relative to 1951–1980.');
+  await expect(page.locator('.jb-science-cue')).toContainText('How much warmer or cooler each January was than 1951–1980 (°C).');
   await expect(page.locator('.jb-side-provenance')).toContainText('not matched frame by frame');
   await expect(readout).toContainText('OBSERVATION');
   // Read the first two January notes silently, then confirm Play sounds those exact notes in order.

@@ -94,8 +94,8 @@ export default function OceanDeck({record,motion,volume,onVolume}:{record:Jukebo
 
   const sideControls=<>
     <div className="jb-side-selector" role="group" aria-label={t('Choose a side of Currents of Heat')}>
-      <button type="button" aria-label={t('Side A: pole to pole')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('Pole to pole')}<small>{t('48 bands · Arctic to Antarctica')}</small></span></button>
-      <button type="button" aria-label={t('Side B: touch the ocean')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('Touch the ocean')}<small>{t('Any place · its temperature')}</small></span></button>
+      <button type="button" aria-label={t('Side A: pole to pole')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('Pole to pole')}<small>{t('From the Arctic to Antarctica')}</small></span></button>
+      <button type="button" aria-label={t('Side B: touch the ocean')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('Touch the ocean')}<small>{t('Tap the sea to hear it')}</small></span></button>
     </div>
     <div className="air-tempo"><label htmlFor="ocean-bpm">{t('Tempo')}</label><input id="ocean-bpm" type="range" min={60} max={160} step={4} value={bpm} aria-valuetext={`${bpm} ${t('beats per minute')}`} onChange={e=>{bpmRef.current=Number(e.target.value);setBpm(Number(e.target.value));}}/><output htmlFor="ocean-bpm">{bpm} BPM</output></div>
   </>;

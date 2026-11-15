@@ -137,7 +137,7 @@ export default function AirDeck({record,motion,volume,onVolume}:{record:JukeboxR
 
   const sideControls=<>
     <div className="jb-side-selector" role="group" aria-label={t('Choose a side of The Air We Share')}>
-      <button type="button" aria-label={t('Side A: around the world')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('Around the world')}<small>{t('64 slices · Earth turns under the needle')}</small></span></button>
+      <button type="button" aria-label={t('Side A: around the world')} aria-pressed={side==='a'} onClick={()=>changeSide('a')}><b>A</b><span>{t('Around the world')}<small>{t('Spin the Earth, hear the air')}</small></span></button>
       <button type="button" aria-label={t('Side B: NASA’s six stories')} aria-pressed={side==='b'} onClick={()=>changeSide('b')}><b>B</b><span>{t('NASA’s six stories')}<small>{t('Hurricane, dust, smoke, volcanoes')}</small></span></button>
     </div>
     <div className="air-stories" role="group" aria-label={t('NASA’s stories in this image')}>
