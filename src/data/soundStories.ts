@@ -62,6 +62,14 @@ export const SOUND_STORIES:Record<JukeboxRecordId,SoundStory>={
     why:'To hear that warming is not even: the Arctic and the continents warm fastest, and any place you touch tells its own story.',
     how:'Each colour is read back to a temperature anomaly on NASA’s printed −2 to +2 °C colour bar. Side A plays 34 bands of latitude, pole to pole; Side B plays a place’s 15 decades. Warmer than the 1951–1980 normal plays higher.',
   },
+  storm:{
+    what:'Lightning around the world through 2022, seen from the International Space Station, played as drums.',
+    who:'NASA’s Lightning Imaging Sensor on the Space Station recorded each flash (NASA Marshall Space Flight Center); Michala Garrison visualized it at NASA’s Scientific Visualization Studio, with a version made for the Earth Information Center display.',
+    when:'The 15th of each month of 2022; each frame shows a 10-day window of flashes.',
+    where:'Everywhere between about 55°N and 55°S, the band the Space Station’s orbit covers. Image: NASA SVS 5011.',
+    why:'To hear where storms live: over land far more than sea, following the sun north and south through the year.',
+    how:'TerraJuke counts the yellow dots NASA drew in every place. Each month opens with a low note for the world’s lightning (more is higher), then 18 drums sweep west to east, louder where there was more lightning. Side B plays one drum per month for any place you touch.',
+  },
   temperature:{
     what:'Twelve January global temperature anomalies, the same numbers as the Climate Spiral’s Side B, on their own.',
     who:'NASA GISS (GISTEMP v4).',

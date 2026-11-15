@@ -14,7 +14,7 @@ test('Home introduces the project without a player and sends visitors to Listen'
   await expect(page.getByRole('button',{name:'Play record',exact:true})).toHaveCount(0);
   await expect(page.getByRole('heading',{name:'A jukebox for Earth information.'})).toBeVisible();
   await expect(page.getByRole('heading',{name:'Pictures and measurements sound different on purpose.'})).toBeVisible();
-  const shelf=page.locator('.hi-shelf a');await expect(shelf).toHaveCount(7);
+  const shelf=page.locator('.hi-shelf a');await expect(shelf).toHaveCount(8);
   await expect(shelf.first()).toHaveAttribute('href','/listen?record=spiral');
   await page.getByRole('link',{name:/Currents of Heat/}).click();
   await expect(page).toHaveURL(/\/listen\?record=ocean$/);

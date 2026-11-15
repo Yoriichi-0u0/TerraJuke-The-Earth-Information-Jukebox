@@ -1,0 +1,9 @@
+/* Storm Drums: a sweeping slice of longitude, and month bars measured up from the base. */
+.storm-map{background:#141414}
+.storm-sweep{position:absolute;top:0;bottom:0;pointer-events:none;background:linear-gradient(90deg,#ffd60a00,#ffd60a33 50%,#ffd60a00);box-shadow:inset 1px 0 #ffd60a99,inset -1px 0 #ffd60a99;transition:left .08s linear}
+.storm-sweep.is-playing{box-shadow:inset 1px 0 #ffd60a,inset -1px 0 #ffd60a,0 0 18px #ffd60a88}
+.ss-pages:not(.ss-motion) .storm-sweep{transition:none}
+.storm-months{grid-template-columns:repeat(12,minmax(0,1fr))}
+.storm-months button i{position:absolute;left:25%;right:25%;bottom:22px;height:calc(var(--h) * .38);min-height:1px;border-radius:2px;background:linear-gradient(#fff3a0,#ffd60a)}
+.storm-months button::before{display:none}
+@media(max-width:520px){.storm-months{grid-template-columns:repeat(6,minmax(0,1fr))}}

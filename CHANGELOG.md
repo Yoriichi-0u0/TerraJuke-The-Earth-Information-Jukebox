@@ -13,6 +13,12 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 ## [Unreleased]
 
 ### Added
+- Record 08 **Storm Drums** from NASA SVS 5011 (*Lightning Events Detected from the ISS 2017–2023*, a challenge
+  Resource): twelve 2022 frames extracted from NASA's Science On a Sphere movie with its `labels.txt`. Side A: each
+  month a note for the world's lightning, then 18 drums sweep west to east; Side B: a place's storm months.
+  [docs/STORM-DRUMS.md](docs/STORM-DRUMS.md).
+
+### Added
 - Submission kit: a 30-second demo shot list, English captions and title/end cards in `docs/video/`, and the portal
   text for all eight fields in `docs/PORTAL-DRAFT.md` (official limit: video ≤ 30 s or ≤ 7 slides).
 
