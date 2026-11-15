@@ -18,18 +18,20 @@ deadline is earlier. **Do everything before 21:00 MYT.** Tick each box in this f
 
 ## 2. Demo video (30 seconds or less; longer = ineligible)
 
-- [ ] Watch the produced cut: `TerraJuke-video-studio/terrajuke-30s/out/terrajuke-demo-30s.mp4` on Jacy's Mac
-  (30.0 s, real app footage and sound, captions, no voice). Or record your own with `docs/video/SHOT-LIST.md`. Check:
+- [ ] Watch the narrated cut: `TerraJuke-video-studio/terrajuke-30s/out/terrajuke-demo-30s-narrated.mp4` on
+  Jacy's Mac (30.0 s, real app footage and sound, AI narration voice, captions). Listen for how "TerraJuke" and
+  "BoboMimi" are pronounced. Or record your own with `docs/video/SHOT-LIST.md`. Check:
   - [ ] Duration **≤ 0:30** (check the exported file, not the editor timeline)
   - [ ] English captions on screen
   - [ ] Team name **BoboMimi** and both names appear; challenge named; title **TerraJuke**
   - [ ] Shows the real app and real sound; no NASA logo added; AI-generated art only with its watermark
-  - [ ] A visible "AI-assisted" note (the produced cut has it in the end card's small print)
+  - [ ] The end card's small print mentions AI assistance. The narration voice is AI: say so in the YouTube description
+  and the portal's SI field (already in `docs/PORTAL-DRAFT.md`); the MP4's own metadata says so too.
   - [ ] No person under 18 visible or heard
-- [ ] Optional: add your own voices to the caption timings (no AI voice speaking as a team member).
 - [ ] Upload to **YouTube (Public or Unlisted)** or Google Drive ("Anyone with the link"). Title: "TerraJuke: The Earth
   Information Jukebox (NASA Space Apps 2026, Team BoboMimi)". On YouTube, also upload
-  `docs/video/terrajuke-demo.srt` as English subtitles.
+  `docs/video/terrajuke-demo.srt` as English subtitles. Description line: "Footage and music: the live TerraJuke
+  app. Narration: AI text-to-speech (Kokoro). Edited with AI assistance (Claude Code)."
 - [ ] Open the link in a **private window**: it must play without signing in.
 
 ## 3. NASA portal (a signed-in team member does this)
