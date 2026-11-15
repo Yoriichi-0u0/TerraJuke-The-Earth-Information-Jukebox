@@ -38,6 +38,7 @@ tests and docs. Rollback = revert the merge commit on `main` (Vercel redeploys);
 
 | Version | Date | Headline |
 |---|---|---|
+| [11.0.0](v11.0.0.md) | 2026-11-15 | Learn: one listen-for prompt and one question per record; Play on landscape phones |
 | [10.4.4](v10.4.4.md) | 2026-11-15 | Climate Spiral card links both the NASA picture and the GISTEMP data |
 | [10.4.3](v10.4.3.md) | 2026-11-15 | Focus stays on the chosen data button; evening QA on ten emulated devices |
 | [10.4.2](v10.4.2.md) | 2026-11-15 | Temperature charts: warmer orange, cooler blue |
