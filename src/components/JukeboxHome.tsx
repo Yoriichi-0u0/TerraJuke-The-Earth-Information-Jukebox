@@ -204,7 +204,7 @@ export default function JukeboxHome({motion}:{motion:boolean}){
   },[]);
   const record=jukeboxRecords.find(r=>r.id===selected)??jukeboxRecords[0],station='climate' as const;
   const optional=selected==='personal'||selected==='mystery';
-  const stageRecords=useMemo(()=>jukeboxRecords.map(r=>({id:r.id,title:r.title,number:r.number,accent:r.accent,image:r.frame?.imageUrl??r.posterUrl,focus:r.id==='nightlights'?[.855,.72] as [number,number]:undefined})),[]);
+  const stageRecords=useMemo(()=>jukeboxRecords.map(r=>({id:r.id,title:r.title,number:r.number,accent:r.accent,image:r.stageImageUrl??r.frame?.imageUrl??r.posterUrl,focus:r.id==='nightlights'?[.855,.72] as [number,number]:undefined})),[]);
   function selectRecord(id:JukeboxRecordId|'mystery'){
     stopShow(false);
     personal.cancel();
