@@ -1,5 +1,42 @@
 # Submission checklist: 15 November 2026 (MYT)
 
+## Final verification (15 Nov 2026, 19:05 MYT)
+
+The project **was submitted for judging at 16:56** ("Project Submitted for Judging" banner; screenshot kept by
+Chia). Edits and resubmission stay open until **23:59**; only the last submission is judged. Claude checked
+everything that can be checked without signing in to the portal:
+
+| # | Check | Result | Evidence |
+|---|---|---|---|
+| 1 | Final project link opens signed out | ✅ | https://terrajuke.vercel.app returns 200; all five pages load |
+| 2 | Live site is the latest `main` | ✅ | TerraJuke 10.4.0; live bundle `index-CataseTm.js` equals a fresh build of `main` (`beb0561`) |
+| 3 | Source code is public | ✅ | GitHub repo `PUBLIC`, opens signed out |
+| 4 | Demo video is public, plays signed out, 30 s or less | ✅ | https://youtu.be/bZC6O_t4LHc: Public, not private or unlisted, playability OK, 29 s; title "TerraJuke: The Earth Information Jukebox (NASA Space Apps 2026, Team BoboMimi)" |
+| 5 | At least one NASA data source | ✅ | Seven SVS visualizations (5190, 5313, 5046, 3912, 5669, 5450, 5011) and GISTEMP v4, listed in [PORTAL-DRAFT.md](PORTAL-DRAFT.md) |
+| 6 | NASA files are the pinned originals | ✅ | 112 hashes in the provenance files match the bundled files (0 mismatches) |
+| 7 | AI use disclosed; AI images watermarked; no NASA logos | ✅ | SI section of the portal draft (code, watermarked icon and vinyl art, AI narration voice); watermarks since 10.0.0 |
+| 8 | Everything in English | ✅ | App is English only; video has English captions |
+| 9 | Eligibility | ✅ | This repository is the submission (DECISION-LOG, 14 Nov 21:10; Jacy) |
+
+**Still for a person (Claude cannot see the signed-in portal):**
+
+- [ ] **Open the submitted project page signed in and read every field.** On 14 Nov a *different* draft was saved
+  there (name "TerraJuke: One Earth. Every Sense. Everyone.", link terrajuke-2026.vercel.app, NASA data only
+  SVS 5313). Make sure the submitted page shows **this** project: name "TerraJuke: The Earth Information Jukebox",
+  Final Project https://terrajuke.vercel.app, Demo https://youtu.be/bZC6O_t4LHc, and the summary, description,
+  SI, NASA data and references from [PORTAL-DRAFT.md](PORTAL-DRAFT.md).
+- [ ] Team roster (Chia Yuen Kai, Jacy Chiong Yet Suu), Local Event Bintulu, challenge *The Earth Information
+  Jukebox*.
+- [ ] **SSC, before 21:00:** team photo posted in Discord `#team-photo`.
+- [ ] Open the video in a private window and turn on subtitles: English subtitles appear.
+- [ ] Optional, before 23:59: paste the refreshed "What it does" and "Validity" text from
+  [PORTAL-DRAFT.md](PORTAL-DRAFT.md) (section "Optional refresh"), then press **Submit for Judging** again and wait
+  for the banner. Skip this if anything is unclear: the 16:56 submission is valid as it is.
+- [ ] Optional: a real-phone check and a VoiceOver check, logged in `docs/evidence/`.
+
+Details of each step follow.
+
+
 Two separate tracks. **SSC** (Sarawak Space Challenge, local XP) counts the NASA submission automatically, but its
 deadline is earlier. **Do everything before 21:00 MYT.** Tick each box in this file or in the team chat.
 
@@ -11,10 +48,10 @@ deadline is earlier. **Do everything before 21:00 MYT.** Tick each box in this f
 
 ## 1. The app (done by Claude; re-check in 2 minutes)
 
-- [ ] https://terrajuke.vercel.app opens in a private window, no sign-in. Home → **Open the jukebox** → Listen.
+- [x] https://terrajuke.vercel.app opens with no sign-in (checked 19:05). Home → **Open the jukebox** → Listen.
 - [ ] Press **Play record** on Climate Spiral: you hear sound. Try one more record (The Warming Map).
 - [ ] On a real phone: the page fits, Play is visible, a Side B tap works.
-- [ ] Source: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox is **public** (checked 15 Nov 15:49).
+- [x] Source: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox is **public** (checked 15 Nov 19:05).
 
 ## 2. Demo video (30 seconds or less; longer = ineligible)
 
