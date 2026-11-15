@@ -12,6 +12,11 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [10.4.4] - 2026-11-15 20:00 · PRs #64, #65 · live
+
+Climate Spiral card links its data. Production: merge `ab22c0d`, bundle `index-C37ZZu1F.js`.
+Notes: [docs/releases/v10.4.4.md](docs/releases/v10.4.4.md).
+
 ### Changed
 - Explore Data's Climate Spiral card links both its sources: the NASA picture (SVS 5190) and the NASA data its
   numbers come from (GISTEMP).
@@ -319,7 +324,8 @@ Notes: [docs/releases/v7.0.0.md](docs/releases/v7.0.0.md).
 ## [1.0.0] - 2026-10-14 · Earth FM
 - First visual and climate sonification, connected to GitHub and Vercel; `main` is the single production branch.
 
-[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v10.4.3...main
+[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v10.4.4...main
+[10.4.4]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.4
 [10.4.3]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.3
 [10.4.2]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.2
 [10.4.1]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.1
