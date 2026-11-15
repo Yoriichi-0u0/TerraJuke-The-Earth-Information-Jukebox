@@ -4,7 +4,7 @@
 
 - **Who holds the repository:** still Jacy and her Claude Code. Chia's session has not resumed; it must `git pull`
   and read this section, [CHANGELOG.md](../CHANGELOG.md) and [DECISION-LOG.md](DECISION-LOG.md) before pushing.
-- **Live:** TerraJuke **10.4.2**, merge `c5f36f9`, bundle `index-Bnqvn4R6.js` (https://terrajuke.vercel.app).
+- **Live:** TerraJuke **10.4.3**, merge `b5f03ab`, bundle `index-DrX5zh5r.js` (https://terrajuke.vercel.app).
   `main` and production match. Release notes: [docs/releases/](releases/README.md).
 - **Submitted** on the NASA Space Apps portal at **16:56 MYT** (10.1.1 was live then) and **resubmitted at 19:13** with typo and link fixes only. Edits are possible until
   23:59. Demo video: https://youtu.be/bZC6O_t4LHc. Portal text: [PORTAL-DRAFT.md](PORTAL-DRAFT.md).

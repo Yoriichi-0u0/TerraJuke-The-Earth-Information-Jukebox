@@ -12,6 +12,11 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+## [10.4.3] - 2026-11-15 19:53 · PRs #61, #62, #63 · live
+
+Keep your place when switching data; evening QA. Production: merge `b5f03ab`, bundle `index-DrX5zh5r.js`.
+Notes: [docs/releases/v10.4.3.md](docs/releases/v10.4.3.md).
+
 ### Fixed
 - Keyboard and screen-reader users keep their place when they switch the data on Create or Explore Data: focus
   stays on the chosen data button instead of jumping to the page heading and the top of the page.
@@ -310,7 +315,8 @@ Notes: [docs/releases/v7.0.0.md](docs/releases/v7.0.0.md).
 ## [1.0.0] - 2026-10-14 · Earth FM
 - First visual and climate sonification, connected to GitHub and Vercel; `main` is the single production branch.
 
-[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v10.4.2...main
+[Unreleased]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/compare/v10.4.3...main
+[10.4.3]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.3
 [10.4.2]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.2
 [10.4.1]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.1
 [10.4.0]: https://github.com/Yoriichi-0u0/TerraJuke-The-Earth-Information-Jukebox/releases/tag/v10.4.0
