@@ -12,6 +12,10 @@ have git tags and GitHub releases. Times are MYT (UTC+8). How to cut a release: 
 
 ## [Unreleased]
 
+### Fixed
+- Learn's Climate Spiral question says "Play Side B", and its "Hear it" link now opens the record on Side B
+  (`/listen?record=spiral&side=b`) instead of Side A.
+
 ### Changed
 - The Create, Explore Data, About, Learn and Listen-weight tests now also run on the emulated iPhone, iPad, Safari
   and Android devices (`PLAYWRIGHT_DEVICES=1`); one test no longer relies on Tab reaching buttons, which Safari

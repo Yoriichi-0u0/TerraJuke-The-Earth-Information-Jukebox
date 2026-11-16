@@ -17,7 +17,7 @@ export default function LearnPage(){
     <p className="ln-score" role="status">{answered===0?t('Pick any question to start.'):`${t('Answered')} ${answered} ${t('of')} ${asked.length} · ${right} ${t('right')}`}{answered>0&&<button type="button" className="sp-text-button" onClick={()=>setPicked({})}>{t('Start again')}</button>}</p>
     <ol className="ln-grid">{asked.map(record=>{const q=LEARN[record.id]!,choice=picked[record.id],done=choice!==undefined,ok=choice===q.answer;return <li key={record.id} id={`learn-${record.id}`} className={`ln-card${arrived===record.id?' is-arrived':''}`} data-state={done?(ok?'right':'wrong'):'open'}>
       <div className="ln-head"><span className="ln-num">{record.number}</span><h2>{t(record.title)}</h2></div>
-      <p className="ln-listen"><b>{t('Listen for')}:</b> {t(q.listen)} <a href={`/listen?record=${record.id}`}>{t('Hear it')} →</a></p>
+      <p className="ln-listen"><b>{t('Listen for')}:</b> {t(q.listen)} <a href={`/listen?record=${record.id}${q.side?`&side=${q.side}`:''}`}>{t('Hear it')} →</a></p>
       <fieldset><legend>{t(q.ask)}</legend>{q.options.map((option,i)=><label key={option} data-answer={done&&i===q.answer?'yes':undefined}><input type="radio" name={`learn-${record.id}`} checked={choice===i} onChange={()=>setPicked(p=>({...p,[record.id]:i}))}/><span>{t(option)}</span></label>)}</fieldset>
       <p className="ln-why" aria-live="polite">{done&&<><b>{t(ok?'Yes!':'Not quite.')}</b> {t(q.why)}</>}</p>
     </li>;})}</ol>
