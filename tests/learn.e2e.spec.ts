@@ -54,3 +54,12 @@ test('answering all eight shows what the records share',async({page})=>{
   const summary=page.getByRole('region',{name:'What all eight records share'});
   await expect(summary).toContainText('more of something plays higher or louder');await expect(summary).toContainText('a brighter picture is not a measurement');
 });
+
+test('Learn’s Climate Spiral link opens the record on Side B, as the question asks',async({page})=>{
+  await page.goto('/learn');
+  const link=page.locator('#learn-spiral').getByRole('link',{name:/Hear it/});
+  await expect(link).toHaveAttribute('href','/listen?record=spiral&side=b');
+  await link.click();
+  await expect(page.getByRole('button',{name:'Side B: hear the measurements',exact:true})).toHaveAttribute('aria-pressed','true');
+  await expect(page.getByRole('button',{name:'Play record',exact:true})).toBeEnabled();
+});

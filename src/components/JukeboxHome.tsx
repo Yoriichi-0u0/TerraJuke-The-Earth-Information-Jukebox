@@ -103,7 +103,8 @@ function useImagePerformance(visual:ReturnType<typeof useVisualRecord>,volume:nu
 }
 
 function ClimateDeck({record,motion,volume,onVolume}:{record:JukeboxRecord;motion:boolean;volume:number;onVolume:(value:number)=>void}){
-  const {t}=useStudioLanguage();const [side,setSide]=useState<RecordSide>('a');
+  // ?side=b (used by Learn's "Hear it" link) opens Climate Spiral on its measurements; Play still starts nothing by itself.
+  const {t}=useStudioLanguage();const [side,setSide]=useState<RecordSide>(()=>new URLSearchParams(location.search).get('side')==='b'?'b':'a');
   const [inspectedObservation,setInspectedObservation]=useState<number|null>(null);
   // Both adapters persist through a flip; only an explicit Play action starts an engine.
   const visual=useVisualRecord(record,motion,volume),data=useDataRecord(measurementRecord,volume);

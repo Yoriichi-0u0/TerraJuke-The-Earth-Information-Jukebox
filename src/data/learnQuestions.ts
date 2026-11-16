@@ -2,9 +2,9 @@
 // fixed sound rule (src/lib/<record>/sonify.ts, docs/<RECORD>.md) and facts its tests check.
 import type {JukeboxRecordId} from './jukeboxRecords';
 
-export type Question={listen:string;ask:string;options:[string,string,string];answer:0|1|2;why:string};
+export type Question={/** Opens the record on this side from Learn (only Climate Spiral supports b). */side?:'b';listen:string;ask:string;options:[string,string,string];answer:0|1|2;why:string};
 export const LEARN:Partial<Record<JukeboxRecordId,Question>>={
-  spiral:{listen:'Play Side B: twelve Januaries, from 1880 to 2025.',ask:'As the Januaries get closer to today, the notes mostly…',options:['go higher','go lower','stay the same'],answer:0,why:'Each note is one January’s temperature compared with the 1951–1980 average, on a fixed scale: warmer plays higher. Recent Januaries are the warmest, so the notes climb.'},
+  spiral:{side:'b',listen:'Play Side B: twelve Januaries, from 1880 to 2025.',ask:'As the Januaries get closer to today, the notes mostly…',options:['go higher','go lower','stay the same'],answer:0,why:'Each note is one January’s temperature compared with the 1951–1980 average, on a fixed scale: warmer plays higher. Recent Januaries are the warmest, so the notes climb.'},
   nightlights:{listen:'Play Side A: NASA’s map of how night lights changed from 2012 to 2023.',ask:'A place where city lights grew plays a note that…',options:['rises','falls','is silent'],answer:0,why:'TerraJuke reads NASA’s own legend: purple means more light and rises; orange means less light and falls.'},
   air:{listen:'Play Side A and wait until Africa turns under the needle.',ask:'Over Africa, how many of the four aerosol instruments play?',options:['none','only one','all four at once'],answer:2,why:'Smoke, dust, sea salt and sulfate all show over and around Africa in NASA’s picture, so all four tracks sound together. Mute or solo a track to pick one out.'},
   ocean:{listen:'Play Side A: the ocean from pole to pole.',ask:'Travelling from the icy poles toward the equator, the notes…',options:['get higher','get lower','do not change'],answer:0,why:'Each current’s colour is read back to a temperature on NASA’s 0–32 °C colour bar: warmer water plays higher, and the tropics are warmest.'},
